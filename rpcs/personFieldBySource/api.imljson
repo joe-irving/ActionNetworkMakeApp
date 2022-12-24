@@ -1,0 +1,42 @@
+[
+    {
+        "condition": "{{ parameters.person_source == 'id' }}",
+        "response": {
+            "output": [
+                {
+                    "name": "person_id",
+                    "label": "Person ID",
+                    "type": "text",
+                    "required": true
+                }
+            ]
+        }
+    },
+    {
+        "condition": "{{ parameters.person_source == 'email' }}",
+        "response": {
+            "output": [
+                {
+                    "name": "person_email_address",
+                    "label": "Person Email Address",
+                    "type": "email",
+                    "required": true
+                }
+            ]
+        }
+    },
+    {
+        "condition": "{{ parameters.person_source == 'phone_number' }}",
+        "response": {
+            "output": [
+                {
+                    "name": "person_phone_number",
+                    "label": "Person Phone Number",
+                    "help": "Include the country code",
+                    "type": "text",
+                    "required": true
+                }
+            ]
+        }
+    }
+]

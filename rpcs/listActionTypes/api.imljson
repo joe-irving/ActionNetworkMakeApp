@@ -1,0 +1,120 @@
+{
+    "response": {
+        "temp": {
+            "get": [
+                {
+                    "label": "Advocacy Campaigns",
+                    "value": "osdi:advocacy_campaigns"
+                },
+                {
+                    "label": "Campaigns",
+                    "value": "action_network:campaigns"
+                },
+                {
+                    "label": "Events",
+                    "value": "osdi:events"
+                },
+                {
+                    "label": "Event Campaigns",
+                    "value": "action_network:event_campaigns"
+                },
+                {
+                    "label": "Forms",
+                    "value": "osdi:forms"
+                },
+                {
+                    "label": "Fundraising Pages",
+                    "value": "osdi:fundraising_pages"
+                },
+                {
+                    "label": "Petition",
+                    "value": "osdi:petitions"
+                },
+                {
+                    "label": "Lists",
+                    "value": "osdi:lists"
+                }
+            ],
+            "put": [
+                {
+                    "label": "Advocacy Campaigns",
+                    "value": "osdi:advocacy_campaigns"
+                },
+                {
+                    "label": "Events",
+                    "value": "osdi:events"
+                },
+                {
+                    "label": "Event Campaigns",
+                    "value": "action_network:event_campaigns"
+                },
+                {
+                    "label": "Forms",
+                    "value": "osdi:forms"
+                },
+                {
+                    "label": "Fundraising Pages",
+                    "value": "osdi:fundraising_pages"
+                },
+                {
+                    "label": "Petition",
+                    "value": "osdi:petitions"
+                }
+            ],
+            "post": [
+                {
+                    "label": "Advocacy Campaigns",
+                    "value": "osdi:advocacy_campaigns"
+                },
+                {
+                    "label": "Event Campaigns",
+                    "value": "action_network:event_campaigns"
+                },
+                {
+                    "label": "Events",
+                    "value": "osdi:events"
+                },
+                {
+                    "label": "Forms",
+                    "value": "osdi:forms"
+                },
+                {
+                    "label": "Fundraising Pages",
+                    "value": "osdi:fundraising_pages"
+                },
+                {
+                    "label": "Petition",
+                    "value": "osdi:petitions"
+                }
+            ],
+            "delete": [],
+            "record_helper": [
+                {
+                    "label": "Advocacy Campaigns",
+                    "value": "osdi:advocacy_campaigns"
+                },
+                {
+                    "label": "Events",
+                    "value": "osdi:events"
+                },
+                {
+                    "label": "Event Campaigns",
+                    "value": "action_network:event_campaigns"
+                },
+                {
+                    "label": "Forms",
+                    "value": "osdi:forms"
+                },
+                {
+                    "label": "Fundraising Pages",
+                    "value": "osdi:fundraising_pages"
+                },
+                {
+                    "label": "Petition",
+                    "value": "osdi:petitions"
+                }
+            ]
+        },
+        "output": "{{temp[if(parameters.method,parameters.method,'get')]}}"
+    }
+}

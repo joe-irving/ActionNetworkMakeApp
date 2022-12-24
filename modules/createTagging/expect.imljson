@@ -1,0 +1,38 @@
+[
+    {
+        "name": "person_source",
+        "label": "Pick the person by:",
+        "type": "select",
+        "options": {
+            "store": [
+                {
+                    "label": "ID",
+                    "value": "id",
+                    "default": true
+                },
+                {
+                    "label": "Email",
+                    "value": "email"
+                },
+                {
+                    "label": "Phone Number",
+                    "value": "phone_number"
+                }
+            ],
+            "nested": "rpc://personFieldBySource"
+        }
+    },
+    {
+        "name": "tag_id",
+        "type": "select",
+        "options": "rpc://tags",
+        "label": "Tag ID",
+        "required": true
+    }
+//     {
+//         "name": "person_id",
+//         "label": "Person ID",
+//         // "type": "uuid",
+//         "required": true
+//     }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "response": {
+            "temp": {
+                "system_type": "{{ first(split(parameters.action_type, ':')) }}",
+                "action_type_url": "{{ last(split(parameters.action_type, ':'))  }}",
+                "endpoint_lookup": {
+                    "osdi:advocacy_campaigns": "osdi:outreaches",
+                    "osdi:events": "osdi:attendances",
+                    "osdi:forms": "osdi:submissions",
+                    "osdi:fundraising_pages": "osdi:donations",
+                    "osdi:petitions": "osdi:signatures",
+                    "osdi:lists": "osdi:items"
+                }
+            }
+        }
+    }
+]

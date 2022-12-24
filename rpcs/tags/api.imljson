@@ -1,0 +1,12 @@
+{
+    "url": "/v2/tags",
+    "method": "GET",
+    "response": {
+        "iterate": "{{body._embedded['osdi:tags']}}",
+        "output": {
+            "label": "{{item.name}}",
+            "value": "{{ if(parameters.string=='true', item.name , replace(item._links.self.href,'https://actionnetwork.org/api/v2/tags/', '')) }}"
+        },
+        "limit": 75
+    }
+}

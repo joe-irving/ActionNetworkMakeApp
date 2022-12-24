@@ -1,0 +1,8 @@
+{
+    "name": "listPeople",
+    "label": "List People",
+    "description": "List People in group",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "search"
+}

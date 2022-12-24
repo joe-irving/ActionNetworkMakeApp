@@ -1,0 +1,9 @@
+[
+    {
+        "name": "filter",
+        "type": "text",
+        "label": "Filter",
+        "help": "The oData query for the people list. Recommended, otherwise it will retreive all people! See https://actionnetwork.org/docs/v2/#odata for help",
+        "required": false
+    }
+]

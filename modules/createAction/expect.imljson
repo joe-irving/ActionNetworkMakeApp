@@ -1,0 +1,12 @@
+[
+    {
+        "name": "action_type",
+        "label": "Action Type",
+        "type": "select",
+        "required": true,
+        "options": {
+            "store": "rpc://listActionTypes?method=post",
+            "nested": "rpc://getActionUpdateFields?method=post"
+        }
+    }
+]

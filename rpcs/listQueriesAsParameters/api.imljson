@@ -1,0 +1,11 @@
+{
+    "url": "/v2/queries",
+    "method": "GET",
+    "response": {
+        "iterate": "{{body._embedded['osdi:queries']}}",
+        "output": {
+            "label": "{{item.name}}",
+            "value": "{{ item._links.self.href }}"
+        }
+    }
+}

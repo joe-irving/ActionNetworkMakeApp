@@ -1,0 +1,82 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "person_id",
+        "type": "text",
+        "label": "Person ID"
+    },
+    {
+        "name": "tag_id",
+        "type": "text",
+        "label": "Tag ID"
+    },
+    {
+        "name": "item",
+        "type": "collection",
+        "label": "Item",
+        "spec": [
+            {
+                "name": "created_date",
+                "type": "date",
+                "label": "Date created"
+            },
+            {
+                "name": "modified_date",
+                "type": "date",
+                "label": "Date modified"
+            },
+            {
+                "name": "item_type",
+                "type": "text",
+                "label": "Item Type"
+            },
+            {
+                "name": "_links",
+                "type": "collection",
+                "label": "Links",
+                "spec": [
+                    {
+                        "name": "self",
+                        "type": "collection",
+                        "label": "Self",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:tag",
+                        "type": "collection",
+                        "label": "Tag",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:person",
+                        "type": "collection",
+                        "label": "Person",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

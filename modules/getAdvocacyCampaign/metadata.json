@@ -1,0 +1,8 @@
+{
+    "name": "getAdvocacyCampaign",
+    "label": "Get Advocacy Campaign",
+    "description": "Retrieving an individual advocacy campaign resource",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

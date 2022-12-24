@@ -1,0 +1,8 @@
+{
+    "name": "listTags",
+    "label": "List Tags",
+    "description": "List all tags available in your group",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "search"
+}

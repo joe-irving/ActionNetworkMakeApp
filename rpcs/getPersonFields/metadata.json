@@ -1,0 +1,5 @@
+{
+    "name": "getPersonFields",
+    "label": "Get Person Fields",
+    "connection": "action-network-jmxysg"
+}

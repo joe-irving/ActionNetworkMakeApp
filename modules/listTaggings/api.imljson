@@ -1,0 +1,18 @@
+{
+    "url": "/v2/tags/{{parameters.tag_id}}/taggings",
+    "method": "GET",
+    "body": {},
+    "headers": {},
+    "response": {
+        "output": {
+            "id": "{{ first(reverse(split(item._links.self.href, '/'))) }}",
+            "person_id": "{{ first(reverse(split(item._links['osdi:person'].href, '/'))) }}",
+            "tag_id": "{{ first(reverse(split(item._links['osdi:tag'].href, '/'))) }}",
+            "item": "{{item}}"
+        },
+        "iterate": "{{body._embedded['osdi:taggings']}}"
+    },
+    "pagination": {
+        "url": "{{body._links.next.href}}"
+    }
+}

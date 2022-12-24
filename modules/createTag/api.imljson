@@ -1,0 +1,17 @@
+{
+    "url": "/v2/tags",
+    "method": "POST",
+    "body": {
+        "name": "{{parameters.name}}"
+    },
+    "response": {
+        "temp": {
+            "created_date_stamp": "{{ formatDate(body.created_date, 'X') }}"
+        },
+        "output": {
+            "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
+            "new": "{{ floor((formatDate(now, 'X') - formatDate(body.created_date, 'X'))) == 0 }}",
+            "tag": "{{ body }}"
+        }
+    }
+}

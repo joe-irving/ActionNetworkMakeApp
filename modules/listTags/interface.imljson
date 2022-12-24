@@ -1,0 +1,70 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "Tag ID"
+    },
+    {
+        "name": "tag",
+        "label": "Tag",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "identifiers",
+                "type": "array",
+                "label": "Identifiers",
+                "spec": {
+                    "name": "identifier",
+                    "type": "text",
+                    "label": "Identifier"
+                }
+            },
+            {
+                "name": "created_date",
+                "type": "date",
+                "label": "Date created"
+            },
+            {
+                "name": "modified_date",
+                "type": "date",
+                "label": "Date modified"
+            },
+            {
+                "name": "name",
+                "type": "text",
+                "label": "Name"
+            },
+            {
+                "name": "_links",
+                "label": "Links",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "self",
+                        "type": "collection",
+                        "label": "Self",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:taggings",
+                        "type": "collection",
+                        "label": "Taggings",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

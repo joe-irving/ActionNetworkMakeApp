@@ -1,0 +1,11 @@
+{
+    "url": "/v2/metadata/custom_fields",
+    "method": "GET",
+    "response": {
+        "iterate": "{{body['action_network:custom_fields']}}",
+        "output": {
+            "label": "{{item.name}}",
+            "value": "{{item.name}}"
+        }
+    }
+}

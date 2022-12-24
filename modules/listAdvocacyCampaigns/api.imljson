@@ -1,0 +1,15 @@
+{
+    "url": "/v2/advocacy_campaigns",
+    "method": "GET",
+    "qs": {
+        "filter": "{{parameters.filter}}"
+    },
+    "response": {
+        "output": {
+            "id": "{{ first(reverse(split(item._links.self.href, '/'))) }}",
+            "creator_id": "{{ first(reverse(split(item._links['osdi:creator'].href, '/'))) }}",
+            "item": "{{ item }}"
+        },
+        "iterate": "{{body._embedded['osdi:advocacy_campaigns']}}"
+    }
+}

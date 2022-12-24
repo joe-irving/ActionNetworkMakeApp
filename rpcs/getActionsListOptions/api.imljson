@@ -1,0 +1,19 @@
+{
+    "url": "/v2/{{ substring(parameters.action_type, indexOf(parameters.action_type, ':')+1,length(parameters.action_type)) }}",
+    "method": "GET",
+    "qs": {
+        "action_type": "{{parameters.action_type}}"
+    },
+    "response": {
+        "iterate": "{{body._embedded[parameters.action_type]}}",
+        "output": {
+            "label": "{{if(item.name, item.name, item.title)}}",
+            "value": "{{replace(item._links.self.href,'https://actionnetwork.org/api/v2/'+substring(parameters.action_type, indexOf(parameters.action_type, ':')+1,length(parameters.action_type))+'/', '')}}"
+        },
+        "limit": 75
+    },
+    "pagination": {
+        "url": "{{ body._links.next.href }}",
+        "condition": "{{ body.total_pages > body.page }}"
+    }
+}

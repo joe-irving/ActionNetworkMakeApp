@@ -1,0 +1,8 @@
+[
+    {
+        "name": "id",
+        "type": "uuid",
+        "label": "ID",
+        "required": true
+    }
+]

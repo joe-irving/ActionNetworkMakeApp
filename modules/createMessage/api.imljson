@@ -1,0 +1,23 @@
+{
+    "url": "/v2/messages",
+    "method": "POST",
+    "body": {
+        "origin_system": "{{ parameters.origin_system }}",
+        "name": "{{ parameters.name }}",
+        "subject": "{{ parameters.subject }}",
+        "from": "{{ parameters.from }}",
+        "body": "{{ parameters.body }}",
+        "reply_to": "{{ parameters['reply-to'] }}",
+        "targets": "{{ parameters.targets }}",
+        "_links": {
+            "osdi:wrappers": {
+                "href": "{{ parameters.wrapper }}"
+            }
+        }
+    },
+    "response": {
+        "output": {
+            "item": "{{body}}"
+        }
+    }
+}

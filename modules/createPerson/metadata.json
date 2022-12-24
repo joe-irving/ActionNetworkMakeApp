@@ -1,0 +1,8 @@
+{
+    "name": "createPerson",
+    "label": "Create Person",
+    "description": "Create a new person",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

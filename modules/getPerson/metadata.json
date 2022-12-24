@@ -1,0 +1,8 @@
+{
+    "name": "getPerson",
+    "label": "Get Person",
+    "description": "Get a single person by id",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

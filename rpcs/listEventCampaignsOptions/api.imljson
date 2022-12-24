@@ -1,0 +1,11 @@
+{
+    "url": "/v2/event_campaigns",
+    "method": "GET",
+    "response": {
+        "iterate": "{{body._embedded['action_network:event_campaigns']}}",
+        "output": {
+            "label": "{{if(item.name, item.name, item.title)}}",
+            "value": "{{replace(item._links.self.href,'https://actionnetwork.org/api/v2/event_campaigns', '')}}"
+        }
+    }
+}

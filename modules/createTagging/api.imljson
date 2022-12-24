@@ -1,0 +1,56 @@
+[
+    {
+        "condition": "{{ parameters.person_source == 'id' }}",
+        "url": "/v2/people",
+        "qs": {
+            "filter": "identifier eq 'action_network:{{ parameters.person_id }}'"
+        },
+        "response": {
+            "temp": {
+                "osdi:person": "{{ first(body._links['osdi:people']) }}"
+            }
+        }
+    },
+    {
+        "condition": "{{ parameters.person_source == 'email' }}",
+        "url": "/v2/people",
+        "qs": {
+            "filter": "email_address eq '{{ parameters.person_email_address }}'"
+        },
+        "response": {
+            "temp": {
+                "osdi:person": "{{ first(body._links['osdi:people']) }}"
+            }
+        }
+    },
+    {
+        "condition": "{{ parameters.person_source == 'phone_number' }}",
+        "url": "/v2/people",
+        "qs": {
+            "filter": "phone_number eq '{{ parameters.person_phone_number }}'"
+        },
+        "response": {
+            "temp": {
+                "osdi:person": "{{ first(body._links['osdi:people']) }}"
+            }
+        }
+    },
+    {
+        "url": "/v2/tags/{{ parameters.tag_id }}/taggings",
+        "method": "POST",
+        "qs": {},
+        "body": {
+            "_links": {
+                "osdi:person": "{{ temp['osdi:person'] }}"
+            }
+        },
+        "response": {
+            "output": {
+                "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
+                "person_id": "{{ first(reverse(split(body._links['osdi:person'].href, '/'))) }}",
+                "tag_id": "{{ first(reverse(split(body._links['osdi:tag'].href, '/'))) }}",
+                "item": "{{body}}"
+            }
+        }
+    }
+]

@@ -1,0 +1,8 @@
+{
+    "name": "listActions",
+    "label": "List Actions",
+    "description": "List actions",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "search"
+}

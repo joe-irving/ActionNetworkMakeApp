@@ -1,0 +1,8 @@
+{
+    "name": "removeTagging",
+    "label": "Remove Tagging",
+    "description": "Removes a tagging instance for a tag",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

@@ -1,0 +1,102 @@
+{
+    "response": {
+        "output": [
+            {
+                "label": "English",
+                "value": "en"
+            },
+            {
+                "label": "Arabic",
+                "value": "ar"
+            },
+            {
+                "label": "Danish",
+                "value": "da"
+            },
+            {
+                "label": "Dutch",
+                "value": "nl"
+            },
+            {
+                "label": "Finnish",
+                "value": "fi"
+            },
+            {
+                "label": "French",
+                "value": "fr"
+            },
+            {
+                "label": "German",
+                "value": "de"
+            },
+            {
+                "label": "Hungarian",
+                "value": "hu"
+            },
+            {
+                "label": "Indonesian",
+                "value": "id"
+            },
+            {
+                "label": "Italian",
+                "value": "it"
+            },
+            {
+                "label": "Japanese",
+                "value": "ja"
+            },
+            {
+                "label": "Moldovan",
+                "value": "mo"
+            },
+            {
+                "label": "Polish",
+                "value": "pl"
+            },
+            {
+                "label": "Portuguese",
+                "value": "pt-BR"
+            },
+            {
+                "label": "Russian",
+                "value": "ru"
+            },
+            {
+                "label": "Serbian",
+                "value": "sr"
+            },
+            {
+                "label": "German",
+                "value": "de"
+            },
+            {
+                "label": "Simplified Chinese",
+                "value": "zh"
+            },
+            {
+                "label": "Slovenian",
+                "value": "sl"
+            },
+            {
+                "label": "Spanish",
+                "value": "es"
+            },
+            {
+                "label": "Swedish",
+                "value": "sv"
+            },
+            {
+                "label": "Turkish",
+                "value": "tr"
+            },
+            {
+                "label": "Vietnamese",
+                "value": "vi"
+            },
+            {
+                "label": "Welsh",
+                "value": "cy"
+            }
+        ]
+    }
+}

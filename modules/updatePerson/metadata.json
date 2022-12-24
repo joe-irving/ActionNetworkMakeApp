@@ -1,0 +1,8 @@
+{
+    "name": "updatePerson",
+    "label": "Update Person",
+    "description": "Update a persons data",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

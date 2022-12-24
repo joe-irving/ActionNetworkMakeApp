@@ -1,0 +1,19 @@
+{
+    "url": "/v2/{{ substring(parameters.action_type, indexOf(parameters.action_type, ':')+1,length(parameters.action_type)) }}",
+    "method": "GET",
+    "qs": {
+        "limit": 1
+    },
+    "response": {
+        "temp": {
+            "action": "{{ first(body._embedded[parameters.action_type]) }}"
+        },
+        "output": {
+            "id": "{{ last(split(item._links.self.href, '/')) }}",
+            "creator_id": "{{ last(split(item._links['osdi:creator'].href, '/')) }}",
+            "organizer_id": "{{ last(split(item._links['osdi:organizer'].href, '/')) }}",
+            "action": "{{ item }}"
+        },
+        "iterate": "{{ first(body._embedded[parameters.action_type]) }}"
+    }
+}

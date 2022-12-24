@@ -1,0 +1,45 @@
+[
+    {
+        "condition": "{{ parameters.person_or_action == 'action' }}",
+        "response": {
+            "output": [
+                {
+                    "name": "action_id",
+                    "type": "select",
+                    "label": "Which action to list action takers for?",
+                    "options": "rpc://getActionsListOptions"
+                }
+            ]
+        }
+    },
+    {
+        "condition": "{{ parameters.person_or_action == 'person' }}",
+        "response": {
+            "output": [
+                {
+                    "name": "person_source",
+                    "label": "Pick the person by:",
+                    "type": "select",
+                    "options": {
+                        "store": [
+                            {
+                                "label": "ID",
+                                "value": "id",
+                                "default": true
+                            },
+                            {
+                                "label": "Email",
+                                "value": "email"
+                            },
+                            {
+                                "label": "Phone Number",
+                                "value": "phone_number"
+                            }
+                        ],
+                        "nested": "rpc://personFieldBySource"
+                    }
+                }
+            ]
+        }
+    }
+]

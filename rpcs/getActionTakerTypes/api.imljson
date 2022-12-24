@@ -1,0 +1,74 @@
+{
+    "response": {
+        "temp": {
+            "get": [
+                {
+                    "label": "Advocacy Campaigns",
+                    "value": "osdi:advocacy_campaigns"
+                },
+                {
+                    "label": "Events",
+                    "value": "osdi:events"
+                },
+                {
+                    "label": "Forms",
+                    "value": "osdi:forms"
+                },
+                {
+                    "label": "Fundraising Pages",
+                    "value": "osdi:fundraising_pages"
+                },
+                {
+                    "label": "Petition",
+                    "value": "osdi:petitions"
+                }
+            ],
+            "put": [
+                {
+                    "label": "Events",
+                    "value": "osdi:events/attendances"
+                },
+                {
+                    "label": "Forms",
+                    "value": "osdi:forms/submissions"
+                },
+                {
+                    "label": "Fundraising Pages",
+                    "value": "osdi:fundraising_pages/donations"
+                },
+                {
+                    "label": "Petition",
+                    "value": "osdi:petitions/signatures"
+                }
+            ],
+            "post": [
+                {
+                    "label": "Advocacy Campaigns",
+                    "value": "osdi:advocacy_campaigns"
+                },
+                {
+                    "label": "Event Campaigns",
+                    "value": "action_network:event_campaigns"
+                },
+                {
+                    "label": "Events",
+                    "value": "osdi:events"
+                },
+                {
+                    "label": "Forms",
+                    "value": "osdi:forms"
+                },
+                {
+                    "label": "Fundraising Pages",
+                    "value": "osdi:fundraising_pages"
+                },
+                {
+                    "label": "Petition",
+                    "value": "osdi:petitions"
+                }
+            ],
+            "delete": []
+        },
+        "output": "{{temp[if(parameters.method,parameters.method,'get')]}}"
+    }
+}

@@ -1,0 +1,23 @@
+[
+    {
+        "name": "action_type",
+        "label": "Action Type",
+        "type": "select",
+        "required": true,
+        "options": {
+            "store": "rpc://listActionTypes?method=put",
+            "nested": [
+                {
+                    "name": "id",
+                    "label": "Action",
+                    "type": "select",
+                    "options": {
+                        "store": "rpc://getActionsListOptions",
+                        "nested": "rpc://getActionUpdateFields?method=put"
+                    },
+                    "required": true
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,8 @@
+{
+    "name": "listTaggingsByPerson",
+    "label": "List Taggings By Person",
+    "description": "list all taggings for a specific person",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "search"
+}

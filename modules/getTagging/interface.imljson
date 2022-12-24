@@ -1,0 +1,394 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "person_id",
+        "type": "text",
+        "label": "Person ID"
+    },
+    {
+        "name": "tag_id",
+        "type": "text",
+        "label": "Tag ID"
+    },
+    {
+        "name": "tagging",
+        "type": "collection",
+        "label": "Tagging",
+        "spec": [
+            {
+                "name": "created_date",
+                "type": "date",
+                "label": "Date created"
+            },
+            {
+                "name": "modified_date",
+                "type": "date",
+                "label": "Date modified"
+            },
+            {
+                "name": "item_type",
+                "type": "text",
+                "label": "Item Type"
+            },
+            {
+                "name": "_links",
+                "type": "collection",
+                "label": "Links",
+                "spec": [
+                    {
+                        "name": "self",
+                        "type": "collection",
+                        "label": "Self",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:tag",
+                        "type": "collection",
+                        "label": "Tag",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:person",
+                        "type": "collection",
+                        "label": "Person",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "tag",
+        "label": "Tag",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "created_date",
+                "type": "date",
+                "label": "Date created"
+            },
+            {
+                "name": "modified_date",
+                "type": "date",
+                "label": "Date modified"
+            },
+            {
+                "name": "name",
+                "type": "text",
+                "label": "Name"
+            },
+            {
+                "name": "_links",
+                "label": "Links",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "self",
+                        "type": "collection",
+                        "label": "Self",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:taggings",
+                        "type": "collection",
+                        "label": "Taggings",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "person",
+        "label": "Person",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "created_date",
+                "type": "date",
+                "label": "Date created"
+            },
+            {
+                "name": "modified_date",
+                "type": "date",
+                "label": "Date modified"
+            },
+            {
+                "name": "family_name",
+                "type": "text",
+                "label": "Last name"
+            },
+            {
+                "name": "given_name",
+                "type": "text",
+                "label": "First name"
+            },
+            {
+                "name": "languages_spoken",
+                "type": "array",
+                "label": "Languages",
+                "spec": {
+                    "name": "name",
+                    "label": "label",
+                    "type": "select",
+                    "options": "rpc://listLanguages"
+                }
+            },
+            {
+                "name": "custom_fields",
+                "type": "collection",
+                "label": "Custom Fields"
+            },
+            {
+                "name": "email_addresses",
+                "type": "array",
+                "label": "Emails",
+                "spec": [
+                    {
+                        "name": "primary",
+                        "label": "Primary",
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "address",
+                        "type": "text",
+                        "label": "Address"
+                    },
+                    {
+                        "name": "status",
+                        "type": "text",
+                        "label": "Status"
+                    }
+                ]
+            },
+            {
+                "name": "phone_numbers",
+                "type": "array",
+                "label": "Phone Numbers",
+                "spec": [
+                    {
+                        "name": "primary",
+                        "label": "Primary",
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "number",
+                        "type": "text",
+                        "label": "Number"
+                    },
+                    {
+                        "name": "number_type",
+                        "type": "text",
+                        "label": "Type"
+                    },
+                    {
+                        "name": "status",
+                        "type": "text",
+                        "label": "Status"
+                    }
+                ]
+            },
+            {
+                "name": "postal_addresses",
+                "type": "array",
+                "label": "Address",
+                "spec": [
+                    {
+                        "name": "primary",
+                        "label": "Primary",
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "address_lines",
+                        "label": "Adress Lines",
+                        "type": "array",
+                        "spec": {
+                            "type": "text",
+                            "label": "Line"
+                        }
+                    },
+                    {
+                        "name": "locality",
+                        "type": "text",
+                        "label": "Locality"
+                    },
+                    {
+                        "name": "region",
+                        "type": "text",
+                        "label": "Region"
+                    },
+                    {
+                        "name": "postal_code",
+                        "type": "text",
+                        "label": "Postal code"
+                    },
+                    {
+                        "name": "country",
+                        "type": "select",
+                        "label": "Country",
+                        "options": "rpc://listCountryCodes"
+                    },
+                    {
+                        "name": "language",
+                        "type": "select",
+                        "label": "Language",
+                        "options": "rpc://listLanguages"
+                    },
+                    {
+                        "name": "location",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "latitude",
+                                "type": "number",
+                                "label": "Latitude"
+                            },
+                            {
+                                "name": "longitude",
+                                "type": "number",
+                                "label": "Longitude"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "_links",
+                "type": "collection",
+                "label": "Links",
+                "spec": [
+                    {
+                        "name": "self",
+                        "type": "collection",
+                        "label": "Self",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:attendances",
+                        "type": "collection",
+                        "label": "Attendances",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:signatures",
+                        "type": "collection",
+                        "label": "Signatures",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:submissions",
+                        "type": "collection",
+                        "label": "Submissions",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:donations",
+                        "type": "collection",
+                        "label": "Donations",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:outreaches",
+                        "type": "collection",
+                        "label": "Outreaches",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:taggings",
+                        "type": "collection",
+                        "label": "Taggings",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:person",
+                        "type": "collection",
+                        "label": "Person",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Link"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

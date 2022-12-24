@@ -1,0 +1,22 @@
+{
+    "url": "/v2/advocacy_campaigns",
+    "method": "POST",
+    "body": {
+        "name": "{{parameters.name}}",
+        "title": "{{parameters.title}}",
+        "origin_system": "{{parameters.origin_system}}",
+        "description": "{{parameters.description}}",
+        "targets": "{{parameters.targets}}",
+        "type": "{{parameters.type}}"
+        // "osdi:creator": {
+        //     "_links": {
+        //         "self": {
+        //             "href": "https://actionnetwork.org/api/v2/people/{{ parameters.person_id }}"
+        //         }
+        //     }
+        // }
+    },
+    "response": {
+        "output": "{{body}}"
+    }
+}

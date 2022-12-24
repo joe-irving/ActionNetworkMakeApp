@@ -1,0 +1,760 @@
+[
+    {
+        "name": "id",
+        "label": "ID",
+        "type": "text"
+    },
+    {
+        "name": "creator_id",
+        "label": "Creator ID",
+        "type": "text"
+    },
+    {
+        "name": "organizer_id",
+        "label": "Organizer ID",
+        "type": "text"
+    },
+    {
+        "name": "action",
+        "label": "Action",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "created_date",
+                "type": "date",
+                "label": "Date created"
+            },
+            {
+                "name": "modified_date",
+                "type": "date",
+                "label": "Date modified"
+            },
+            {
+                "name": "name",
+                "type": "text",
+                "label": "Admin Title"
+            },
+            {
+                "name": "title",
+                "type": "text",
+                "label": "Title"
+            },
+            {
+                "name": "description",
+                "type": "text",
+                "label": "Description"
+            },
+            {
+                "name": "browser_url",
+                "label": "Browser URL",
+                "type": "text"
+            },
+            {
+                "name": "featured_image_url",
+                "type": "text",
+                "label": "Featured Image URL"
+            },
+            {
+                "name": "action_network:hidden",
+                "type": "boolean",
+                "label": "Hidden"
+            },
+            {
+                "name": "_embedded",
+                "label": "Embedded",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "osdi:creator",
+                        "type": "collection",
+                        "label": "Creator",
+                        "spec": [
+                            {
+                                "name": "created_date",
+                                "type": "date",
+                                "label": "Date created"
+                            },
+                            {
+                                "name": "modified_date",
+                                "type": "date",
+                                "label": "Date modified"
+                            },
+                            {
+                                "name": "family_name",
+                                "type": "text",
+                                "label": "Last name"
+                            },
+                            {
+                                "name": "given_name",
+                                "type": "text",
+                                "label": "First name"
+                            },
+                            {
+                                "name": "languages_spoken",
+                                "type": "array",
+                                "label": "Languages",
+                                "spec": {
+                                    "type": "text"
+                                }
+                            },
+                            {
+                                "name": "custom_fields",
+                                "type": "collection",
+                                "label": "Custom Fields"
+                            },
+                            {
+                                "name": "email_addresses",
+                                "type": "array",
+                                "label": "Emails",
+                                "spec": [
+                                    {
+                                        "name": "primary",
+                                        "label": "Primary",
+                                        "type": "boolean"
+                                    },
+                                    {
+                                        "name": "address",
+                                        "type": "text",
+                                        "label": "Address"
+                                    },
+                                    {
+                                        "name": "status",
+                                        "type": "text",
+                                        "label": "Status"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "phone_numbers",
+                                "type": "array",
+                                "label": "Phone Numbers",
+                                "spec": [
+                                    {
+                                        "name": "primary",
+                                        "label": "Primary",
+                                        "type": "boolean"
+                                    },
+                                    {
+                                        "name": "number",
+                                        "type": "text",
+                                        "label": "Number"
+                                    },
+                                    {
+                                        "name": "number_type",
+                                        "type": "text",
+                                        "label": "Type"
+                                    },
+                                    {
+                                        "name": "status",
+                                        "type": "text",
+                                        "label": "Status"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "postal_addresses",
+                                "type": "array",
+                                "label": "Address",
+                                "spec": [
+                                    {
+                                        "name": "primary",
+                                        "label": "Primary",
+                                        "type": "boolean"
+                                    },
+                                    {
+                                        "name": "address_lines",
+                                        "label": "Adress Lines",
+                                        "type": "array",
+                                        "spec": {
+                                            "type": "text",
+                                            "label": "Line"
+                                        }
+                                    },
+                                    {
+                                        "name": "locality",
+                                        "type": "text",
+                                        "label": "Locality"
+                                    },
+                                    {
+                                        "name": "region",
+                                        "type": "text",
+                                        "label": "Region"
+                                    },
+                                    {
+                                        "name": "postal_code",
+                                        "type": "text",
+                                        "label": "Postal code"
+                                    },
+                                    {
+                                        "name": "country",
+                                        "type": "text",
+                                        "label": "Country"
+                                    },
+                                    {
+                                        "name": "language",
+                                        "type": "text",
+                                        "label": "Language"
+                                    },
+                                    {
+                                        "name": "location",
+                                        "type": "collection",
+                                        "spec": [
+                                            {
+                                                "name": "latitude",
+                                                "type": "number",
+                                                "label": "Latitude"
+                                            },
+                                            {
+                                                "name": "longitude",
+                                                "type": "number",
+                                                "label": "Longitude"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "_links",
+                                "type": "collection",
+                                "label": "Links",
+                                "spec": [
+                                    {
+                                        "name": "self",
+                                        "type": "collection",
+                                        "label": "Self",
+                                        "spec": [
+                                            {
+                                                "name": "href",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "attendances",
+                                        "type": "collection",
+                                        "label": "Attendances",
+                                        "spec": [
+                                            {
+                                                "name": "href",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "signatures",
+                                        "type": "collection",
+                                        "label": "Signatures",
+                                        "spec": [
+                                            {
+                                                "name": "href",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "submissions",
+                                        "type": "collection",
+                                        "label": "Submissions",
+                                        "spec": [
+                                            {
+                                                "name": "href",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "donations",
+                                        "type": "collection",
+                                        "label": "Donations",
+                                        "spec": [
+                                            {
+                                                "name": "href",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "outreaches",
+                                        "type": "collection",
+                                        "label": "Outreaches",
+                                        "spec": [
+                                            {
+                                                "name": "href",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "osdi:taggings",
+                                        "type": "collection",
+                                        "label": "Taggings",
+                                        "spec": [
+                                            {
+                                                "name": "href",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "osdi:person",
+                                        "type": "collection",
+                                        "label": "Person",
+                                        "spec": [
+                                            {
+                                                "name": "href",
+                                                "type": "text",
+                                                "label": "Link"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "action_network:sponsor",
+                "type": "collection",
+                "label": "Sponsor",
+                "spec": [
+                    {
+                        "name": "title",
+                        "label": "Title",
+                        "type": "text"
+                    },
+                    {
+                        "name": "browser_url",
+                        "label": "Browser URL",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "name": "_links",
+                "type": "collection",
+                "label": "Links",
+                "spec": [
+                    {
+                        "name": "self",
+                        "type": "collection",
+                        "label": "Self",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:outreaches",
+                        "type": "collection",
+                        "label": "Outreaches",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:creator",
+                        "type": "collection",
+                        "label": "Creator",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "action_network:embed",
+                        "type": "collection",
+                        "label": "Embed",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:record_outreach_helper",
+                        "type": "collection",
+                        "label": "Record Outreach Helper",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:events",
+                        "label": "Events",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:items",
+                        "label": "Items",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:organizer",
+                        "label": "Organizer",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "action_network:event_campaign",
+                        "label": "Event Campaigns",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:record_attendance_helper",
+                        "label": "Record Attendance Helper",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:submissions",
+                        "label": "Submissions",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:record_submission_helper",
+                        "label": "Record Submission Helper",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:donations",
+                        "label": "Donations",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:record_donation_helper",
+                        "label": "Record Donation Helper",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "HRef"
+                            }
+                        ]
+                    }
+                ]
+            },
+            // Advocacy Campaign
+            {
+                "name": "targets",
+                "label": "Targets",
+                "type": "text"
+            },
+            {
+                "name": "total_outreaches",
+                "type": "number",
+                "label": "Total Outreaches"
+            },
+            {
+                "name": "type",
+                "label": "Type",
+                "type": "text"
+            },
+            {
+                "name": "actions",
+                "label": "Actions",
+                "type": "array",
+                "spec": [
+                    {
+                        "name": "title",
+                        "label": "Title",
+                        "type": "text"
+                    },
+                    {
+                        "name": "browser_url",
+                        "label": "Browser URL",
+                        "type": "text"
+                    }
+                ]
+            },
+            // Event Campaigns (event_campaigns)
+            {
+                "name": "host_pitch",
+                "label": "Host Pitch",
+                "type": "text"
+            },
+            {
+                "name": "host_instructions",
+                "label": "Host Instructions",
+                "type": "text"
+            },
+            {
+                "name": "host_url",
+                "label": "Host URL",
+                "type": "url"
+            },
+            {
+                "name": "total_events",
+                "label": "Total Events",
+                "type": "number"
+            },
+            {
+                "name": "total_rsvps",
+                "label": "Total RSVPs",
+                "type": "number"
+            },
+            // Events (events)
+            {
+                "name": "instructions",
+                "label": "Instructions",
+                "type": "text"
+            },
+            {
+                "name": "start_date",
+                "label": "Start Date",
+                "type": "date",
+                "time": true
+            },
+            {
+                "name": "end_date",
+                "label": "End Date",
+                "type": "date",
+                "time": true
+            },
+            {
+                "name": "location",
+                "label": "Location",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "venue",
+                        "label": "Venue",
+                        "type": "text"
+                    },
+                    {
+                        "name": "address_lines",
+                        "label": "Address Lines",
+                        "type": "array",
+                        "spec": {
+                            "name": "line",
+                            "label": "Line",
+                            "type": "text"
+                        }
+                    },
+                    {
+                        "name": "locality",
+                        "label": "Locality",
+                        "type": "text"
+                    },
+                    {
+                        "name": "region",
+                        "label": "Region",
+                        "type": "text"
+                    },
+                    {
+                        "name": "postal_code",
+                        "label": "Postal Code",
+                        "type": "text"
+                    },
+                    {
+                        "name": "country",
+                        "label": "Country",
+                        "type": "text"
+                    },
+                    {
+                        "name": "location",
+                        "label": "Location",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "latitude",
+                                "label": "Latitude",
+                                "type": "number"
+                            },
+                            {
+                                "name": "longitude",
+                                "label": "Longitude",
+                                "type": "number"
+                            },
+                            {
+                                "name": "accuracy",
+                                "label": "Accuracy",
+                                "type": "text"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "total_accepted",
+                "label": "Total Accepted",
+                "type": "number"
+            },
+            {
+                "name": "action_network:event_campaign_id",
+                "label": "Event Campaign ID",
+                "type": "uuid"
+            },
+            {
+                "name": "status",
+                "label": "Status",
+                "type": "text"
+            },
+            {
+                "name": "transparence",
+                "label": "Transparence",
+                "type": "text"
+            },
+            {
+                "name": "visibility",
+                "label": "Visibility",
+                "type": "text"
+            },
+            {
+                "name": "guests_can_invite_others",
+                "label": "Guests Can Invite Others",
+                "type": "boolean"
+            },
+            {
+                "name": "capacity",
+                "label": "Capacity",
+                "type": "number"
+            },
+            {
+                "name": "reminders",
+                "label": "Reminders",
+                "type": "array",
+                "spec": [
+                    {
+                        "name": "method",
+                        "label": "Method",
+                        "type": "text"
+                    },
+                    {
+                        "name": "minutes",
+                        "label": "Minutes",
+                        "type": "number"
+                    }
+                ]
+            },
+            // Forms (osdi:forms)
+            {
+                "name": "call_to_action",
+                "label": "Call to Action",
+                "type": "text"
+            },
+            {
+                "name": "total_submissions",
+                "label": "Total Submissions",
+                "type": "number"
+            },
+            // Fundraising Pages (osdi:fundraising_pages)
+            {
+                "name": "total_donations",
+                "label": "Total Donations",
+                "type": "number"
+            },
+            {
+                "name": "total_amount",
+                "label": "Total Amount",
+                "type": "text"
+            },
+            {
+                "name": "currency",
+                "label": "Currency",
+                "type": "text"
+            },
+            // Petitions
+            {
+                "name": "petition_text",
+                "label": "Petition Text",
+                "type": "text"
+            },
+            {
+                "name": "total_signatures",
+                "label": "Total Signatures",
+                "type": "number"
+            },
+            {
+                "name": "target",
+                "label": "Target",
+                "type": "array",
+                "spec": [
+                    {
+                        "name": "name",
+                        "label": "Name",
+                        "type": "text"
+                    }
+                ]
+            }
+        ]
+    }
+]

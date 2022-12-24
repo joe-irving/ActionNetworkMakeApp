@@ -1,0 +1,10 @@
+{
+    "url": "/v2/people/{{parameters.id}}",
+    "method": "GET",
+    "response": {
+        "output": {
+            "item": "{{ body }}",
+            "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}"
+        }
+    }
+}

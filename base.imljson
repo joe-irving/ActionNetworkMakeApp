@@ -1,0 +1,17 @@
+{
+    "baseUrl": "https://actionnetwork.org/api",
+    "log": {
+        "sanitize": [
+            "request.headers.osdi-api-token"
+        ]
+    },
+    "headers": {
+        "OSDI-API-Token": "{{connection.apiKey}}",
+        "Content-Type": "Application/JSON"
+    },
+    "response": {
+        "error": {
+            "message": "[{{ statusCode }}] {{ body.error }}"
+        }
+    }
+}

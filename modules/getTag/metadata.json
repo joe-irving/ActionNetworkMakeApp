@@ -1,0 +1,8 @@
+{
+    "name": "getTag",
+    "label": "Get Tag",
+    "description": "Get an individual tag by unique ID",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

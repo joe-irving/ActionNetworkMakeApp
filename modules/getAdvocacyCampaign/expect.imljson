@@ -1,0 +1,8 @@
+[
+    {
+        "name": "id",
+        "type": "select",
+        "label": "Advocacy Campaign",
+        "options": "rpc://listAdvocacyCampaignsAsParams"
+    }
+]

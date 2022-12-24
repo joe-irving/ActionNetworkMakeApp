@@ -1,0 +1,5 @@
+{
+    "name": "getSampleData",
+    "label": "Get Sample Data",
+    "connection": "action-network-jmxysg"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "getAction",
+    "label": "Get Action",
+    "description": "Get an individual action",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

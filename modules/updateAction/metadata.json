@@ -1,0 +1,8 @@
+{
+    "name": "updateAction",
+    "label": "Update Action",
+    "description": "Updates an existing action",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

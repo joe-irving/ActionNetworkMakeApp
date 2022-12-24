@@ -1,0 +1,85 @@
+[
+    {
+        "name": "action_type",
+        "label": "Action Type",
+        "type": "select",
+        "options": {
+            "store": "rpc://getActionTakerTypes",
+            "nested": [
+                {
+                    "name": "person_or_action",
+                    "label": "List actions taken for a person or an action?",
+                    "type": "select",
+                    "options": {
+                        "store": [
+                            {
+                                "label": "Person",
+                                "value": "person"
+                            },
+                            {
+                                "label": "Action",
+                                "value": "action"
+                            }
+                        ],
+                        "nested": "rpc://getActionsTakenParentResource"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "filter_date_type",
+        "label": "Filter by which date",
+        "type": "select",
+        "advanced": true,
+        "options": {
+            "store": [
+                {
+                    "label": "Modified Date",
+                    "value": "modified_date"
+                },
+                {
+                    "label": "Created Date",
+                    "value": "created_date"
+                }
+            ],
+            "nested": [
+                // gt/lt/eq
+                {
+                    "name": "filter_operator",
+                    "label": "Filter Operator",
+                    "type": "select",
+                    "required": true,
+                    "options": [
+                        {
+                            "label": "Greater than",
+                            "value": "gt"
+                        },
+                        {
+                            "label": "Less than",
+                            "value": "lt"
+                        },
+                        {
+                            "label": "Equal",
+                            "value": "eq"
+                        }
+                    ]
+                },
+                {
+                    "name": "filter_value",
+                    "label": "Filter by Value",
+                    "type": "date",
+                    "time": true,
+                    "required": true
+                }
+            ]
+        }
+    },
+    {
+        "name": "filter",
+        "label": "Raw filter",
+        "type": "text",
+        "help": "Override other filter settings with an oData query string.",
+        "advanced": true
+    }
+]

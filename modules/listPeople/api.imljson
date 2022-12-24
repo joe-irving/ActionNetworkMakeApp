@@ -1,0 +1,19 @@
+{
+    "url": "/v2/people",
+    "method": "GET",
+    "qs": {
+        "filter": "{{parameters.filter}}"
+    },
+    "body": {},
+    "headers": {},
+    "response": {
+        "output": {
+            "id": "{{ replace(item._links.self.href, 'https://actionnetwork.org/api/v2/people/', '') }}",
+            "item": "{{item}}"
+        },
+        "iterate": "{{body._embedded['osdi:people']}}"
+    },
+    "pagination": {
+        "url": "{{body._links.next.href}}"
+    }
+}

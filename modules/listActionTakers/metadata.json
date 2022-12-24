@@ -1,0 +1,8 @@
+{
+    "name": "listActionTakers",
+    "label": "List Actions Taken",
+    "description": "List all actions taken for a specific action, or by a specific person",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "search"
+}

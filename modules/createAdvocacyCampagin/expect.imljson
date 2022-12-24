@@ -1,0 +1,47 @@
+[
+    {
+        "name": "title",
+        "type": "text",
+        "label": "Title",
+        "required": true
+    },
+    {
+        "name": "type",
+        "label": "Type",
+        "type": "select",
+        "options": [
+            {
+                "label": "Email",
+                "value": "email",
+                "default": true
+            },
+            {
+                "label": "Call",
+                "value": "call"
+            }
+        ]
+    },
+    {
+        "name": "description",
+        "label": "Description",
+        "type": "text"
+    },
+    {
+        "type": "text",
+        "name": "targets",
+        "label": "Targets"
+    },
+    {
+        "name": "origin_system",
+        "type": "text",
+        "default": "make.com",
+        "label": "Origin System",
+        "advanced": true
+    },
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Admin Name",
+        "advanced": true
+    }
+]

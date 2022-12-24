@@ -1,0 +1,5 @@
+{
+    "name": "getActionUpdateFields",
+    "label": "Get Action Fields",
+    "connection": "action-network-jmxysg"
+}

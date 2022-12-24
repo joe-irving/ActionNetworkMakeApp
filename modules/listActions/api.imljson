@@ -1,0 +1,44 @@
+[
+    {
+        "url": "/v2/{{ last(split(parameters.action_type, ':')) }}",
+        "condition": "{{indexOf(parameters.action_type, 'events')<0 || !parameters.event_campaign_id}}",
+        "method": "GET",
+        "qs": {
+            "filter": "{{parameters.filter}}"
+        },
+        "response": {
+            "output": {
+                "id": "{{ last(split(item._links.self.href, '/')) }}",
+                "creator_id": "{{ last(split(item._links['osdi:creator'].href, '/')) }}",
+                "organizer_id": "{{ last(split(item._links['osdi:organizer'].href, '/')) }}",
+                "action": "{{ item }}"
+            },
+            "iterate": "{{body._embedded[parameters.action_type]}}"
+        },
+        "pagination": {
+            "url": "{{ body._links.next.href }}",
+            "condition": "{{ body.total_pages > body.page }}"
+        }
+    },
+    {
+        "url": "/v2/event_campaigns/{{parameters.event_campaign_id}}/events",
+        "condition": "{{indexOf(parameters.action_type, 'events')>=0 & parameters.event_campaign_id}}",
+        "method": "GET",
+        "qs": {
+            "filter": "{{parameters.filter}}"
+        },
+        "response": {
+            "output": {
+                "id": "{{ first(reverse(split(item._links.self.href, '/'))) }}",
+                "creator_id": "{{ first(reverse(split(item._links['osdi:creator'].href, '/'))) }}",
+                "organizer_id": "{{ last(split(item._links['osdi:organizer'].href, '/')) }}",
+                "action": "{{ item }}"
+            },
+            "iterate": "{{body._embedded[parameters.action_type]}}"
+        },
+        "pagination": {
+            "url": "{{body._links.next.href}}",
+            "condition": "{{ body.total_pages > body.page }}"
+        }
+    }
+]

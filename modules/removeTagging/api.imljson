@@ -1,0 +1,12 @@
+{
+    "url": "/v2/tags/{{parameters.tag_id}}/taggings/{{parameters.tagging_id}}",
+    "method": "DELETE",
+    "response": {
+        "output": {
+            "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
+            "person_id": "{{ first(reverse(split(body._links['osdi:person'].href, '/'))) }}",
+            "tag_id": "{{ first(reverse(split(body._links['osdi:tag'].href, '/'))) }}",
+            "item": "{{body}}"
+        }
+    }
+}

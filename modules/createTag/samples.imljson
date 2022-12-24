@@ -1,0 +1,20 @@
+{
+    "id": "71f8feef-61c8-4e6b-9745-ec1d7752f298",
+    "new": true,
+    "tag": {
+        "identifiers": [
+            "action_network:71f8feef-61c8-4e6b-9745-ec1d7752f298"
+        ],
+        "created_date": "2014-03-25T17:11:33Z",
+        "modified_date": "2014-03-25T17:13:33Z",
+        "name": "Volunteers",
+        "_links": {
+            "self": {
+                "href": "https://actionnetwork.org/api/v2/tags/71f8feef-61c8-4e6b-9745-ec1d7752f298"
+            },
+            "osdi:taggings": {
+                "href": "https://actionnetwork.org/api/v2/tags/71f8feef-61c8-4e6b-9745-ec1d7752f298/taggings"
+            }
+        }
+    }
+}

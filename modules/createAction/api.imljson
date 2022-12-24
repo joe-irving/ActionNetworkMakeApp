@@ -1,0 +1,38 @@
+{
+    "url": "/v2/{{ if(parameters.event_campaign_id, 'event_campaigns/'+parameters.event_campaign_id+'/','')+last(split(parameters.action_type, ':')) }}/{{ parameters.id }}",
+    "method": "POST",
+    "body": {
+        // general
+        "name": "{{parameters.name}}",
+        "title": "{{parameters.title}}",
+        "description": "{{parameters.description}}",
+        "origin_system": "{{parameters.origin_system}}",
+        "browser_url": "{{parameters.browser_url}}",
+        // advocacy
+        "targets": "{{parameters.targets}}",
+        "type": "{{parameters.type}}",
+        // event_campaigns
+        "host_pitch": "{{parameters.host_pitch}}",
+        "host_instructions": "{{parameters.host_instructions}}",
+        "host_url": "{{parameters.host_url}}",
+        // events
+        "instructions": "{{parameters.instructions}}",
+        "start_date": "{{parameters.start_date}}",
+        "end_date": "{{parameters.end_date}}",
+        "location": "{{parameters.location}}",
+        // forms
+        "call_to_action": "{{parameters.call_to_action}}",
+        // fundraising pages (n/a)
+        // petiion
+        "petition_text": "{{parameters.petition_text}}",
+        "target": "{{parameters.target}}"
+    },
+    "response": {
+        "output": {
+            "id": "{{ last(split(body._links.self.href, '/')) }}",
+            "creator_id": "{{ last(split(body._links['osdi:creator'].href, '/')) }}",
+            "organizer_id": "{{ last(split(body._links['osdi:organizer'].href, '/')) }}",
+            "action": "{{ body }}"
+        }
+    }
+}

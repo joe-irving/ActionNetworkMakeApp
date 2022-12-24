@@ -1,0 +1,8 @@
+{
+    "name": "takeAction",
+    "label": "Take action",
+    "description": "Take action on an Action Network action",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

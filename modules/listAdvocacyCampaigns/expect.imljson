@@ -1,0 +1,9 @@
+[
+    {
+        "name": "filter",
+        "type": "uuid",
+        "label": "Filter",
+        "help": "oData filter. See https://actionnetwork.org/docs/v2/#odata for help",
+        "required": false
+    }
+]

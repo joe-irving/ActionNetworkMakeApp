@@ -1,0 +1,15 @@
+[
+    {
+        "name": "tag_id",
+        "type": "select",
+        "options": "rpc://tags",
+        "label": "Tag ID",
+        "required": true
+    },
+    {
+        "name": "tagging_id",
+        "type": "text",
+        "label": "Tagging ID",
+        "required": true
+    }
+]

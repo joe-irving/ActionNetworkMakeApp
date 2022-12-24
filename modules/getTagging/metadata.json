@@ -1,0 +1,8 @@
+{
+    "name": "getTagging",
+    "label": "Get Tagging",
+    "description": "Retreive an individual tagging instance",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

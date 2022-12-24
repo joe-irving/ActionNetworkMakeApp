@@ -1,0 +1,11 @@
+{
+    "url": "/v2/advocacy_campaigns/{{ parameters.id }}",
+    "method": "GET",
+    "response": {
+        "output": {
+            "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
+            "creator_id": "{{ first(reverse(split(body._links['osdi:creator'].href, '/'))) }}",
+            "item": "{{ body }}"
+        }
+    }
+}

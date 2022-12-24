@@ -1,0 +1,8 @@
+{
+    "name": "createAction",
+    "label": "Create Action",
+    "description": "Creates a new action, only visable in reports/email targeting and via the API",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

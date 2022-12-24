@@ -1,0 +1,11 @@
+{
+    "url": "https://actionnetwork.org/api/v2",
+    "headers": {
+        "OSDI-API-Token": "{{parameters.apiKey}}"
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.OSDI-API-Token"
+        ]
+    }
+}

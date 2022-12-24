@@ -1,0 +1,59 @@
+[
+    {
+        "name": "origin_system",
+        "type": "text",
+        "label": "Origin System",
+        "default": "make.com"
+    },
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Admin Title"
+    },
+    {
+        "name": "subject",
+        "type": "text",
+        "label": "Subject",
+        "required": true
+    },
+    {
+        "name": "from",
+        "type": "text",
+        "label": "From",
+        "required": true,
+        "help": "e.g. your name"
+    },
+    {
+        "name": "body",
+        "type": "text",
+        "multiline": true,
+        "label": "Body",
+        "help": "Format with HTML",
+        "required": true
+    },
+    {
+        "name": "reply-to",
+        "type": "email",
+        "label": "Reply to",
+        "required": true
+    },
+    {
+        "name": "targets",
+        "type": "array",
+        "label": "Targets",
+        "spec": [
+            {
+                "name": "href",
+                "label": "Query",
+                "type": "select",
+                "options": "rpc://listQueriesAsParameters"
+            }
+        ]
+    },
+    {
+        "name": "wrapper",
+        "type": "select",
+        "label": "Wrapper",
+        "options": "rpc://listEmailWrappersAsParams"
+    }
+]

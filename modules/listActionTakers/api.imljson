@@ -1,0 +1,95 @@
+[
+    {
+        "response": {
+            "temp": {
+                "system_type": "{{ first(split(parameters.action_type, ':')) }}",
+                "action_type_url": "{{ last(split(parameters.action_type, ':'))  }}",
+                "endpoint_lookup": {
+                    "osdi:advocacy_campaigns": "osdi:outreaches",
+                    "osdi:events": "osdi:attendances",
+                    "osdi:forms": "osdi:submissions",
+                    "osdi:fundraising_pages": "osdi:donations",
+                    "osdi:petitions": "osdi:signatures",
+                    "osdi:lists": "osdi:items"
+                },
+                "basic_filter": "{{ parameters.filter_date_type }} {{ parameters.filter_operator }} '{{ parameters.filter_value }}'"
+            }
+        }
+    },
+    {
+        "response": {
+            "temp": {
+                "action_taker_type": "{{ temp.endpoint_lookup[parameters.action_type] }}",
+                "action_taker_type_url": "{{ first(reverse(split(temp.endpoint_lookup[parameters.action_type], ':'))) }}",
+                "filter": "{{  if(parameters.filter, parameters.filter, if(parameters.filter_operator, temp.basic_filter, null))  }}"
+            }
+        }
+    },
+    // Set endpoint for person
+    {
+        "condition": "{{ parameters.person_source == 'id' }}",
+        "response": {
+            "temp": {
+                "endpoint": "/v2/people/{{ parameters.person_id }}/{{ temp.action_taker_type_url }}"
+            }
+        }
+    },
+    {
+        "condition": "{{ parameters.person_source == 'email' }}",
+        "url": "/v2/people",
+        "qs": {
+            "filter": "email_address eq '{{ parameters.person_email_address }}'"
+        },
+        "response": {
+            "temp": {
+                "osdi:person": "{{ first(body._embedded['osdi:people']) }}"
+            }
+        }
+    },
+    {
+        "condition": "{{ parameters.person_source == 'phone_number' }}",
+        "url": "/v2/people",
+        "qs": {
+            "filter": "phone_number eq '{{ parameters.person_phone_number }}'"
+        },
+        "response": {
+            "temp": {
+                "osdi:person": "{{ first(body._embedded['osdi:people']) }}"
+            }
+        }
+    },
+    {
+        "condition": "{{ parameters.person_or_action == 'person' && parameters.person_source != 'id'}}",
+        "response": {
+            "temp": {
+                "endpoint": "{{ temp.`osdi:person`._links[temp.action_taker_type].href }}"
+            }
+        }
+    },
+    // Set endpoint for action
+    {
+        "condition": "{{ parameters.person_or_action == 'action' }}",
+        "response": {
+            "temp": {
+                "endpoint": "/v2/{{ temp.action_type_url }}/{{ parameters.action_id }}/{{ temp.action_taker_type_url }}"
+            }
+        }
+    },
+    // Iterate through action takers with filter
+    {
+        "url": "{{ temp.endpoint }}",
+        "method": "GET",
+        "qs": {
+            "filter": "{{temp.filter}}"
+            // "filter": "{{ temp.basic_filter }}"
+        },
+        "response": {
+            "iterate": "{{ body._embedded[temp.action_taker_type] }}",
+            "output": "{{ item }}"
+        },
+        "pagination": {
+            "url": "{{body._links.next.href}}",
+            "condition": "{{ body.total_pages > body.page }}"
+        }
+    }
+]
