@@ -10,6 +10,11 @@
         "label": "Creator ID"
     },
     {
+        "name": "action_type",
+        "label": "Type",
+        "type": "text"
+    },
+    {
         "name": "action",
         "label": "Action",
         "type": "collection",

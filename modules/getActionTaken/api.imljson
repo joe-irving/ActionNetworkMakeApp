@@ -1,0 +1,91 @@
+[
+    // Define lookup hash, system and action type
+    {
+        "response": {
+            "temp": {
+                "system_type": "{{ first(split(parameters.action_type, ':')) }}",
+                "action_type_url": "{{ last(split(parameters.action_type, ':'))  }}",
+                "endpoint_lookup": {
+                    "osdi:advocacy_campaigns": "osdi:outreaches",
+                    "osdi:events": "osdi:attendances",
+                    "osdi:forms": "osdi:submissions",
+                    "osdi:fundraising_pages": "osdi:donations",
+                    "osdi:petitions": "osdi:signatures",
+                    "osdi:lists": "osdi:items"
+                },
+                "action_type_singular_lookup": {
+                    "osdi:advocacy_campaigns": "osdi:advocacy_campaign",
+                    "osdi:events": "osdi:event",
+                    "osdi:forms": "osdi:form",
+                    "osdi:fundraising_pages": "osdi:fundraising_page",
+                    "osdi:petitions": "osdi:petition",
+                    "osdi:lists": "osdi:list"
+                }
+            }
+        }
+    },
+    // Create endpoint with lookup
+    {
+        "response": {
+            "temp": {
+                "action_taker_type_url": "{{ last(split(temp.endpoint_lookup[parameters.action_type], ':')) }}",
+                "action_type_singular": "{{ temp.action_type_singular_lookup[parameters.action_type] }}"
+            }
+        }
+    },
+    {
+        "response": {
+            "temp": {
+                "action_taker_url": "/v2/{{ temp.action_type_url }}/{{parameters.action_id}}/{{ temp.action_taker_type_url }}/{{ parameters.action_taken_id }}",
+                "action_url": "/v2/{{ temp.action_type_url }}/{{parameters.action_id}}"
+            }
+        }
+    },
+    // Get Action Taken
+    {
+        "url": "{{ temp.action_taker_url }}",
+        "qs": {
+            "test": "{{ temp.action_type_singular }}"
+        },
+        "method": "GET",
+        "response":{
+            "temp": {
+                "action_taken": "{{ body }}",
+                "person_url": "{{ body._links.`osdi:person`.href }}"
+            }
+        }
+    },
+    
+    // Get Action
+    {
+        "url": "{{ temp.action_url }}",
+        "qs": {
+            "test": "{{ temp }}"
+        },
+        "method": "GET",
+        "response": {
+            "temp": {
+                "action": "{{ body }}"
+            }
+        }
+    },
+    // Get Person
+    {
+        "url": "{{ temp.person_url }}",
+        "method": "GET",
+        "response": {
+            "temp": {
+                "person": "{{body}}"
+            },
+            "output": {
+                "id": "{{ first(reverse(split(temp.action_taken._links.self.href, '/'))) }}",
+                "person_id": "{{ first(reverse(split(temp.person._links.self.href, '/'))) }}",
+                "action_id": "{{ first(reverse(split(temp.action._links.self.href, '/'))) }}",
+                "action_taken": "{{ temp.action_taken }}",
+                "action_type": "{{ parameters.action_type }}",
+                "person": "{{ temp.person }}",
+                "action": "{{ temp.action }}"
+            }
+        }
+    }
+]

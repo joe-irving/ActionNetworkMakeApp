@@ -1,0 +1,8 @@
+{
+    "name": "watchPeople",
+    "label": "Watch People",
+    "description": "Watches for new people",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "trigger"
+}

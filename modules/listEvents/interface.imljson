@@ -1,0 +1,319 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "event",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "identifiers",
+                "type": "array",
+                "spec": {
+                    "type": "text"
+                },
+                "label": "Identifiers"
+            },
+            {
+                "name": "created_date",
+                "type": "text",
+                "label": "Created Date"
+            },
+            {
+                "name": "description",
+                "type": "text",
+                "label": "Description"
+            },
+            {
+                "name": "start_date",
+                "type": "text",
+                "label": "Start Date"
+            },
+            {
+                "name": "end_date",
+                "type": "text",
+                "label": "End Date"
+            },
+            {
+                "name": "reminders",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "method",
+                            "type": "text",
+                            "label": "Method"
+                        },
+                        {
+                            "name": "minutes",
+                            "type": "number",
+                            "label": "Minutes"
+                        }
+                    ]
+                },
+                "label": "Reminders"
+            },
+            {
+                "name": "total_accepted",
+                "type": "number",
+                "label": "Total Accepted"
+            },
+            {
+                "name": "action_network:event_campaign_id",
+                "type": "text",
+                "label": "Action Network:Event Campaign ID"
+            },
+            {
+                "name": "action_network:sponsor",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "title",
+                        "type": "text",
+                        "label": "Title"
+                    },
+                    {
+                        "name": "browser_url",
+                        "type": "text",
+                        "label": "Browser Url"
+                    }
+                ],
+                "label": "Action Network:Sponsor"
+            },
+            {
+                "name": "location",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "venue",
+                        "type": "text",
+                        "label": "Venue"
+                    },
+                    {
+                        "name": "address_lines",
+                        "type": "array",
+                        "spec": {
+                            "type": "text"
+                        },
+                        "label": "Address Lines"
+                    },
+                    {
+                        "name": "locality",
+                        "type": "text",
+                        "label": "Locality"
+                    },
+                    {
+                        "name": "region",
+                        "type": "text",
+                        "label": "Region"
+                    },
+                    {
+                        "name": "postal_code",
+                        "type": "text",
+                        "label": "Postal Code"
+                    },
+                    {
+                        "name": "country",
+                        "type": "text",
+                        "label": "Country"
+                    },
+                    {
+                        "name": "location",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "latitude",
+                                "type": "number",
+                                "label": "Latitude"
+                            },
+                            {
+                                "name": "longitude",
+                                "type": "number",
+                                "label": "Longitude"
+                            },
+                            {
+                                "name": "accuracy",
+                                "type": "text",
+                                "label": "Accuracy"
+                            }
+                        ],
+                        "label": "Location"
+                    }
+                ],
+                "label": "Location"
+            },
+            {
+                "name": "_links",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "self",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Self"
+                    },
+                    {
+                        "name": "osdi:organizer",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Osdi:Organizer"
+                    },
+                    {
+                        "name": "osdi:creator",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Osdi:Creator"
+                    },
+                    {
+                        "name": "action_network:embed",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Action Network:Embed"
+                    },
+                    {
+                        "name": "action_network:event_campaign",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Action Network:Event Campaign"
+                    },
+                    {
+                        "name": "osdi:attendances",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Osdi:Attendances"
+                    },
+                    {
+                        "name": "record_attendance_helper",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Record Attendance Helper"
+                    },
+                    {
+                        "name": "osdi:record_attendance_helper",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Osdi:Record Attendance Helper"
+                    }
+                ],
+                "label": " Links"
+            },
+            {
+                "name": "modified_date",
+                "type": "text",
+                "label": "Modified Date"
+            },
+            {
+                "name": "status",
+                "type": "text",
+                "label": "Status"
+            },
+            {
+                "name": "transparence",
+                "type": "text",
+                "label": "Transparence"
+            },
+            {
+                "name": "visibility",
+                "type": "text",
+                "label": "Visibility"
+            },
+            {
+                "name": "guests_can_invite_others",
+                "type": "boolean",
+                "label": "Guests Can Invite Others"
+            },
+            {
+                "name": "origin_system",
+                "type": "text",
+                "label": "Origin System"
+            },
+            {
+                "name": "title",
+                "type": "text",
+                "label": "Title"
+            },
+            {
+                "name": "name",
+                "type": "text",
+                "label": "Name"
+            },
+            {
+                "name": "browser_url",
+                "type": "text",
+                "label": "Browser Url"
+            },
+            {
+                "name": "instructions",
+                "type": "text",
+                "label": "Instructions"
+            },
+            {
+                "name": "action_network:hidden",
+                "type": "boolean",
+                "label": "Action Network:Hidden"
+            }
+        ],
+        "label": "Event"
+    },
+    {
+        "name": "creator_id",
+        "type": "text",
+        "label": "Creator ID"
+    },
+    {
+        "name": "organizer_id",
+        "type": "text",
+        "label": "Organizer ID"
+    }
+]

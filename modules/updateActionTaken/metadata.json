@@ -1,0 +1,8 @@
+{
+    "name": "updateActionTaken",
+    "label": "Update Action Taken",
+    "description": "Updates an instance of an action taken",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

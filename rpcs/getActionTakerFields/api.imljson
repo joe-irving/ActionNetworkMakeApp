@@ -1,0 +1,145 @@
+{
+    "temp": {
+        "method": "{{ parameters.method || 'post' }}",
+        "post": {
+            "osdi:advocacy_campaigns": [
+                {
+                    "name": "subject",
+                    "label": "Subject",
+                    "help": "For email type advocacy campaigns only.",
+                    "type": "text"
+                },
+                {
+                    "name": "message",
+                    "label": "Message",
+                    "help": "For email type advocacy campaigns only.",
+                    "type": "text"
+                },
+                {
+                    "name": "duration",
+                    "label": "Duration",
+                    "help": "For phone type campaigns only",
+                    "type": "text"
+                },
+                {
+                    "name": "targets",
+                    "label": "Targets",
+                    "type": "array",
+                    "validate": {
+                        "min": 0,
+                        "max": 1
+                    },
+                    "spec": {
+                        "name": "target",
+                        "label": "Target",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "title",
+                                "label": "Title",
+                                "type": "text"
+                            },
+                            {
+                                "name": "given_name",
+                                "label": "First Name",
+                                "type": "text"
+                            },
+                            {
+                                "name": "family_name",
+                                "label": "Last Name",
+                                "type": "text"
+                            },
+                            {
+                                "name": "ocdid",
+                                "label": "Open Civic Data Division ID",
+                                "help": "See http://docs.opencivicdata.org/en/latest/proposals/0002.html",
+                                "type": "text"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "osdi:events": [],
+            "osdi:petitions": [
+                {
+                    "name": "comments",
+                    "label": "Comments",
+                    "type": "text"
+                }
+            ],
+            "osdi:fundraising_pages": [
+                {
+                    "name": "recipients",
+                    "label": "Recipients",
+                    "type": "array",
+                    "help": "When updating, recipents are added rather than replaced.",
+                    "spec": {
+                        "name": "recipient",
+                        "label": "Recipient",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "display_name",
+                                "label": "Display Name",
+                                "help": "The name of the recipient of this part of the donation.",
+                                "type": "text"
+                            },
+                            {
+                                "name": "amount",
+                                "label": "Amount",
+                                "help": "The amount donated to this recipient.",
+                                "type": "text"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "created_date",
+                    "label": "Created Date",
+                    "help": "The date and time the resource was created. Adding a date allows for backdating of donations.",
+                    "type": "date",
+                    "time": true
+                },
+                {
+                    "name": "action_network:recurrence",
+                    "label": "Recurrence",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "recurring",
+                            "label": "Is this recurring?",
+                            "type": "boolean"
+                        },
+                        {
+                            "name": "period",
+                            "label": "Donation frequency",
+                            "type": "select",
+                            "options": [
+                                {
+                                    "label": "Weekly",
+                                    "value": "Weekly"
+                                },
+                                {
+                                    "label": "Monthly",
+                                    "value": "Monthly"
+                                },
+                                {
+                                    "label": "Quarterly",
+                                    "value": "Quarterly"
+                                },
+                                {
+                                    "label": "Yearly",
+                                    "value": "Yearly"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "osdi:forms": []
+        }
+    },
+    "response": {
+        "output": "{{ if(parameters.action_type, temp[temp.method][parameters.action_type], merge(temp[temp.method]['osdi:advocacy_campaigns'], temp[temp.method]['osdi:events'], temp[temp.method]['osdi:petitions'], temp[temp.method]['osdi:forms'], temp[temp.method]['osdi:fundraising_pages'])) }}"
+    }
+}

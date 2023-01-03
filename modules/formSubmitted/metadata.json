@@ -1,0 +1,8 @@
+{
+    "name": "formSubmitted",
+    "label": "Form submitted",
+    "description": "Triggers when a form is submitted",
+    "connection": null,
+    "webhook": "action-network-jmxysg",
+    "type": "instant_trigger"
+}

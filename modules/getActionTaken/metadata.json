@@ -1,0 +1,8 @@
+{
+    "name": "getActionTaken",
+    "label": "Get Action Taken",
+    "description": "Retrieve an instance of an action taken, with action and person included",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

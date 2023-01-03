@@ -1,4 +1,5 @@
 [
+    // Define lookup hash, system and action type
     {
         "response": {
             "temp": {
@@ -12,6 +13,89 @@
                     "osdi:petitions": "osdi:signatures",
                     "osdi:lists": "osdi:items"
                 }
+            }
+        }
+    },
+    // Create endpoint with lookup
+    {
+        "response": {
+            "temp": {
+                "action_taker_type_url": "{{ last(split(temp.endpoint_lookup[parameters.action_type], ':')) }}"
+            }
+        }
+    },
+    {
+        "response": {
+            "temp": {
+                "endpoint": "/v2/{{ temp.action_type_url }}/{{parameters.action_id}}/{{ temp.action_taker_type_url }}"
+            }
+        }
+    },
+    // TODO: Check if phone number or email already registered?
+    // POST data to the endpoint
+    {
+        "url": "{{ temp.endpoint }}",
+        "method": "POST",
+        "qs": {
+            "background_request": "{{ parameters.background_processing }}"
+        },
+        "body": {
+            "person": {
+                "given_name": "{{parameters.person.given_name}}",
+                "family_name": "{{parameters.person.family_name}}",
+                "email_addresses": [
+                    {
+                        "address": "{{parameters.person.email}}"
+                    }
+                ],
+                "phone_numbers": [
+                    {
+                        "number": "{{parameters.person.phone_number}}",
+                        "status": "{{parameters.person.phone_number_subscription}}"
+                    }
+                ],
+                "postal_addresses": [
+                    {
+                        "address_lines": [
+                            "{{parameters.person.address}}"
+                        ],
+                        "locality": "{{parameters.person.locality}}",
+                        "postal_code": "{{parameters.person.postal_code}}",
+                        "country": "{{parameters.person.country}}"
+                    }
+                ],
+                "languages_spoken": [
+                    "{{parameters.person.language}}"
+                ],
+                "custom_fields": "{{ toCollection(parameters.person.custom_fields, 'key', 'value') }}"
+            },
+            "add_tags": "{{ parameters.add_tags }}",
+            "remove_tags": "{{ parameters.remove_tags }}",
+            "triggers": {
+                "autoresponse": {
+                    "enabled": "{{ parameters.autoresponse }}"
+                }
+            },
+            "action_network:referrer_data": "{{ parameters.referrer_data }}",
+            // Outreaches
+            "subject": "{{ parameters.subject }}",
+            "message": "{{ parameters.message }}",
+            "duration": "{{ parameters.duration }}",
+            "targets": "{{ parameters.targets }}",
+            // Petitions
+            "comments": "{{ parameters.comments }}",
+            // Fundraiser
+            "recipients": "{{ parameters.recipients }}",
+            "created_date": "{{ parameters.created_date }}",
+            "action_network:recurrence": "{{ parameters.`action_network:recurrence` }}"
+        },
+        "response": {
+            "output": {
+                "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
+                "action_id": "{{ parameters.action_id }}",
+                "person_id": "{{ first(reverse(split(body._links.`osdi:person`.href, '/'))) }}",
+                "action_type": "{{ parameters.action_type }}",
+                "action_taken": "{{ body }}"
             }
         }
     }

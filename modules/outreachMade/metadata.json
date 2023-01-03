@@ -1,0 +1,8 @@
+{
+    "name": "outreachMade",
+    "label": "Outreach Made",
+    "description": "Triggers when an email or phone call is made to a target",
+    "connection": null,
+    "webhook": "action-network-jmxysg",
+    "type": "instant_trigger"
+}

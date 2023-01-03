@@ -1,0 +1,343 @@
+[
+    {
+        "name": "osdi:donation",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "created_date",
+                "type": "text",
+                "label": "Created Date"
+            },
+            {
+                "name": "modified_date",
+                "type": "text",
+                "label": "Modified Date"
+            },
+            {
+                "name": "currency",
+                "type": "text",
+                "label": "Currency"
+            },
+            {
+                "name": "amount",
+                "type": "text",
+                "label": "Amount"
+            },
+            {
+                "name": "recipients",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "display_name",
+                            "type": "text",
+                            "label": "Display Name"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "text",
+                            "label": "Amount"
+                        }
+                    ]
+                },
+                "label": "Recipients"
+            },
+            {
+                "name": "payment",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "method",
+                        "type": "text",
+                        "label": "Method"
+                    },
+                    {
+                        "name": "reference_number",
+                        "type": "text",
+                        "label": "Reference Number"
+                    },
+                    {
+                        "name": "authorization_stored",
+                        "type": "boolean",
+                        "label": "Authorization Stored"
+                    }
+                ],
+                "label": "Payment"
+            },
+            {
+                "name": "action_network:recurrence",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "recurring",
+                        "type": "boolean",
+                        "label": "Recurring"
+                    },
+                    {
+                        "name": "period",
+                        "type": "text",
+                        "label": "Period"
+                    }
+                ],
+                "label": "Action Network:Recurrence"
+            },
+            {
+                "name": "identifiers",
+                "type": "array",
+                "spec": {
+                    "type": "text"
+                },
+                "label": "Identifiers"
+            },
+            {
+                "name": "person",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "created_date",
+                        "type": "text",
+                        "label": "Created Date"
+                    },
+                    {
+                        "name": "modified_date",
+                        "type": "text",
+                        "label": "Modified Date"
+                    },
+                    {
+                        "name": "family_name",
+                        "type": "text",
+                        "label": "Family Name"
+                    },
+                    {
+                        "name": "postal_addresses",
+                        "type": "array",
+                        "spec": {
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "primary",
+                                    "type": "boolean",
+                                    "label": "Primary"
+                                },
+                                {
+                                    "name": "address_lines",
+                                    "type": "array",
+                                    "spec": {
+                                        "type": "text"
+                                    },
+                                    "label": "Address Lines"
+                                },
+                                {
+                                    "name": "locality",
+                                    "type": "text",
+                                    "label": "Locality"
+                                },
+                                {
+                                    "name": "postal_code",
+                                    "type": "text",
+                                    "label": "Postal Code"
+                                },
+                                {
+                                    "name": "region",
+                                    "type": "text",
+                                    "label": "Region"
+                                },
+                                {
+                                    "name": "country",
+                                    "type": "text",
+                                    "label": "Country"
+                                },
+                                {
+                                    "name": "location",
+                                    "type": "collection",
+                                    "spec": [
+                                        {
+                                            "name": "latitude",
+                                            "type": "number",
+                                            "label": "Latitude"
+                                        },
+                                        {
+                                            "name": "longitude",
+                                            "type": "number",
+                                            "label": "Longitude"
+                                        },
+                                        {
+                                            "name": "accuracy",
+                                            "type": "text",
+                                            "label": "Accuracy"
+                                        }
+                                    ],
+                                    "label": "Location"
+                                }
+                            ]
+                        },
+                        "label": "Postal Addresses"
+                    },
+                    {
+                        "name": "email_addresses",
+                        "type": "array",
+                        "spec": {
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "primary",
+                                    "type": "boolean",
+                                    "label": "Primary"
+                                },
+                                {
+                                    "name": "address",
+                                    "type": "text",
+                                    "label": "Address"
+                                },
+                                {
+                                    "name": "status",
+                                    "type": "text",
+                                    "label": "Status"
+                                }
+                            ]
+                        },
+                        "label": "Email Addresses"
+                    },
+                    {
+                        "name": "phone_numbers",
+                        "type": "array",
+                        "spec": {
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "primary",
+                                    "type": "boolean",
+                                    "label": "Primary"
+                                },
+                                {
+                                    "name": "number",
+                                    "type": "text",
+                                    "label": "Number"
+                                },
+                                {
+                                    "name": "number_type",
+                                    "type": "text",
+                                    "label": "Number Type"
+                                },
+                                {
+                                    "name": "status",
+                                    "type": "text",
+                                    "label": "Status"
+                                }
+                            ]
+                        },
+                        "label": "Phone Numbers"
+                    },
+                    {
+                        "name": "languages_spoken",
+                        "type": "array",
+                        "spec": {
+                            "type": "text"
+                        },
+                        "label": "Languages Spoken"
+                    },
+                    {
+                        "name": "custom_fields",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "phone_number",
+                                "type": "text",
+                                "label": "Phone Number"
+                            }
+                        ],
+                        "label": "Custom Fields"
+                    }
+                ],
+                "label": "Person"
+            },
+            {
+                "name": "action_network:referrer_data",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "source",
+                        "type": "text",
+                        "label": "Source"
+                    }
+                ],
+                "label": "Action Network:Referrer Data"
+            },
+            {
+                "name": "add_tags",
+                "type": "array",
+                "spec": {
+                    "type": "text"
+                },
+                "label": "Add Tags"
+            },
+            {
+                "name": "_links",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "self",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Self"
+                    },
+                    {
+                        "name": "osdi:fundraising_page",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Osdi:Fundraising Page"
+                    },
+                    {
+                        "name": "osdi:person",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Osdi:Person"
+                    }
+                ],
+                "label": " Links"
+            }
+        ],
+        "label": "Osdi:Donation"
+    },
+    {
+        "name": "action_network:sponsor",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "title",
+                "type": "text",
+                "label": "Title"
+            },
+            {
+                "name": "url",
+                "type": "text",
+                "label": "Url"
+            }
+        ],
+        "label": "Action Network:Sponsor"
+    },
+    {
+        "name": "idempotency_key",
+        "type": "text",
+        "label": "Idempotency Key"
+    }
+]

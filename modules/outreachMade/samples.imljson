@@ -1,0 +1,86 @@
+{
+    "osdi:outreach": {
+        "created_date": "2018-11-07T19:49:26Z",
+        "modified_date": "2018-11-07T19:49:26Z",
+        "type": "email",
+        "subject": "Please vote for this bill",
+        "message": "Please vote for bill no 123",
+        "targets": [
+            {
+                "title": "Representative",
+                "given_name": "Jill",
+                "family_name": "Black",
+                "ocdid": "ocd-division/country:us/state:ny/cd:18"
+            }
+        ],
+        "identifiers": [
+            "action_network:32b6df18-014f-4e0c-b112-f1bacfc41a61"
+        ],
+        "person": {
+            "created_date": "2018-11-07T17:56:40Z",
+            "modified_date": "2018-11-07T19:46:40Z",
+            "family_name": "Smith",
+            "postal_addresses": [
+                {
+                    "primary": true,
+                    "address_lines": [
+                        "1600 Pennsylvania Ave NW"
+                    ],
+                    "locality": "Washington",
+                    "postal_code": "20036",
+                    "region": "District of Columbia",
+                    "country": "US",
+                    "location": {
+                        "latitude": 41.2967,
+                        "longitude": -73.6698,
+                        "accuracy": "Approximate"
+                    }
+                }
+            ],
+            "email_addresses": [
+                {
+                    "primary": true,
+                    "address": "jsmith@mail.com",
+                    "status": "subscribed"
+                }
+            ],
+            "phone_numbers": [
+                {
+                    "primary": true,
+                    "number": "12024444444",
+                    "number_type": "Mobile",
+                    "status": "subscribed"
+                }
+            ],
+            "languages_spoken": [
+                "en"
+            ],
+            "custom_fields": {
+                "phone_number": "123.456.7890"
+            }
+        },
+        "action_network:referrer_data": {
+            "source": "facebook"
+        },
+        "add_tags": [
+            "volunteer",
+            "member"
+        ],
+        "_links": {
+            "self": {
+                "href": "https://actionnetwork.org/api/v2/advocacy_campaigns/48de2ac1-2398-41db-8d19-699e23bec035/outreaches/32b6df18-014f-4e0c-b112-f1bacfc41a61"
+            },
+            "osdi:advocacy_campaign": {
+                "href": "https://actionnetwork.org/api/v2/advocacy_campaigns/48de2ac1-2398-41db-8d19-699e23bec035"
+            },
+            "osdi:person": {
+                "href": "https://actionnetwork.org/api/v2/people/0df69aaf-3614-4315-b73a-088866b404e8"
+            }
+        }
+    },
+    "action_network:sponsor": {
+        "title": "Progressive Action Now",
+        "url": "https://actionnetwork.org/groups/progressive-action-now"
+    },
+    "idempotency_key": "1679091c5a880faf6fb5e6087eb1b2dcou"
+}

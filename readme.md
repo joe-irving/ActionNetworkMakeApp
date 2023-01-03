@@ -2,25 +2,39 @@
 
 Action Network' API is split into a few key areas:
 
-## Actions
+## Actions and events
 
 ### List Actions
 
 List actions of a particular type.
 
-For events, if you do not specify an event campaign then all event where the group is a primary sponsor will be return. If an event campaign is selected, all events within that event campaign will be returned, including those which do not have the group as a primary sponsor.
+## List Events
+
+Lists events. If you do not specify an event campaign then all event where the group is a primary sponsor will be return. If an event campaign is selected, all events within that event campaign will be returned, including those which do not have the group as a primary sponsor.
 
 ### Get Action
 
 Gets an individual action. The action type and action id are mappable.
 
+### Get Event
+
+Gets an individual event. Where the event is part of an event campaign and the group is **not** the primary sponsor, then event campaign is required.
+
 ### Update action
 
 this dynamically takes fields from RPCs depending on the action chosen. An RPC is also used to list the first 75 of the resource type for people to pick to modify.
 
+### Update event
+
+Like update action but with Event campaign option.
+
 ### Create action
 
-very similar to update action. Additionally allows type on advocacy campaigns
+very similar to update action. Additionally allows type on advocacy campaigns. Allows for creation of events
+
+### Watch events and watch action
+
+can be filtered with action network oData filters. Can watch for new or updated actions
 
 ## Tags
 
@@ -71,6 +85,88 @@ Like with other person lookups, you can lookup a person based on email, phone nu
 
 ### Take action
 
+This module uses the record helpers. This means in one POST request actions can be recorded or taken.
 
+NOTE: People will always be subscribed if they are **new** to the list. Their subscription status will be unchanged if they already existed
 
+#### Limitations by action
+
+Action Type | Action Taken Type | User interface actions | API Actions | Deduplicated | Autoresponse | Notes
+------------|-------------------|------------------------|-------------|-----
+Events | Attendances | Yes | Yes | Yes | Yes | Some events only sit as children to an event campaign
+Fundraising Pages | Donations | No | Yes | No | No |
+Advocacy Campaigns | Outreaches | No | Yes | No | No 
+Petitions | Signatures | Yes | Yes | Yes | Yes
+Forms | Sumissions | Yes | Yes | Yes | Yes
+
+#### Tags
+
+Adding and removing tags can only be for tags that already exists. The list should be available via RPC.
+
+#### Background processing
+
+To save on response time, you can set this to process in the background. Use if you do not need the response info.
+
+### Update Action Taken
+
+Update the information in an action taken. There are only 3 types of actions that allow for information to be updated, despite what is in the Action Network documentation.
+
+Action Type | Action Taken Type | Notes
+------------:|-------------------:|:------------------------
+Fundraising Pages | Donations | Recipients are added when updated, you cannot change any recipients added when the donation was created
+Advocacy Campaigns | Outreaches | 
+Petitions | Signatures |
+
+Action Network documentation states it is possible to change referrer data but that has not been possible in practice.
+
+### Get Action Taken
+
+* Gets Action taken (by action type, action and action taken ID).
+* Gets associated person
+* Gets associated action
+
+Returns as one collection
+
+### Instant action triggers for:
+
+* Submissions
+* Signatures
+* Attendances
+* Outreaches
+
+The all action webhook as purposefully not been set up as it is far too unpredictable in volume for Make.
+
+Go to Details > API & Sync in the menu to create webhooks with the address you are given. Make sure the action type matches up.
+
+## People
+
+### Create person
+
+Creates a new person. People are duplicated by email and phone number. Used the person signup helper.
+
+### Update person
+
+Updates a person based on ID, Email or phone number. ID is faster as only one request. Background processing available for when response data is not needed.
+
+### List people
+
+Lists people that fit into a specific filter. Allows for writing custom queries using the oData standard, but also use of a simple filter that is easier to use for the user.
+
+### Get person
+
+Retreives a single person resource by ID, email or phone number. 
+
+If selected, this module can retrive the first page of attendances, submissions, signatures, outreaches, donations and taggings for the person. That means a max of 25 embedded resources for the person. Also returned will be the actual total in a collection called "Totals" in case only that info is needed.
+
+### Watch people
+
+Watches people by modified date (new or updated). Created date corresponds to when that person first took action on action network, not in the group.
+
+Works very similarly to list people
+
+## Emails (messages)
+
+Currently action network only deals with emails on the API, and not mobile messages.
+
+### Create message
 

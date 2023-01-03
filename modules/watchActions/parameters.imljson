@@ -1,0 +1,96 @@
+[
+    {
+        "name": "action_type",
+        "label": "Action Type",
+        "type": "select",
+        "options": "rpc://listActionTypes?method=get",
+        "required": true
+    },
+    {
+        "name": "date_field",
+        "label": "Watch for new or modified actions?",
+        "type": "select",
+        "required": true,
+        "options": [
+            {
+                "label": "New actions only",
+                "value": "created_date"
+            },
+            {
+                "label": "New and updated actions",
+                "value": "modified_date"
+            }
+        ]
+    },
+    {
+        "name": "simple_filter",
+        "label": "Only watch actions that fit this filter:",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "property",
+                "label": "Property",
+                "type": "select",
+                "options": {
+                    "store": [
+                        {
+                            "label": "Created Date",
+                            "value": "created_date"
+                        },
+                        {
+                            "label": "Modified Date",
+                            "value": "modified_date"
+                        },
+                        {
+                            "label": "Origin System",
+                            "value": "origin_system"
+                        },
+                        {
+                            "label": "Title",
+                            "value": "title"
+                        }
+                    ],
+                    "nested": [
+                        {
+                            "name": "operator",
+                            "label": "Operator",
+                            "type": "select",
+                            "required": true,
+                            "options": [
+                                {
+                                    "label": "Exact match",
+                                    "value": "eq"
+                                },
+                                {
+                                    "label": "Greater than",
+                                    "value": "gt"
+                                },
+                                {
+                                    "label": "Less than",
+                                    "value": "lt"
+                                }
+                            ]
+                        },
+                        "rpc://getFilterValueField"
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "help": "The maximum number of results to be worked with during one execution cycle.",
+        "name": "limit",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 2,
+        "required": true
+    },
+    {
+        "name": "filter",
+        "type": "text",
+        "label": "Raw string filter, overides the simple filter",
+        "help": "The oData query for the people list. See https://actionnetwork.org/docs/v2/#odata for help",
+        "required": false,
+        "advanced": true
+    }
+]

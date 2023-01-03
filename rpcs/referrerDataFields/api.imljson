@@ -1,0 +1,31 @@
+{
+    "response": {
+        "output": [
+            {
+                "name": "source",
+                "label": "Source",
+                "type": "text",
+                "help": "Equivalent to someone taking action with the url argument ?source=[your source]. Corresponds to the sources chart in this action's manage page."
+            },
+            {
+                "name": "website",
+                "label": "Website",
+                "type": "text",
+                "help": "Equivalent to someone taking action after clicking a link on the listed website. Corresponds to the websites chart in this action's manage page."
+            },
+            {
+                "name": "email_referrer",
+                "label": "Email Referrer",
+                "type": "select",
+                "help": "The id of the email that brought someone to the link to take action.",
+                "options": "rpc://listRecentEmailIDs"
+            },
+            {
+                "name": "mobile_message_referrer",
+                "label": "Mobile Message Referrer",
+                "type": "text",
+                "help": "The id of the mobile message that brought someone to the link to take action."
+            }
+        ]
+    }
+}

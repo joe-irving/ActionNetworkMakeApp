@@ -1,19 +1,26 @@
-{
-    "url": "/v2/people",
-    "method": "GET",
-    "qs": {
-        "filter": "{{parameters.filter}}"
+[
+    {
+        "response": {
+            "temp": {
+                "simple_filter": "{{ parameters.simple_filter.property }} {{ parameters.simple_filter.operator }} '{{ parameters.simple_filter.value }}'"
+            }
+        }
     },
-    "body": {},
-    "headers": {},
-    "response": {
-        "output": {
-            "id": "{{ replace(item._links.self.href, 'https://actionnetwork.org/api/v2/people/', '') }}",
-            "item": "{{item}}"
+    {
+        "url": "/v2/people",
+        "method": "GET",
+        "qs": {
+            "filter": "{{if(parameters.filter, parameters.filter, temp.simple_filter)}}"
         },
-        "iterate": "{{body._embedded['osdi:people']}}"
-    },
-    "pagination": {
-        "url": "{{body._links.next.href}}"
+        "response": {
+            "output": {
+                "id": "{{ replace(item._links.self.href, 'https://actionnetwork.org/api/v2/people/', '') }}",
+                "item": "{{item}}"
+            },
+            "iterate": "{{body._embedded['osdi:people']}}"
+        },
+        "pagination": {
+            "url": "{{body._links.next.href}}"
+        }
     }
-}
+]

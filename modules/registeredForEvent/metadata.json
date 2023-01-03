@@ -1,0 +1,8 @@
+{
+    "name": "registeredForEvent",
+    "label": "Registered for Event",
+    "description": "Triggers when a person registers for an event",
+    "connection": null,
+    "webhook": "action-network-jmxysg",
+    "type": "instant_trigger"
+}

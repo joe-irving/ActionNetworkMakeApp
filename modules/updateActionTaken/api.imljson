@@ -1,0 +1,66 @@
+[
+    // Define lookup hash, system and action type
+    {
+        "response": {
+            "temp": {
+                "system_type": "{{ first(split(parameters.action_type, ':')) }}",
+                "action_type_url": "{{ last(split(parameters.action_type, ':'))  }}",
+                "endpoint_lookup": {
+                    "osdi:advocacy_campaigns": "osdi:outreaches",
+                    "osdi:events": "osdi:attendances",
+                    "osdi:forms": "osdi:submissions",
+                    "osdi:fundraising_pages": "osdi:donations",
+                    "osdi:petitions": "osdi:signatures",
+                    "osdi:lists": "osdi:items"
+                }
+            }
+        }
+    },
+    // Create endpoint with lookup
+    {
+        "response": {
+            "temp": {
+                "action_taker_type_url": "{{ last(split(temp.endpoint_lookup[parameters.action_type], ':')) }}"
+            }
+        }
+    },
+    {
+        "response": {
+            "temp": {
+                "endpoint": "/v2/{{ temp.action_type_url }}/{{parameters.action_id}}/{{ temp.action_taker_type_url }}/{{ parameters.action_taken_id }}"
+            }
+        }
+    },
+    // PUT data to the endpoint
+    {
+        "url": "{{ temp.endpoint }}",
+        "method": "PUT",
+        "qs": {
+            "background_request": "{{ parameters.background_processing }}"
+        },
+        "body": {
+            // The below line is commented out as it was not causing actions taken to be updated.
+            //"action_network:referrer_data": "{{ parameters.referrer_data }}",
+            // Outreaches
+            "subject": "{{ parameters.subject }}",
+            "message": "{{ parameters.message }}",
+            "duration": "{{ parameters.duration }}",
+            "targets": "{{ parameters.targets }}",
+            // Petitions
+            "comments": "{{ parameters.comments }}",
+            // Fundraiser
+            "recipients": "{{ parameters.recipients }}",
+            "created_date": "{{ parameters.created_date }}",
+            "action_network:recurrence": "{{ parameters.`action_network:recurrence` }}"
+        },
+        "response": {
+            "output": {
+                "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
+                "action_id": "{{ parameters.action_id }}",
+                "person_id": "{{ first(reverse(split(body._links.`osdi:person`.href, '/'))) }}",
+                "action_type": "{{ parameters.action_type }}",
+                "action_taken": "{{ body }}"
+            }
+        }
+    }
+]

@@ -1,9 +1,174 @@
 [
     {
+        "name": "simple_filter",
+        "label": "Simple filter",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "property",
+                "label": "Property",
+                "type": "select",
+                "required": true,
+                "options": {
+                    "store": [
+                        {
+                            "label": "Created Date",
+                            "value": "created_date"
+                        },
+                        {
+                            "label": "Modified Date",
+                            "value": "modified_date"
+                        },
+                        {
+                            "label": "Family Name",
+                            "value": "family_name"
+                        },
+                        {
+                            "label": "Given Name",
+                            "value": "given_name"
+                        },
+                        {
+                            "label": "Email Address",
+                            "value": "email_address"
+                        },
+                        {
+                            "label": "Phone Number",
+                            "value": "phone_number"
+                        },
+                        {
+                            "label": "Region",
+                            "value": "region"
+                        },
+                        {
+                            "label": "Postal Code",
+                            "value": "postal_code"
+                        }
+                    ],
+                    "nested": [
+                        {
+                            "name": "operator",
+                            "label": "Operator",
+                            "type": "select",
+                            "required": true,
+                            "options": [
+                                {
+                                    "label": "Exact match",
+                                    "value": "eq"
+                                },
+                                {
+                                    "label": "Greater than",
+                                    "value": "gt"
+                                },
+                                {
+                                    "label": "Less than",
+                                    "value": "lt"
+                                }
+                            ]
+                        },
+                        "rpc://getFilterValueField"
+                    ]
+                }
+            }
+        ]
+    },
+    {
         "name": "filter",
         "type": "text",
-        "label": "Filter",
-        "help": "The oData query for the people list. Recommended, otherwise it will retreive all people! See https://actionnetwork.org/docs/v2/#odata for help",
-        "required": false
+        "label": "Raw string filter, overides the simple filter",
+        "help": "The oData query for the people list. See https://actionnetwork.org/docs/v2/#odata for help",
+        "required": false,
+        "advanced": true
     }
+    // {
+    //     "name": "filter_type",
+    //     "label": "Show people who fit:",
+    //     "type": "select",
+    //     "options": [
+    //         {
+    //             "label": "All filters",
+    //             "value": "and"
+    //         },
+    //         {
+    //             "label": "Any filters",
+    //             "value": "or"
+    //         }
+    //     ]
+    // },
+    // {
+    //     "name": "filters",
+    //     "label": "Filters",
+    //     "type": "array",
+    //     "spec": {
+    //         "name": "filter",
+    //         "label": "Filter",
+    //         "type": "collection",
+    //         "spec": [
+    //             {
+    //                 "name": "property",
+    //                 "label": "Property",
+    //                 "type": "select",
+    //                 "required": true,
+    //                 "options": {
+    //                     "store": [
+    //                         {
+    //                             "label": "Created Date",
+    //                             "value": "created_date"
+    //                         },
+    //                         {
+    //                             "label": "Modified Date",
+    //                             "value": "modified_date"
+    //                         },
+    //                         {
+    //                             "label": "Family Name",
+    //                             "value": "family_name"
+    //                         },
+    //                         {
+    //                             "label": "Given Name",
+    //                             "value": "given_name"
+    //                         },
+    //                         {
+    //                             "label": "Email Address",
+    //                             "value": "email_address"
+    //                         },
+    //                         {
+    //                             "label": "Phone Number",
+    //                             "value": "phone_number"
+    //                         },
+    //                         {
+    //                             "label": "Region",
+    //                             "value": "region"
+    //                         },
+    //                         {
+    //                             "label": "Postal Code",
+    //                             "value": "postal_code"
+    //                         }
+    //                     ],
+    //                     "nested": [
+    //                         {
+    //                             "name": "operator",
+    //                             "label": "Operator",
+    //                             "type": "select",
+    //                             "required": true,
+    //                             "options": [
+    //                                 {
+    //                                     "label": "Exact match",
+    //                                     "value": "eq"
+    //                                 },
+    //                                 {
+    //                                     "label": "Greater than",
+    //                                     "value": "gt"
+    //                                 },
+    //                                 {
+    //                                     "label": "Less than",
+    //                                     "value": "lt"
+    //                                 }
+    //                             ]
+    //                         },
+    //                         "rpc://getFilterValueField"
+    //                     ]
+    //                 }
+    //             }
+    //         ]
+    //     }
+    // }
 ]

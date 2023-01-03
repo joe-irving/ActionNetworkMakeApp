@@ -5,9 +5,9 @@
         "label": "ID"
     },
     {
-        "name": "item",
+        "name": "person",
         "type": "collection",
-        "label": "Item",
+        "label": "Person",
         "spec": [
             {
                 "name": "created_date",

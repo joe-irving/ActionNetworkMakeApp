@@ -1,39 +1,47 @@
 {
     "url": "/v2/people",
     "method": "POST",
-    "qs": {},
-    "body": {
-        "given_name": "{{parameters.given_name}}",
-        "family_name": "{{parameters.family_name}}",
-        "email_addresses": [
-            {
-                "address": "{{parameters.email}}",
-                "status": "{{parameters.email_subscription}}"
-            }
-        ],
-        "phone_numbers": [
-            {
-                "number": "{{parameters.phone_number}}",
-                "status": "{{parameters.phone_number_subscription}}"
-            }
-        ],
-        "postal_addresses": [
-            {
-                "address_lines": [
-                    "{{parameters.address}}"
-                ],
-                "locality": "{{parameters.locality}}",
-                "postal_code": "{{parameters.postal_code}}",
-                "country": "{{parameters.country}}"
-            }
-        ],
-        "languages_spoken": [
-            "{{parameters.language}}"
-        ],
-        "custom_fields": "{{ toCollection(parameters.custom_fields, 'key', 'value') }}"
+    "qs": {
+        "background_request": "{{ parameters.background_processing }}"
     },
-    "headers": {},
+    "body": {
+        "person": {
+            "given_name": "{{parameters.given_name}}",
+            "family_name": "{{parameters.family_name}}",
+            "email_addresses": [
+                {
+                    "address": "{{parameters.email}}",
+                    "status": "{{parameters.email_subscription}}"
+                }
+            ],
+            "phone_numbers": [
+                {
+                    "number": "{{parameters.phone_number}}",
+                    "status": "{{parameters.phone_number_subscription}}"
+                }
+            ],
+            "postal_addresses": [
+                {
+                    "address_lines": [
+                        "{{parameters.address}}"
+                    ],
+                    "locality": "{{parameters.locality}}",
+                    "postal_code": "{{parameters.postal_code}}",
+                    "country": "{{parameters.country}}"
+                }
+            ],
+            "languages_spoken": [
+                "{{parameters.language}}"
+            ],
+            "custom_fields": "{{ toCollection(parameters.custom_fields, 'key', 'value') }}"
+        },
+        "add_tags": "{{ parameters.add_tags }}",
+        "remove_tags": "{{ parameters.remove_tags }}"
+    },
     "response": {
-        "output": "{{body}}"
+        "output": {
+            "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
+            "person": "{{body}}"
+        }
     }
 }

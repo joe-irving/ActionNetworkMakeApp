@@ -1,0 +1,15 @@
+[
+    {
+        "name": "event_campaign_id",
+        "label": "Event Campaign",
+        "help": "Neccessary when the event is in an event campaign and the group is not a primary sponsor.",
+        "type": "select",
+        "options": "rpc://listEventCampaignsOptions"
+    },
+    {
+        "name": "event_id",
+        "label": "Event ID",
+        "type": "text",
+        "required": true
+    }
+]

@@ -1,0 +1,35 @@
+[
+    {
+        "name": "action_type",
+        "label": "What action type?",
+        "type": "select",
+        "required": true,
+        "options": {
+            "store": "rpc://listActionTypes?method=put_action_taker",
+            "nested": [
+                {
+                    "name": "action_id",
+                    "label": "Action",
+                    "type": "select",
+                    "required": true,
+                    "options": "rpc://getActionsListOptions"
+                },
+                {
+                    "name": "action_taken_id",
+                    "label": "Action Taken ID",
+                    "required": true,
+                    "type": "text"
+                },
+                "rpc://getActionTakerFields"
+                // The below is commented out as trying to update referrer data was
+                // not corresponding to updates on action network.
+                // {
+                //     "name": "referrer_data",
+                //     "label": "Referrer Data",
+                //     "type": "collection",
+                //     "spec": "rpc://referrerDataFields"
+                // }
+            ]
+        }
+    }
+]

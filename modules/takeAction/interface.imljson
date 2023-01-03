@@ -1,7 +1,160 @@
 [
     {
         "name": "id",
-        "type": "uinteger",
-        "label": "User ID"
+        "type": "text",
+        "label": "Action Taken ID"
+    },
+    {
+        "name": "action_id",
+        "label": "Action ID",
+        "type": "text"
+    },
+    {
+        "name": "person_id",
+        "label": "Person ID",
+        "type": "text"
+    },
+    {
+        "name": "action_type",
+        "label": "Action Type",
+        "type": "text"
+    },
+    {
+        "name": "action_taken",
+        "label": "Action Taken",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "created_date",
+                "label": "Created Date",
+                "type": "date",
+                "time": true
+            },
+            {
+                "name": "modified_date",
+                "label": "Modified Date",
+                "type": "date",
+                "time": true
+            },
+            {
+                "name": "identifiers",
+                "label": "Identifiers",
+                "type": "array",
+                "spec": {
+                    "name": "identifier",
+                    "label": "Identifier",
+                    "type": "text"
+                }
+            },
+            {
+                "name": "type",
+                "label": "Type",
+                "type": "text"
+            },
+            {
+                "name": "duration",
+                "label": "Duration",
+                "type": "text"
+            },
+            {
+                "name": "targets",
+                "label": "Targets",
+                "type": "array",
+                "spec": {
+                    "name": "target",
+                    "label": "Target",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "title",
+                            "label": "Title",
+                            "type": "text"
+                        },
+                        {
+                            "name": "given_name",
+                            "label": "First Name",
+                            "type": "text"
+                        },
+                        {
+                            "name": "family_name",
+                            "label": "Last Name",
+                            "type": "text"
+                        },
+                        {
+                            "name": "ocdid",
+                            "label": "Open Civic Data Division ID",
+                            "help": "See http://docs.opencivicdata.org/en/latest/proposals/0002.html",
+                            "type": "text"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "comments",
+                "label": "Comments",
+                "type": "text"
+            },
+            {
+                "name": "recipients",
+                "label": "Recipients",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "display_name",
+                        "label": "Display Name",
+                        "help": "The name of the recipient of this part of the donation.",
+                        "type": "text"
+                    },
+                    {
+                        "name": "amount",
+                        "label": "Amount",
+                        "help": "The amount donated to this recipient.",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "name": "created_date",
+                "label": "Created Date",
+                "help": "The date and time the resource was created. Adding a date allows for backdating of donations.",
+                "type": "date",
+                "time": true
+            },
+            {
+                "name": "action_network:recurrence",
+                "label": "Recurrence",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "recurring",
+                        "label": "Is this recurring?",
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "period",
+                        "label": "Donation frequency",
+                        "type": "select",
+                        "options": [
+                            {
+                                "label": "Weekly",
+                                "value": "Weekly"
+                            },
+                            {
+                                "label": "Monthly",
+                                "value": "Monthly"
+                            },
+                            {
+                                "label": "Quarterly",
+                                "value": "Quarterly"
+                            },
+                            {
+                                "label": "Yearly",
+                                "value": "Yearly"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 ]

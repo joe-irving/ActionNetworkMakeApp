@@ -1,0 +1,91 @@
+[
+    {
+        "response": {
+            "temp": {
+                "created_date": {
+                    "name": "value",
+                    "label": "Value",
+                    "type": "date",
+                    "required": true,
+                    "time": true
+                },
+                "modified_date": {
+                    "name": "value",
+                    "label": "Value",
+                    "type": "date",
+                    "required": true,
+                    "time": true
+                },
+                "family_name": {
+                    "name": "value",
+                    "label": "Value",
+                    "required": true,
+                    "type": "text"
+                },
+                "given_name": {
+                    "name": "value",
+                    "label": "Value",
+                    "required": true,
+                    "type": "text"
+                },
+                "email_address": {
+                    "name": "value",
+                    "label": "Value",
+                    "required": true,
+                    "type": "email"
+                },
+                "phone_number": {
+                    "name": "value",
+                    "label": "Value",
+                    "required": true,
+                    "type": "text"
+                },
+                "region": {
+                    "name": "value",
+                    "label": "Value",
+                    "required": true,
+                    "type": "text"
+                },
+                "postal_code": {
+                    "name": "value",
+                    "label": "Value",
+                    "required": true,
+                    "type": "text"
+                },
+                "origin_system": {
+                    "name": "value",
+                    "label": "Value",
+                    "required": true,
+                    "type": "text"
+                },
+                "title": {
+                    "name": "value",
+                    "label": "Value",
+                    "required": true,
+                    "type": "text"
+                },
+                "start_date": {
+                    "name": "value",
+                    "label": "Value",
+                    "type": "date",
+                    "required": true,
+                    "time": true
+                },
+                "end_date": {
+                    "name": "value",
+                    "label": "Value",
+                    "type": "date",
+                    "required": true,
+                    "time": true
+                }
+            }
+        }
+    },
+    {
+        "response": {
+            "output": [
+                "{{ temp[parameters.property] }}"
+            ]
+        }
+    }
+]

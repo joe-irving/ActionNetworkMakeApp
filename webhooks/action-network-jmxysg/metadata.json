@@ -1,0 +1,6 @@
+{
+    "name": "action-network-jmxysg",
+    "label": "Took specific action",
+    "connection": null,
+    "type": "web"
+}

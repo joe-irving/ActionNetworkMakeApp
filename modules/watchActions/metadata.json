@@ -1,0 +1,8 @@
+{
+    "name": "watchActions",
+    "label": "Watch Actions",
+    "description": "Watch for new or modified actions of a specific type",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "trigger"
+}

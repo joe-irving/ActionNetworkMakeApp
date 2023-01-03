@@ -1,1 +1,65 @@
-{}
+{
+    "id": "45c46c46-5c93-4247-836b-295b7651c708",
+    "item": {
+        "identifiers": [
+            "action_network:45c46c46-5c93-4247-836b-295b7651c708"
+        ],
+        "email_addresses": [
+            {
+                "primary": true,
+                "address": "testemail1@email.com",
+                "status": "subscribed"
+            }
+        ],
+        "phone_numbers": [
+            {
+                "primary": true,
+                "number_type": "Mobile",
+                "status": "unsubscribed"
+            }
+        ],
+        "postal_addresses": [
+            {
+                "primary": true,
+                "region": "",
+                "country": "US",
+                "location": {
+                    "latitude": 0,
+                    "longitude": 0,
+                    "accuracy": "Approximate"
+                }
+            }
+        ],
+        "_links": {
+            "self": {
+                "href": "https://actionnetwork.org/api/v2/people/45c46c46-5c93-4247-836b-295b7651c708"
+            },
+            "osdi:signatures": {
+                "href": "https://actionnetwork.org/api/v2/people/45c46c46-5c93-4247-836b-295b7651c708/signatures"
+            },
+            "osdi:submissions": {
+                "href": "https://actionnetwork.org/api/v2/people/45c46c46-5c93-4247-836b-295b7651c708/submissions"
+            },
+            "osdi:donations": {
+                "href": "https://actionnetwork.org/api/v2/people/45c46c46-5c93-4247-836b-295b7651c708/donations"
+            },
+            "osdi:taggings": {
+                "href": "https://actionnetwork.org/api/v2/people/45c46c46-5c93-4247-836b-295b7651c708/taggings"
+            },
+            "osdi:outreaches": {
+                "href": "https://actionnetwork.org/api/v2/people/45c46c46-5c93-4247-836b-295b7651c708/outreaches"
+            },
+            "osdi:attendances": {
+                "href": "https://actionnetwork.org/api/v2/people/45c46c46-5c93-4247-836b-295b7651c708/attendances"
+            }
+        },
+        "custom_fields": {},
+        "created_date": "2022-12-28T00:31:17Z",
+        "modified_date": "2022-12-28T00:31:17Z",
+        "languages_spoken": [
+            "en"
+        ]
+    },
+    "__IMTLENGTH__": 6,
+    "__IMTINDEX__": 1
+}

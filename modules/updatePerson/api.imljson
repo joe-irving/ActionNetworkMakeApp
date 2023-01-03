@@ -1,39 +1,85 @@
-{
-    "url": "/v2/people/{{parameters.id}}",
-    "method": "PUT",
-    "qs": {},
-    "body": {
-        "given_name": "{{parameters.given_name}}",
-        "family_name": "{{parameters.family_name}}",
-        "email_addresses": [
-            {
-                "address": "{{parameters.email}}",
-                "status": "{{parameters.email_subscription}}"
+[
+    {
+        "condition": "{{ parameters.person_source == 'id' }}",
+        "response": {
+            "temp": {
+                "person_url": "/v2/people/{{ parameters.person_id }}"
             }
-        ],
-        "phone_numbers": [
-            {
-                "number": "{{parameters.phone_number}}",
-                "status": "{{parameters.phone_number_subscription}}"
-            }
-        ],
-        "postal_addresses": [
-            {
-                "address_lines": [
-                    "{{parameters.address}}"
-                ],
-                "locality": "{{parameters.locality}}",
-                "postal_code": "{{parameters.postal_code}}",
-                "country": "{{parameters.country}}"
-            }
-        ],
-        "languages_spoken": [
-            "{{parameters.language}}"
-        ],
-        "custom_fields": "{{ toCollection(parameters.custom_fields, 'key', 'value') }}"
+        }
     },
-    "headers": {},
-    "response": {
-        "output": "{{body}}"
+    {
+        "condition": "{{ parameters.person_source == 'email' }}",
+        "url": "/v2/people",
+        "qs": {
+            "filter": "email_address eq '{{ parameters.person_email_address }}'"
+        },
+        "response": {
+            "temp": {
+                "osdi:person": "{{ first(body._embedded['osdi:people']) }}"
+            }
+        }
+    },
+    {
+        "condition": "{{ parameters.person_source == 'phone_number' }}",
+        "url": "/v2/people",
+        "qs": {
+            "filter": "phone_number eq '{{ parameters.person_phone_number }}'"
+        },
+        "response": {
+            "temp": {
+                "osdi:person": "{{ first(body._embedded['osdi:people']) }}"
+            }
+        }
+    },
+    {
+        "condition": "{{ parameters.person_source != 'id' }}",
+        "response": {
+            "temp": {
+                "person_url": "{{ temp.`osdi:person`._links.self.href }}"
+            }
+        }
+    },
+    {
+        "url": "{{temp.person_url}}",
+        "method": "PUT",
+        "qs": {
+            "background_request": "{{ parameters.background_processing }}"
+        },
+        "body": {
+            "given_name": "{{parameters.given_name}}",
+            "family_name": "{{parameters.family_name}}",
+            "email_addresses": [
+                {
+                    "address": "{{parameters.email}}",
+                    "status": "{{parameters.email_subscription}}"
+                }
+            ],
+            "phone_numbers": [
+                {
+                    "number": "{{parameters.phone_number}}",
+                    "status": "{{parameters.phone_number_subscription}}"
+                }
+            ],
+            "postal_addresses": [
+                {
+                    "address_lines": [
+                        "{{parameters.address}}"
+                    ],
+                    "locality": "{{parameters.locality}}",
+                    "postal_code": "{{parameters.postal_code}}",
+                    "country": "{{parameters.country}}"
+                }
+            ],
+            "languages_spoken": [
+                "{{parameters.language}}"
+            ],
+            "custom_fields": "{{ toCollection(parameters.custom_fields, 'key', 'value') }}"
+        },
+        "response": {
+            "output": {
+                "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
+                "person": "{{ body }}"
+            }
+        }
     }
-}
+]

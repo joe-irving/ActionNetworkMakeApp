@@ -12,6 +12,14 @@
                     "osdi:petitions": "osdi:signatures",
                     "osdi:lists": "osdi:items"
                 },
+                "action_type_singular_lookup": {
+                    "osdi:advocacy_campaigns": "osdi:advocacy_campaign",
+                    "osdi:events": "osdi:event",
+                    "osdi:forms": "osdi:form",
+                    "osdi:fundraising_pages": "osdi:fundraising_page",
+                    "osdi:petitions": "osdi:petition",
+                    "osdi:lists": "osdi:list"
+                },
                 "basic_filter": "{{ parameters.filter_date_type }} {{ parameters.filter_operator }} '{{ parameters.filter_value }}'"
             }
         }
@@ -21,7 +29,8 @@
             "temp": {
                 "action_taker_type": "{{ temp.endpoint_lookup[parameters.action_type] }}",
                 "action_taker_type_url": "{{ first(reverse(split(temp.endpoint_lookup[parameters.action_type], ':'))) }}",
-                "filter": "{{  if(parameters.filter, parameters.filter, if(parameters.filter_operator, temp.basic_filter, null))  }}"
+                "filter": "{{  if(parameters.filter, parameters.filter, if(parameters.filter_operator, temp.basic_filter, null))  }}",
+                "action_type_singular": "{{ temp.action_type_singular_lookup[parameters.action_type] }}"
             }
         }
     },
@@ -80,12 +89,19 @@
         "url": "{{ temp.endpoint }}",
         "method": "GET",
         "qs": {
-            "filter": "{{temp.filter}}"
+            "filter": "{{temp.filter}}",
+            "test": "{{ temp.action_type_singular }}"
             // "filter": "{{ temp.basic_filter }}"
         },
         "response": {
             "iterate": "{{ body._embedded[temp.action_taker_type] }}",
-            "output": "{{ item }}"
+            "output": {
+                "id": "{{ first(reverse(split(item._links.self.href, '/'))) }}",
+                "action_id": "{{ first(reverse(split(item._links[temp.action_type_singular].href, '/'))) }}",
+                "person_id": "{{ first(reverse(split(item._links.`osdi:person`.href, '/'))) }}",
+                "action_type": "{{ parameters.action_type }}",
+                "action_taken": "{{ item }}"
+            }
         },
         "pagination": {
             "url": "{{body._links.next.href}}",

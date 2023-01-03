@@ -32,6 +32,7 @@
             "id": "{{ last(split(body._links.self.href, '/')) }}",
             "creator_id": "{{ last(split(body._links['osdi:creator'].href, '/')) }}",
             "organizer_id": "{{ last(split(body._links['osdi:organizer'].href, '/')) }}",
+            "action_type": "{{ parameters.action_type }}",
             "action": "{{ body }}"
         }
     }

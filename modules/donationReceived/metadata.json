@@ -1,0 +1,8 @@
+{
+    "name": "donationReceived",
+    "label": "Donation received",
+    "description": "Triggers when a donation is made to a fundraising page",
+    "connection": null,
+    "webhook": "action-network-jmxysg",
+    "type": "instant_trigger"
+}

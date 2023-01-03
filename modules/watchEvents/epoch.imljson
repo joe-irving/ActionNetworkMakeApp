@@ -1,0 +1,8 @@
+{
+    "response": {
+        "output": {
+            "date": "{{item[parameters.date_field]}}",
+            "label": "[{{ item.origin_system }}] {{if(item.name, item.name, item.title)}}"
+        }
+    }
+}

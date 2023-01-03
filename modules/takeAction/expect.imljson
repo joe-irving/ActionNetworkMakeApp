@@ -10,8 +10,10 @@
                     "name": "action_id",
                     "label": "Action",
                     "type": "select",
-                    "options": "rpc://getActionsListOptions"
-                    // TODO: Nest record helper feilds here
+                    "options": {
+                        "store": "rpc://getActionsListOptions",
+                        "nested": "rpc://getActionTakerFields"
+                    }
                 }
             ]
         }
@@ -20,7 +22,7 @@
         "name": "person",
         "label": "Person",
         "type": "collection",
-        "spec": "rpc://getPersonFields?method=post"
+        "spec": "rpc://getPersonFields?method=record_helper"
     },
     {
         "name": "add_tags",
@@ -54,31 +56,6 @@
         "name": "referrer_data",
         "label": "Referrer Data",
         "type": "collection",
-        "spec": [
-            {
-                "name": "source",
-                "label": "Source",
-                "type": "text",
-                "help": "Equivalent to someone taking action with the url argument ?source=[your source]. Corresponds to the sources chart in this action's manage page."
-            },
-            {
-                "name": "website",
-                "label": "Website",
-                "type": "text",
-                "help": "Equivalent to someone taking action after clicking a link on the listed website. Corresponds to the websites chart in this action's manage page."
-            },
-            {
-                "name": "email_referrer",
-                "label": "Email Referrer",
-                "type": "text",
-                "help": "The id of the email that brought someone to the link to take action."
-            },
-            {
-                "name": "mobile_message_referrer",
-                "label": "Mobile Message Referrer",
-                "type": "text",
-                "help": "The id of the mobile message that brought someone to the link to take action."
-            }
-        ]
+        "spec": "rpc://referrerDataFields"
     }
 ]

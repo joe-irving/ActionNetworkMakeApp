@@ -1,22 +1,102 @@
 [
     {
         "name": "id",
-        "type": "uinteger",
-        "label": "User ID"
+        "type": "uuid",
+        "label": "Action Taker ID"
     },
     {
-        "name": "email",
-        "type": "email",
-        "label": "Email address"
+        "name": "person_id",
+        "label": "Person ID",
+        "type": "text"
     },
     {
-        "name": "name",
-        "type": "text",
-        "label": "Name"
+        "name": "action_id",
+        "label": "Action ID",
+        "type": "text"
     },
     {
-        "name": "created",
-        "type": "date",
-        "label": "Date created"
+        "name": "action_type",
+        "label": "Action Type",
+        "type": "text"
+    },
+    {
+        "name": "action_taken",
+        "label": "Action Taken",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "created_date",
+                "label": "Created Date",
+                "type": "date",
+                "time": true
+            },
+            {
+                "name": "modified_date",
+                "label": "Modified Date",
+                "type": "date",
+                "time": true
+            },
+            "rpc://referrerDataFields",
+            {
+                "name": "_links",
+                "label": "Links",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "self",
+                        "label": "Self",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "label": "HRef",
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "osdi:person",
+                        "label": "Person",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "label": "HRef",
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "{{ temp.action_type_singular }}",
+                        "label": "{{ temp.action_type_singular }}",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "label": "HRef",
+                                "type": "text"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "action_network:person_id",
+                "label": "Person ID",
+                "type": "text"
+            },
+            {
+                "name": "identifiers",
+                "label": "Identifiers",
+                "type": "array",
+                "spec": [
+                    {
+                        "name": "Identifier",
+                        "label": "Identifier",
+                        "type": "text"
+                    }
+                ]
+            }
+        ]
     }
 ]

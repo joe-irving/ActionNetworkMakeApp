@@ -7,7 +7,7 @@
     {
         "name": "item",
         "type": "collection",
-        "label": "Item",
+        "label": "Person",
         "spec": [
             {
                 "name": "created_date",
@@ -258,5 +258,346 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "totals",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "attendances",
+                "type": "number",
+                "label": "Attendances"
+            },
+            {
+                "name": "submissions",
+                "type": "number",
+                "label": "Submissions"
+            },
+            {
+                "name": "donations",
+                "type": "number",
+                "label": "Donations"
+            },
+            {
+                "name": "taggings",
+                "type": "number",
+                "label": "Taggings"
+            }
+        ],
+        "label": "Totals"
+    },
+    {
+        "name": "taggings",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "created_date",
+                    "type": "text",
+                    "label": "Created Date"
+                },
+                {
+                    "name": "modified_date",
+                    "type": "text",
+                    "label": "Modified Date"
+                },
+                {
+                    "name": "item_type",
+                    "type": "text",
+                    "label": "Item Type"
+                },
+                {
+                    "name": "identifiers",
+                    "type": "array",
+                    "label": "Identifiers"
+                },
+                {
+                    "name": "_links",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "self",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "href",
+                                    "type": "text",
+                                    "label": "Href"
+                                }
+                            ],
+                            "label": "Self"
+                        },
+                        {
+                            "name": "osdi:tag",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "href",
+                                    "type": "text",
+                                    "label": "Href"
+                                }
+                            ],
+                            "label": "Osdi:Tag"
+                        },
+                        {
+                            "name": "osdi:person",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "href",
+                                    "type": "text",
+                                    "label": "Href"
+                                }
+                            ],
+                            "label": "Osdi:Person"
+                        },
+                        {
+                            "name": "curies",
+                            "type": "array",
+                            "spec": {
+                                "type": "collection",
+                                "spec": [
+                                    {
+                                        "name": "name",
+                                        "type": "text",
+                                        "label": "Name"
+                                    },
+                                    {
+                                        "name": "href",
+                                        "type": "text",
+                                        "label": "Href"
+                                    },
+                                    {
+                                        "name": "templated",
+                                        "type": "boolean",
+                                        "label": "Templated"
+                                    }
+                                ]
+                            },
+                            "label": "Curies"
+                        }
+                    ],
+                    "label": " Links"
+                }
+            ]
+        },
+        "label": "Taggings"
+    },
+    {
+        "name": "donations",
+        "type": "array",
+        "label": "Donations"
+    },
+    {
+        "name": "attendances",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "identifiers",
+                    "type": "array",
+                    "spec": {
+                        "type": "text"
+                    },
+                    "label": "Identifiers"
+                },
+                {
+                    "name": "created_date",
+                    "type": "text",
+                    "label": "Created Date"
+                },
+                {
+                    "name": "modified_date",
+                    "type": "text",
+                    "label": "Modified Date"
+                },
+                {
+                    "name": "status",
+                    "type": "text",
+                    "label": "Status"
+                },
+                {
+                    "name": "action_network:person_id",
+                    "type": "text",
+                    "label": "Action Network:Person ID"
+                },
+                {
+                    "name": "action_network:event_id",
+                    "type": "text",
+                    "label": "Action Network:Event ID"
+                },
+                {
+                    "name": "action_network:referrer_data",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "source",
+                            "type": "text",
+                            "label": "Source"
+                        },
+                        {
+                            "name": "referrer",
+                            "type": "text",
+                            "label": "Referrer"
+                        },
+                        {
+                            "name": "website",
+                            "type": "text",
+                            "label": "Website"
+                        }
+                    ],
+                    "label": "Action Network:Referrer Data"
+                },
+                {
+                    "name": "_links",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "self",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "href",
+                                    "type": "text",
+                                    "label": "Href"
+                                }
+                            ],
+                            "label": "Self"
+                        },
+                        {
+                            "name": "osdi:event",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "href",
+                                    "type": "text",
+                                    "label": "Href"
+                                }
+                            ],
+                            "label": "Osdi:Event"
+                        },
+                        {
+                            "name": "osdi:person",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "href",
+                                    "type": "text",
+                                    "label": "Href"
+                                }
+                            ],
+                            "label": "Osdi:Person"
+                        }
+                    ],
+                    "label": " Links"
+                }
+            ]
+        },
+        "label": "Attendances"
+    },
+    {
+        "name": "submissions",
+        "type": "array",
+        "spec": {
+            "type": "collection",
+            "spec": [
+                {
+                    "name": "identifiers",
+                    "type": "array",
+                    "spec": {
+                        "type": "text"
+                    },
+                    "label": "Identifiers"
+                },
+                {
+                    "name": "modified_date",
+                    "type": "text",
+                    "label": "Modified Date"
+                },
+                {
+                    "name": "action_network:person_id",
+                    "type": "text",
+                    "label": "Action Network:Person ID"
+                },
+                {
+                    "name": "action_network:form_id",
+                    "type": "text",
+                    "label": "Action Network:Form ID"
+                },
+                {
+                    "name": "action_network:referrer_data",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "source",
+                            "type": "text",
+                            "label": "Source"
+                        },
+                        {
+                            "name": "referrer",
+                            "type": "text",
+                            "label": "Referrer"
+                        },
+                        {
+                            "name": "website",
+                            "type": "text",
+                            "label": "Website"
+                        }
+                    ],
+                    "label": "Action Network:Referrer Data"
+                },
+                {
+                    "name": "_links",
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "self",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "href",
+                                    "type": "text",
+                                    "label": "Href"
+                                }
+                            ],
+                            "label": "Self"
+                        },
+                        {
+                            "name": "osdi:form",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "href",
+                                    "type": "text",
+                                    "label": "Href"
+                                }
+                            ],
+                            "label": "Osdi:Form"
+                        },
+                        {
+                            "name": "osdi:person",
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "href",
+                                    "type": "text",
+                                    "label": "Href"
+                                }
+                            ],
+                            "label": "Osdi:Person"
+                        }
+                    ],
+                    "label": " Links"
+                },
+                {
+                    "name": "created_date",
+                    "type": "text",
+                    "label": "Created Date"
+                }
+            ]
+        },
+        "label": "Submissions"
     }
 ]

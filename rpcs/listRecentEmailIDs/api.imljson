@@ -1,0 +1,22 @@
+{
+    "url": "/v2/messages",
+    "method": "GET",
+    "qs": {},
+    "body": {},
+    "headers": {},
+    "response": {
+        "iterate": {
+            "condition": "{{ item.type == 'email' }}",
+            "container": "{{ body._embedded.`osdi:messages` }}"
+        },
+        "output": {
+            "label": "{{ if(item.name, item.name, item.subject) }}",
+            "value": "{{ replace(replace(item.administrative_url, 'https://actionnetwork.org/emails/', 'email-'), '/manage','') }}"
+        },
+        "limit": 75
+    },
+    "pagination": {
+        "url": "{{ body._links.next.href }}",
+        "condition": "{{ body.total_pages > body.page }}"
+    }
+}

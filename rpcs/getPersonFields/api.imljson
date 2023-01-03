@@ -359,7 +359,94 @@
                     }
                 }
             ],
-            "put": []
+            "put": [],
+            "record_helper": [
+                {
+                    "name": "given_name",
+                    "label": "First Name",
+                    "type": "text"
+                },
+                {
+                    "name": "family_name",
+                    "label": "Last Name",
+                    "type": "text"
+                },
+                {
+                    "name": "language",
+                    "label": "Language spoken",
+                    "type": "select",
+                    "options": "rpc://listLanguages"
+                },
+                {
+                    "name": "email",
+                    "label": "Email address",
+                    "type": "email"
+                },
+                {
+                    "name": "phone_number",
+                    "label": "Phone Number",
+                    "type": "text"
+                },
+                {
+                    "name": "phone_number_subscription",
+                    "label": "Phone Number Subscription Status",
+                    "type": "select",
+                    "options": [
+                        {
+                            "label": "Subscribe",
+                            "value": "subscribed"
+                        },
+                        {
+                            "label": "Unsubscribe",
+                            "value": "unsubscribed"
+                        }
+                    ]
+                },
+                {
+                    "name": "address",
+                    "label": "First line of address",
+                    "type": "text"
+                },
+                {
+                    "name": "locality",
+                    "label": "City or locality",
+                    "type": "text"
+                },
+                {
+                    "name": "postal_code",
+                    "label": "Post/ZIP Code",
+                    "type": "text"
+                },
+                {
+                    "name": "country",
+                    "type": "select",
+                    "label": "Country",
+                    "options": "rpc://listCountryCodes"
+                },
+                {
+                    "name": "custom_fields",
+                    "type": "array",
+                    "label": "Custom Fields",
+                    "spec": {
+                        "type": "collection",
+                        "name": "field",
+                        "label": "Field",
+                        "spec": [
+                            {
+                                "name": "key",
+                                "label": "Key",
+                                "type": "select",
+                                "options": "rpc://customFIeldSelect"
+                            },
+                            {
+                                "name": "value",
+                                "label": "Value",
+                                "type": "text"
+                            }
+                        ]
+                    }
+                }
+            ]
         },
         "output": "{{ temp[temp.method] }}"
     }

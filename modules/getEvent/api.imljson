@@ -1,0 +1,35 @@
+[
+    // Set endpoint
+    // if event campaign id not empty:
+    {
+        "condition": "{{ length(parameters.event_campaign_id) > 1 }}",
+        "response": {
+            "temp": {
+                "endpoint": "/v2/event_campaigns/{{parameters.event_campaign_id}}/events/{{ parameters.event_id }}",
+                "simple_filter_filled": "{{if(parameters.simple_filter.property, true, false)}}"
+            }
+        }
+    },
+    // if event campaign empty
+    {
+        "condition": "{{ length(temp.endpoint) <= 0 }}",
+        "response": {
+            "temp": {
+                "endpoint": "/v2/events/{{ parameters.event_id }}"
+            }
+        }
+    },
+
+    {
+        "url": "{{ temp.endpoint }}",
+        "method": "GET",
+        "response": {
+            "output": {
+                "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
+                "creator_id": "{{ first(reverse(split(body._links['osdi:creator'].href, '/'))) }}",
+                "organizer_id": "{{ last(split(item._links['osdi:organizer'].href, '/')) }}",
+                "event": "{{ body }}"
+            }
+        }
+    }
+]

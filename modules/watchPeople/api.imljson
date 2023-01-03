@@ -1,0 +1,45 @@
+[
+    {
+        "response": {
+            "temp": {
+                "simple_filter_filled": "{{if(parameters.simple_filter.property, true, false)}}"
+            }
+        }
+    },
+    {
+        "condition": "{{ temp.simple_filter_filled }}",
+        "response": {
+            "temp": {
+                "simple_filter": "{{ parameters.simple_filter.property }} {{ parameters.simple_filter.operator }} '{{ parameters.simple_filter.value }}'"
+            }
+        }
+    },
+    {
+        "response": {
+            "temp": {
+                "filter_string": "{{ if(parameters.filter, parameters.filter, temp.simple_filter) }}"
+            }
+        }
+    },
+    {
+        "url": "/v2/people",
+        "method": "GET",
+        "qs": {
+            "filter": "{{trim(temp.filter_string)}}"
+        },
+        "response": {
+            "iterate": "{{body._embedded.`osdi:people`}}",
+            "trigger": {
+                "id": "{{ item._links.self.href }}",
+                "date": "{{item.modified_date}}",
+                "type": "date",
+                "order": "desc"
+            },
+            "output": {
+                "id": "{{ substring(item._links.self.href, indexOf(item._links.self.href, '/v2/people/') + 11, length(item._links.self.href)) }}",
+                "item": "{{ item }}"
+            },
+            "limit": "{{parameters.limit}}"
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    // Set endpoint
+    // if event campaign id not empty:
+    {
+        "condition": "{{ length(parameters.event_campaign_id) > 1 }}",
+        "response": {
+            "temp": {
+                "endpoint": "/v2/event_campaigns/{{parameters.event_campaign_id}}/events",
+                "simple_filter_filled": "{{if(parameters.simple_filter.property, true, false)}}"
+            }
+        }
+    },
+    // if event campaign empty
+    {
+        "condition": "{{ length(temp.endpoint) <= 0 }}",
+        "response": {
+            "temp": {
+                "endpoint": "/v2/events"
+            }
+        }
+    },
+    {
+        "condition": "{{ temp.simple_filter_filled }}",
+        "response": {
+            "temp": {
+                "simple_filter": "{{ parameters.simple_filter.property }} {{ parameters.simple_filter.operator }} '{{ parameters.simple_filter.value }}'"
+            }
+        }
+    },
+    {
+        "response": {
+            "temp": {
+                "filter_string": "{{ if(parameters.filter, parameters.filter, temp.simple_filter) }}"
+            }
+        }
+    },
+    // loop through endpoint
+    {
+        "url": "{{ temp.endpoint }}",
+        "method": "GET",
+        "qs": {
+            "filter": "{{trim(temp.filter_string)}}"
+        },
+        "response": {
+            "output": {
+                "id": "{{ last(split(item._links.self.href, '/')) }}",
+                "creator_id": "{{ last(split(item._links['osdi:creator'].href, '/')) }}",
+                "organizer_id": "{{ last(split(item._links['osdi:organizer'].href, '/')) }}",
+                "event": "{{ item }}"
+            },
+            "iterate": "{{body._embedded.`osdi:events`}}"
+        },
+        "pagination": {
+            "url": "{{ body._links.next.href }}",
+            "condition": "{{ body.total_pages > body.page }}"
+        }
+    }
+]

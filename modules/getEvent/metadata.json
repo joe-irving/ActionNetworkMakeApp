@@ -1,0 +1,8 @@
+{
+    "name": "getEvent",
+    "label": "Get Event",
+    "description": "Gets an individual event by ID",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

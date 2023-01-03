@@ -1,0 +1,274 @@
+[
+    {
+        "name": "osdi:submission",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "created_date",
+                "type": "text",
+                "label": "Created Date"
+            },
+            {
+                "name": "modified_date",
+                "type": "text",
+                "label": "Modified Date"
+            },
+            {
+                "name": "identifiers",
+                "type": "array",
+                "spec": {
+                    "type": "text"
+                },
+                "label": "Identifiers"
+            },
+            {
+                "name": "person",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "created_date",
+                        "type": "text",
+                        "label": "Created Date"
+                    },
+                    {
+                        "name": "modified_date",
+                        "type": "text",
+                        "label": "Modified Date"
+                    },
+                    {
+                        "name": "family_name",
+                        "type": "text",
+                        "label": "Family Name"
+                    },
+                    {
+                        "name": "postal_addresses",
+                        "type": "array",
+                        "spec": {
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "primary",
+                                    "type": "boolean",
+                                    "label": "Primary"
+                                },
+                                {
+                                    "name": "address_lines",
+                                    "type": "array",
+                                    "spec": {
+                                        "type": "text"
+                                    },
+                                    "label": "Address Lines"
+                                },
+                                {
+                                    "name": "locality",
+                                    "type": "text",
+                                    "label": "Locality"
+                                },
+                                {
+                                    "name": "postal_code",
+                                    "type": "text",
+                                    "label": "Postal Code"
+                                },
+                                {
+                                    "name": "region",
+                                    "type": "text",
+                                    "label": "Region"
+                                },
+                                {
+                                    "name": "country",
+                                    "type": "text",
+                                    "label": "Country"
+                                },
+                                {
+                                    "name": "location",
+                                    "type": "collection",
+                                    "spec": [
+                                        {
+                                            "name": "latitude",
+                                            "type": "number",
+                                            "label": "Latitude"
+                                        },
+                                        {
+                                            "name": "longitude",
+                                            "type": "number",
+                                            "label": "Longitude"
+                                        },
+                                        {
+                                            "name": "accuracy",
+                                            "type": "text",
+                                            "label": "Accuracy"
+                                        }
+                                    ],
+                                    "label": "Location"
+                                }
+                            ]
+                        },
+                        "label": "Postal Addresses"
+                    },
+                    {
+                        "name": "email_addresses",
+                        "type": "array",
+                        "spec": {
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "primary",
+                                    "type": "boolean",
+                                    "label": "Primary"
+                                },
+                                {
+                                    "name": "address",
+                                    "type": "text",
+                                    "label": "Address"
+                                },
+                                {
+                                    "name": "status",
+                                    "type": "text",
+                                    "label": "Status"
+                                }
+                            ]
+                        },
+                        "label": "Email Addresses"
+                    },
+                    {
+                        "name": "phone_numbers",
+                        "type": "array",
+                        "spec": {
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "primary",
+                                    "type": "boolean",
+                                    "label": "Primary"
+                                },
+                                {
+                                    "name": "number",
+                                    "type": "text",
+                                    "label": "Number"
+                                },
+                                {
+                                    "name": "number_type",
+                                    "type": "text",
+                                    "label": "Number Type"
+                                },
+                                {
+                                    "name": "status",
+                                    "type": "text",
+                                    "label": "Status"
+                                }
+                            ]
+                        },
+                        "label": "Phone Numbers"
+                    },
+                    {
+                        "name": "languages_spoken",
+                        "type": "array",
+                        "spec": {
+                            "type": "text"
+                        },
+                        "label": "Languages Spoken"
+                    },
+                    {
+                        "name": "custom_fields",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "phone_number",
+                                "type": "text",
+                                "label": "Phone Number"
+                            }
+                        ],
+                        "label": "Custom Fields"
+                    }
+                ],
+                "label": "Person"
+            },
+            {
+                "name": "action_network:referrer_data",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "source",
+                        "type": "text",
+                        "label": "Source"
+                    }
+                ],
+                "label": "Action Network:Referrer Data"
+            },
+            {
+                "name": "add_tags",
+                "type": "array",
+                "spec": {
+                    "type": "text"
+                },
+                "label": "Add Tags"
+            },
+            {
+                "name": "_links",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "self",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Self"
+                    },
+                    {
+                        "name": "osdi:form",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Osdi:Form"
+                    },
+                    {
+                        "name": "osdi:person",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Osdi:Person"
+                    }
+                ],
+                "label": " Links"
+            }
+        ],
+        "label": "Osdi:Submission"
+    },
+    {
+        "name": "action_network:sponsor",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "title",
+                "type": "text",
+                "label": "Title"
+            },
+            {
+                "name": "url",
+                "type": "text",
+                "label": "Url"
+            }
+        ],
+        "label": "Action Network:Sponsor"
+    },
+    {
+        "name": "idempotency_key",
+        "type": "text",
+        "label": "Idempotency Key"
+    }
+]

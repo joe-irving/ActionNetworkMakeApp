@@ -1,8 +1,57 @@
 [
     {
-        "name": "id",
-        "type": "uuid",
-        "label": "ID",
-        "required": true
+        "name": "person_source",
+        "label": "Pick the person by:",
+        "type": "select",
+        "options": {
+            "store": [
+                {
+                    "label": "ID",
+                    "value": "id",
+                    "default": true
+                },
+                {
+                    "label": "Email",
+                    "value": "email"
+                },
+                {
+                    "label": "Phone Number",
+                    "value": "phone_number"
+                }
+            ],
+            "nested": "rpc://personFieldBySource"
+        }
+    },
+    {
+        "name": "embedded_resources",
+        "label": "Would you like to embed the first 25 of theses associated records?",
+        "type": "select",
+        "multiple": true,
+        "options": [
+            {
+                "label": "Attendances (events)",
+                "value": "osdi:attendances"
+            },
+            {
+                "label": "Signatures (petitions)",
+                "value": " osdi:signatures"
+            },
+            {
+                "label": "Submissions (forms)",
+                "value": "osdi:submissions"
+            },
+            {
+                "label": "Donations",
+                "value": "osdi:donations"
+            },
+            {
+                "label": "Outreaches (advocacy campaigns)",
+                "value": "osdi:outreaches"
+            },
+            {
+                "label": "Taggings",
+                "value": "osdi:taggings"
+            }
+        ]
     }
 ]

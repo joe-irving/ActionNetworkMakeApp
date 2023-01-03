@@ -98,12 +98,22 @@
                     "value": "osdi:events"
                 },
                 {
-                    "label": "Event Campaigns",
-                    "value": "action_network:event_campaigns"
-                },
-                {
                     "label": "Forms",
                     "value": "osdi:forms"
+                },
+                {
+                    "label": "Fundraising Pages",
+                    "value": "osdi:fundraising_pages"
+                },
+                {
+                    "label": "Petition",
+                    "value": "osdi:petitions"
+                }
+            ],
+            "put_action_taker": [
+                {
+                    "label": "Advocacy Campaigns",
+                    "value": "osdi:advocacy_campaigns"
                 },
                 {
                     "label": "Fundraising Pages",

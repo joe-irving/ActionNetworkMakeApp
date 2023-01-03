@@ -1,0 +1,5 @@
+{
+    "name": "listRecentEmailIDs",
+    "label": "List Recent Email IDs",
+    "connection": "action-network-jmxysg"
+}

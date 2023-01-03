@@ -1,0 +1,8 @@
+{
+    "name": "petitionSIgned",
+    "label": "Petition Signed",
+    "description": "Triggers when someone signs a petition",
+    "connection": null,
+    "webhook": "action-network-jmxysg",
+    "type": "instant_trigger"
+}

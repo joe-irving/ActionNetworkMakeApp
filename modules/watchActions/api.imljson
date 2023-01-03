@@ -1,0 +1,46 @@
+[
+    {
+        "response": {
+            "temp": {
+                "simple_filter_filled": "{{if(parameters.simple_filter.property, true, false)}}",
+                "action_type_url": "{{ substring(parameters.action_type, indexOf(parameters.action_type, ':')+1, length(parameters.action_type)) }}"
+            }
+        }
+    },
+    {
+        "condition": "{{ temp.simple_filter_filled }}",
+        "response": {
+            "temp": {
+                "simple_filter": "{{ parameters.simple_filter.property }} {{ parameters.simple_filter.operator }} '{{ parameters.simple_filter.value }}'"
+            }
+        }
+    },
+    {
+        "response": {
+            "temp": {
+                "filter_string": "{{ if(parameters.filter, parameters.filter, temp.simple_filter) }}"
+            }
+        }
+    },
+    {
+        "url": "/v2/{{ temp.action_type_url }}",
+        "method": "GET",
+        "qs": {
+            "filter": "{{trim(temp.filter_string)}}"
+        },
+        "response": {
+            "trigger": {
+                "id": "{{item._links.self.href}}",
+                "date": "{{item[parameters.date_field]}}",
+                "type": "date",
+                "order": "desc"
+            },
+            "output": "{{item}}",
+            "iterate": "{{body._embedded[parameters.action_type]}}"
+        },
+        "pagination": {
+            "url": "{{ body._links.next.href }}",
+            "condition": "{{ body.total_pages > body.page }}"
+        }
+    }
+]

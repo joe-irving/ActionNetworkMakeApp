@@ -16,13 +16,5 @@
         "label": "Filter",
         "help": "oData filter. See https://actionnetwork.org/docs/v2/#odata for help",
         "advanced": true
-    },
-    {
-        "name": "event_campaign_id",
-        "label": "Event Campaign (for events only)",
-        "help": "Action Network does not return events in an event campaign unless the group is a primary sponsor. Choose an event campaign to get all events from that campaign",
-        "type": "select",
-        "options": "rpc://listEventCampaignsOptions",
-        "mode": "edit"
     }
 ]

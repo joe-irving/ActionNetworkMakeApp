@@ -99,5 +99,36 @@
                 }
             ]
         }
+    },
+    {
+        "name": "add_tags",
+        "label": "Add these tags",
+        "type": "array",
+        "spec": {
+            "name": "tag",
+            "label": "Tag",
+            "type": "select",
+            "options": "rpc://tags?string=true"
+        }
+    },
+    {
+        "name": "remove_tags",
+        "label": "Remove these tags",
+        "type": "array",
+        "spec": {
+            "name": "tag",
+            "label": "Tag",
+            "type": "select",
+            "options": "rpc://tags?string=true"
+        }
+    },
+    // Background processing
+    {
+        "name": "background_processing",
+        "label": "Process in the background?",
+        "type": "boolean",
+        "help": "The request will be processed in the background and you will have no data returned. Use if you do not need the reponse of this module.",
+        "default": false,
+        "required": true
     }
 ]

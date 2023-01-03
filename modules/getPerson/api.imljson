@@ -1,10 +1,164 @@
-{
-    "url": "/v2/people/{{parameters.id}}",
-    "method": "GET",
-    "response": {
-        "output": {
-            "item": "{{ body }}",
-            "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}"
+[
+    // Get person ID if from email or phone
+    {
+        "condition": "{{ parameters.person_source == 'id' }}",
+        "url": "/v2/people/{{parameters.person_id}}",
+        "method": "GET",
+        "response": {
+            "temp": {
+                "osdi:person": "{{ body }}"
+            },
+            "output": {
+                "item": "{{ body }}",
+                "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}"
+            }
+        }
+    },
+
+    // Get person by email then:
+    {
+        "condition": "{{ parameters.person_source == 'email' }}",
+        "url": "/v2/people",
+        "qs": {
+            "filter": "email_address eq '{{ parameters.person_email_address }}'"
+        },
+        "response": {
+            "temp": {
+                "osdi:person": "{{ first(body._embedded['osdi:people']) }}"
+            }
+        }
+    },
+
+    // Get person by phone number
+    {
+        "condition": "{{ parameters.person_source == 'phone_number' }}",
+        "url": "/v2/people",
+        "qs": {
+            "filter": "phone_number eq '{{ parameters.person_phone_number }}'"
+        },
+        "response": {
+            "temp": {
+                "osdi:person": "{{ first(body._embedded['osdi:people']) }}"
+            }
+        }
+    },
+
+    {
+        "response": {
+            "output": {
+                "item": "{{ temp.`osdi:person` }}",
+                "id": "{{ first(reverse(split(temp.`osdi:person`._links.self.href, '/'))) }}"
+            }
+        }
+    },
+
+    // If in selected in advanced settings then...
+
+    // -> Get attendances (page 1)
+    {
+        "condition": "{{ contains(parameters.embedded_resources, 'osdi:attendances') }}",
+        "method": "GET",
+        "url": "{{ temp.`osdi:person`._links.`osdi:attendances`.href }}",
+        "response": {
+            "temp": {
+                "attendances": "{{ body._embedded.`osdi:attendances` }}",
+                "totals": {
+                    "attendances": "{{ body.total_records }}"
+                }
+            }
+        }
+    },
+
+    // -> Get signatures (page 1)
+    {
+        "condition": "{{ contains(parameters.embedded_resources, 'osdi:signatures') }}",
+        "method": "GET",
+        "url": "{{ temp.`osdi:person`._links.`osdi:signatures`.href }}",
+        "response": {
+            "temp": {
+                "signatures": "{{ body._embedded.`osdi:signatures` }}",
+                "totals": {
+                    "signatures": "{{ body.total_records }}"
+                }
+            }
+        }
+    },
+
+    // -> Get submissions (page 1)
+    {
+        "condition": "{{ contains(parameters.embedded_resources, 'osdi:submissions') }}",
+        "method": "GET",
+        "url": "{{ temp.`osdi:person`._links.`osdi:submissions`.href }}",
+        "response": {
+            "temp": {
+                "submissions": "{{ body._embedded.`osdi:submissions` }}",
+                "totals": {
+                    "submissions": "{{ body.total_records }}"
+                }
+            }
+        }
+    },
+
+
+    // -> Get donations (page 1)
+    {
+        "condition": "{{ contains(parameters.embedded_resources, 'osdi:donations') }}",
+        "method": "GET",
+        "url": "{{ temp.`osdi:person`._links.`osdi:donations`.href }}",
+        "response": {
+            "temp": {
+                "donations": "{{ body._embedded.`osdi:donations` }}",
+                "totals": {
+                    "donations": "{{ body.total_records }}"
+                }
+            }
+        }
+    },
+
+    // -> Get taggings (page 1)
+    {
+        "condition": "{{ contains(parameters.embedded_resources, 'osdi:taggings') }}",
+        "method": "GET",
+        "url": "{{ temp.`osdi:person`._links.`osdi:taggings`.href }}",
+        "response": {
+            "temp": {
+                "taggings": "{{ body._embedded.`osdi:taggings` }}",
+                "totals": {
+                    "taggings": "{{ body.total_records }}"
+                }
+            }
+        }
+    },
+
+    // -> Get outreaches (page 1)
+    {
+        "condition": "{{ contains(parameters.embedded_resources, 'osdi:taoutreachesggings') }}",
+        "method": "GET",
+        "url": "{{ temp.`osdi:person`._links.`osdi:outreaches`.href }}",
+        "response": {
+            "temp": {
+                "outreaches": "{{ body._embedded.`osdi:outreaches` }}",
+                "totals": {
+                    "outreaches": "{{ body.total_records }}"
+                }
+            }
+        }
+    },
+
+    // Output with embedded resources
+    {
+        "response": {
+            "output": {
+                "id": "{{ first(reverse(split(temp.`osdi:person`._links.self.href, '/'))) }}",
+                "item": "{{ temp.`osdi:person` }}",
+                "attendances": "{{ temp.attendances }}",
+                "signatures": "{{ temp.signatures }}",
+                "submissions": "{{ temp.submissions }}",
+                "donations": "{{ temp.donations }}",
+                "outreaches": "{{ temp.outreaches }}",
+                "taggings": "{{ temp.taggings }}",
+                "totals": "{{ temp.totals }}"
+            }
         }
     }
-}
+]
