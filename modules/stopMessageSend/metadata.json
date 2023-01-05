@@ -1,0 +1,8 @@
+{
+    "name": "stopMessageSend",
+    "label": "Stop Message Send",
+    "description": "Stop a message being sent after Send Message triggered",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

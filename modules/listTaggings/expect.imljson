@@ -5,5 +5,10 @@
         "options": "rpc://tags",
         "label": "Tag ID",
         "required": true
+    },
+    {
+        "name": "limit",
+        "label": "Limit",
+        "type": "uinteger"
     }
 ]

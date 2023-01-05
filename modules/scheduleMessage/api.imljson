@@ -1,0 +1,11 @@
+{
+    "url": "/v2/messages/{{ parameters.message_id }}/schedule",
+    "method": "POST",
+    "qs": {},
+    "body": {
+        "scheduled_start_date": "{{ parameters.scheduled_start_date }}"
+    },
+    "response": {
+        "output": "{{body}}"
+    }
+}

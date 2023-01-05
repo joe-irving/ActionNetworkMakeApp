@@ -1,0 +1,11 @@
+{
+    "url": "/v2/messages/{{ parameters.message_id }}",
+    "method": "GET",
+    "response": {
+        "output": {
+            "id": "{{ last(split(body._links.self.href, '/')) }}",
+            "wrapper_id": "{{ last(split(body._links.`osdi:wrappers`.href, '/')) }}",
+            "message": "{{body}}"
+        }
+    }
+}

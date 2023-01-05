@@ -1,0 +1,8 @@
+{
+    "name": "makeApiCall",
+    "label": "Make API Call",
+    "description": "Universal module for other API calls",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "universal"
+}

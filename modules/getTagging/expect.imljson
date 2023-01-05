@@ -4,6 +4,7 @@
         "type": "select",
         "options": "rpc://tags",
         "label": "Tag ID",
+        "mode": "edit",
         "required": true
     },
     {

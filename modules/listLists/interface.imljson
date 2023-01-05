@@ -1,0 +1,78 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "list",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "created_date",
+                "type": "text",
+                "label": "Created Date"
+            },
+            {
+                "name": "modified_date",
+                "type": "text",
+                "label": "Modified Date"
+            },
+            {
+                "name": "description",
+                "type": "text",
+                "label": "Description"
+            },
+            {
+                "name": "_links",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "self",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Self"
+                    },
+                    {
+                        "name": "osdi:items",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Osdi:Items"
+                    }
+                ],
+                "label": " Links"
+            },
+            {
+                "name": "name",
+                "type": "text",
+                "label": "Name"
+            },
+            {
+                "name": "browser_url",
+                "type": "text",
+                "label": "Browser Url"
+            },
+            {
+                "name": "identifiers",
+                "type": "array",
+                "spec": {
+                    "type": "text"
+                },
+                "label": "Identifiers"
+            }
+        ],
+        "label": "List"
+    }
+]

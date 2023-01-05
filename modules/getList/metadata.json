@@ -1,0 +1,8 @@
+{
+    "name": "getList",
+    "label": "Get List",
+    "description": "Get an individual list by ID",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

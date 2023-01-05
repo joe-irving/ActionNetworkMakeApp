@@ -52,7 +52,8 @@
                 "tagging": "{{item}}",
                 "person": "{{ temp['osdi:person'] }}"
             },
-            "iterate": "{{body._embedded['osdi:taggings']}}"
+            "iterate": "{{body._embedded['osdi:taggings']}}",
+            "limit": "{{ parameters.limit }}"
         },
         "pagination": {
             "url": "{{body._links.next.href}}",

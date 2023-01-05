@@ -1,0 +1,86 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "wrapper",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "identifiers",
+                "type": "array",
+                "spec": {
+                    "type": "text"
+                },
+                "label": "Identifiers"
+            },
+            {
+                "name": "created_date",
+                "type": "text",
+                "label": "Created Date"
+            },
+            {
+                "name": "modified_date",
+                "type": "text",
+                "label": "Modified Date"
+            },
+            {
+                "name": "origin_system",
+                "type": "text",
+                "label": "Origin System"
+            },
+            {
+                "name": "name",
+                "type": "text",
+                "label": "Name"
+            },
+            {
+                "name": "header",
+                "type": "text",
+                "label": "Header"
+            },
+            {
+                "name": "footer",
+                "type": "text",
+                "label": "Footer"
+            },
+            {
+                "name": "administrative_url",
+                "type": "text",
+                "label": "Administrative Url"
+            },
+            {
+                "name": "wrapper_type",
+                "type": "text",
+                "label": "Wrapper Type"
+            },
+            {
+                "name": "default",
+                "type": "boolean",
+                "label": "Default"
+            },
+            {
+                "name": "_links",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "self",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Self"
+                    }
+                ],
+                "label": " Links"
+            }
+        ],
+        "label": "Wrapper"
+    }
+]

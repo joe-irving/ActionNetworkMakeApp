@@ -1,12 +1,5 @@
 [
     {
-        "name": "event_campaign_id",
-        "label": "Event Campaign",
-        "help": "Action Network does not return events in an event campaign unless the group is a primary sponsor. Choose an event campaign to get all events from that campaign",
-        "type": "select",
-        "options": "rpc://listEventCampaignsOptions"
-    },
-    {
         "name": "date_field",
         "label": "Watch for new or modified events?",
         "type": "select",
@@ -21,6 +14,13 @@
                 "value": "modified_date"
             }
         ]
+    },
+    {
+        "name": "event_campaign_id",
+        "label": "Event Campaign",
+        "help": "Action Network does not return events in an event campaign unless the group is a primary sponsor. Choose an event campaign to get all events from that campaign",
+        "type": "select",
+        "options": "rpc://listEventCampaignsOptions"
     },
     {
         "name": "simple_filter",
@@ -90,8 +90,7 @@
         "name": "limit",
         "type": "uinteger",
         "label": "Limit",
-        "default": 2,
-        "required": true
+        "default": 2
     },
     {
         "name": "filter",

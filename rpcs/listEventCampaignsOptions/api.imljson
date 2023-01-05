@@ -6,6 +6,7 @@
         "output": {
             "label": "{{if(item.name, item.name, item.title)}}",
             "value": "{{replace(item._links.self.href,'https://actionnetwork.org/api/v2/event_campaigns/', '')}}"
-        }
+        },
+        "limit": 75
     }
 }

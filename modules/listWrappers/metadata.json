@@ -1,0 +1,8 @@
+{
+    "name": "listWrappers",
+    "label": "List Wrappers",
+    "description": "Lists Email Wrappers available in group",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "search"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "updateMessage",
+    "label": "Update Message",
+    "description": "Update a message (i.e. email)",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

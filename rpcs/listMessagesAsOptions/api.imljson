@@ -1,0 +1,12 @@
+{
+    "url": "/v2/messages",
+    "method": "GET",
+    "response": {
+        "iterate": "{{ body._embedded.`osdi:messages` }}",
+        "output": {
+            "label": "{{if(item.name, item.name, item.subject)}}",
+            "value": "{{ substring(item._links.self.href, indexOf(item._links.self.href, '/v2/messages/') + 13, length(item._links.self.href)) }}"
+        },
+        "limit": 75
+    }
+}

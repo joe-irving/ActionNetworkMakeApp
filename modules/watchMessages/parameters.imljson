@@ -1,0 +1,34 @@
+[
+    // modified/created
+    {
+        "name": "date_field",
+        "label": "Watch for new or modified messages?",
+        "type": "select",
+        "required": true,
+        "options": [
+            {
+                "label": "New messages only",
+                "value": "created_date"
+            },
+            {
+                "label": "New and updated messages",
+                "value": "modified_date"
+            }
+        ]
+    },
+    // Watch for finished targeting only? bool.
+    {
+        "name": "ready_to_send",
+        "label": "Watch for messages ready to send or schedule",
+        "type": "boolean",
+        "required": true,
+        "default": false
+    },
+    {
+        "help": "The maximum number of results to be worked with during one execution cycle.",
+        "name": "limit",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 2
+    }
+]

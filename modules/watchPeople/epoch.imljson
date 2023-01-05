@@ -3,6 +3,7 @@
         "output": {
             "date": "{{item.created_date}}",
             "label": "{{item.given_name}} {{ item.family_name }}"
-        }
+        },
+        "limit": 75
     }
 }

@@ -1,0 +1,8 @@
+{
+    "name": "scheduleMessage",
+    "label": "Schedule Message",
+    "description": "Schedule a message to send in the future",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

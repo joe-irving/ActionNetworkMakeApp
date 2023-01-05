@@ -1,0 +1,55 @@
+[
+    {
+        "name": "url",
+        "label": "URL",
+        "type": "url",
+        "help": "Direct link to Action Network page, often browser_url in API responses",
+        "required": true
+    },
+    {
+        "name": "maxwidth",
+        "label": "Max Width",
+        "type": "integer",
+        "help": "The maximum width you would like for your returned embed code, in pixels. If no maxwidth is given (or an invalid maswidth is given), the embed code returned will display with a width of 100% of its parent container."
+    },
+    {
+        "name": "maxheight",
+        "label": "Max Height",
+        "type": "integer",
+        "help": "The maxheight parameter is not supported, and will be ignored. Embed code returned has height equal to what's necessary to display the content, which can vary based on many situations."
+    },
+    {
+        "name": "style",
+        "label": "Style",
+        "type": "select",
+        "options": [
+            {
+                "label": "Standard",
+                "value": "standard"
+            },
+            {
+                "label": "Layout Only",
+                "value": "layout-only"
+            },
+            {
+                "label": "None",
+                "value": "none"
+            }
+        ]
+    },
+    {
+        "name": "layout",
+        "label": "Layout",
+        "type": "select",
+        "options": [
+            {
+                "label": "Standard",
+                "value": "standard"
+            },
+            {
+                "label": "Full",
+                "value": "full"
+            }
+        ]
+    }
+]

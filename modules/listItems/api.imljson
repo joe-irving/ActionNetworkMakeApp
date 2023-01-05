@@ -1,0 +1,13 @@
+{
+    "url": "/v2/lists/{{ parameters.id }}/items",
+    "method": "GET",
+    "response": {
+        "output": "{{ item }}",
+        "iterate": "{{ body._embedded.`osdi:items` }}",
+        "limit": "{{parameters.limit}}"
+    },
+    "pagination": {
+        "url": "{{ body._links.next.href }}",
+        "condition": "{{ body.page < body.total_pages }}"
+    }
+}

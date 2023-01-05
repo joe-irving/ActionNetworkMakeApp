@@ -1,0 +1,10 @@
+[
+    {
+        "name": "message_id",
+        "label": "Message",
+        "type": "select",
+        "options": "rpc://listMessagesAsOptions",
+        "mode": "edit",
+        "required": true
+    }
+]

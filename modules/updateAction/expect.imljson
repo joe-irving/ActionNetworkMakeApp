@@ -4,6 +4,7 @@
         "label": "Action Type",
         "type": "select",
         "required": true,
+        "mode": "edit",
         "options": {
             "store": "rpc://listActionTypes?method=put",
             "nested": [
@@ -11,6 +12,7 @@
                     "name": "id",
                     "label": "Action",
                     "type": "select",
+                    "mode": "edit",
                     "options": {
                         "store": "rpc://getActionsListOptions",
                         "nested": "rpc://getActionUpdateFields?method=put"

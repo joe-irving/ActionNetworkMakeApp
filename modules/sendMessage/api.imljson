@@ -1,0 +1,7 @@
+{
+    "url": "/v2/messages/{{ parameters.message_id }}/send",
+    "method": "POST",
+    "response": {
+        "output": "{{body}}"
+    }
+}

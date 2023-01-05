@@ -6,6 +6,7 @@
             "value": "{{ replace(item._links.self.href,'https://actionnetwork.org/api/v2/advocacy_campaigns/', '') }}",
             "label": "{{ item.name }}"
         },
-        "iterate": "{{body._embedded['osdi:advocacy_campaigns']}}"
+        "iterate": "{{body._embedded['osdi:advocacy_campaigns']}}",
+        "limit": 75
     }
 }

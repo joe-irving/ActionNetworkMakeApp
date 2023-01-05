@@ -4,6 +4,7 @@
         "type": "select",
         "options": "rpc://tags",
         "label": "Tag ID",
+        "mode": "edit",
         "required": true
     },
     {
@@ -11,5 +12,11 @@
         "type": "text",
         "label": "Tagging ID",
         "required": true
+    },
+    {
+        "name": "background_request",
+        "label": "Process in background (i.e. return nothing)",
+        "type": "boolean",
+        "advanced": true
     }
 ]

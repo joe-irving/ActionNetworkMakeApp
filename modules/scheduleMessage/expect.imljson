@@ -1,0 +1,17 @@
+[
+    {
+        "name": "message_id",
+        "label": "Message",
+        "type": "select",
+        "options": "rpc://listMessagesAsOptions",
+        "required": true
+    },
+    {
+        "name": "scheduled_start_date",
+        "label": "Schedule Date",
+        "type": "date",
+        "time": true,
+        "help": "Must be in the future",
+        "required": true
+    }
+]

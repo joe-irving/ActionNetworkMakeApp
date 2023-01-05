@@ -1,0 +1,8 @@
+{
+    "name": "getWrapper",
+    "label": "Get Wrapper",
+    "description": "Get an email wrapper by ID",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

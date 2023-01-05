@@ -87,12 +87,14 @@ Like with other person lookups, you can lookup a person based on email, phone nu
 
 This module uses the record helpers. This means in one POST request actions can be recorded or taken.
 
-NOTE: People will always be subscribed if they are **new** to the list. Their subscription status will be unchanged if they already existed
+NOTE: People will always be subscribed if they are **new** to the list unless the advanced option of "Do not subscribe activist if new to list?" is ticked.
+
+That option will do 2 extra API called to make sure the person who takes action is not subscribed.
 
 #### Limitations by action
 
 Action Type | Action Taken Type | User interface actions | API Actions | Deduplicated | Autoresponse | Notes
-------------|-------------------|------------------------|-------------|-----
+------------:|:-------------------|:------------------------|:-------------|:-----|:-----|:---
 Events | Attendances | Yes | Yes | Yes | Yes | Some events only sit as children to an event campaign
 Fundraising Pages | Donations | No | Yes | No | No |
 Advocacy Campaigns | Outreaches | No | Yes | No | No 
@@ -170,3 +172,59 @@ Currently action network only deals with emails on the API, and not mobile messa
 
 ### Create message
 
+Creates a new message (email)
+
+### Get message
+
+Get's a message. If targeting > 0 then it is ready to send
+
+### Send message
+
+to send a message imediately
+
+### Schedule message
+
+To send message in future
+
+### Stop send or cancel schedule
+
+Need a message ID and will stop and ongoing to future sends from happening
+
+### List wrappers
+
+lists available email wrappers
+
+### Get Wrappers
+
+Gets an individual email wrapper
+
+## Others
+
+### List custom fields
+
+FOr lookup as a reference if needed
+
+### List Queries
+
+### Get Queries
+
+### List lists
+
+Lists all reports and message target lists.
+
+### Get list
+
+Get an individual list by ID
+
+### List items
+
+Gets the items (person IDs) in a specific list
+
+### Get Item
+
+
+Return a single item in a list by its ID.
+
+### Embed codes
+
+Documentation can be found on the [oEmbed page](https://actionnetwork.org/oembed).

@@ -1,0 +1,8 @@
+{
+    "name": "getItem",
+    "label": "Get Item",
+    "description": "Get a single item of a list ",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

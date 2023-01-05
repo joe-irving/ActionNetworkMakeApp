@@ -1,0 +1,17 @@
+{
+    "url": "/v2/messages",
+    "method": "GET",
+    "response": {
+        "output": {
+            "id": "{{ last(split(item._links.self.href, '/')) }}",
+            "wrapper_id": "{{ last(split(item._links.`osdi:wrappers`.href, '/')) }}",
+            "message": "{{item}}"
+        },
+        "iterate": "{{ body._embedded.`osdi:messages` }}",
+        "limit": "{{ parameters.limit }}"
+    },
+    "pagination": {
+        "url": "{{ body._links.next.href }}",
+        "condition": "{{ body.page < body.total_pages }}"
+    }
+}

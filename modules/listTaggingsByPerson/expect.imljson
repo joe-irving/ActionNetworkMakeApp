@@ -3,6 +3,7 @@
         "name": "person_source",
         "label": "Pick the person by:",
         "type": "select",
+        "required": true,
         "options": {
             "store": [
                 {
@@ -21,5 +22,10 @@
             ],
             "nested": "rpc://personFieldBySource"
         }
+    },
+    {
+        "name": "limit",
+        "label": "Limit",
+        "type": "uinteger"
     }
 ]

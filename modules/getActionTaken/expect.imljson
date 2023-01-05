@@ -4,6 +4,7 @@
         "label": "What action type?",
         "type": "select",
         "required": true,
+        "mode": "edit",
         "options": {
             "store": "rpc://listActionTypes?method=get",
             "nested": [
@@ -12,6 +13,7 @@
                     "label": "Action",
                     "type": "select",
                     "required": true,
+                    "mode": "edit",
                     "options": "rpc://getActionsListOptions"
                 },
                 {

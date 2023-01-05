@@ -1,0 +1,13 @@
+{
+    "type": "rich",
+    "version": "1.0",
+    "provider_name": "Action Network",
+    "provider_url": "https://actionnetwork.org",
+    "html": "<link href='https://actionnetwork.org/css/style-embed-v3.css' rel='stylesheet' type='text/css' /><script src='https://actionnetwork.org/widgets/v5/petition/your-petition?format=js&source=widget'></script><div id='can-petition-area-your-petition' style='width: 100%'><!-- this div is the target for our HTML insertion --></div>",
+    "author_name": "Progressive Action Now",
+    "author_url": "https://actionnetwork.org/groups/progressive-action-now",
+    "title": "Please take action today!",
+    "thumbnail_url": "https://actionnetwork.org/uploads/take-action.jpg",
+    "description": "Please take action today! It's very very important.",
+    "url": "https://actionnetwork.org/petitions/your-petition"
+}

@@ -1,0 +1,9 @@
+[
+    {
+        "name": "message_id",
+        "label": "Which message to send?",
+        "type": "select",
+        "options": "rpc://listMessagesAsOptions",
+        "required": true
+    }
+]

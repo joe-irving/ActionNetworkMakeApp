@@ -1,0 +1,9 @@
+{
+    "response": {
+        "output": {
+            "date": "{{item.created_date}}",
+            "label": "[{{ item.origin_system }}] {{if(item.name, item.name, if(item.subject, item.subject, item.administrative_url))}}"
+        },
+        "limit": 75
+    }
+}

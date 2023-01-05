@@ -1,0 +1,10 @@
+{
+    "url": "/v2/wrappers/{{ parameters.id }}",
+    "method": "GET",
+    "response": {
+        "output": {
+            "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
+            "wrapper": "{{ body }}"
+        }
+    }
+}

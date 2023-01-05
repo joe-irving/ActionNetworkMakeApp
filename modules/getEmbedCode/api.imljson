@@ -1,0 +1,20 @@
+{
+    "url": "https://actionnetwork.org/oembed/",
+    "method": "GET",
+    "qs": {
+        "url": "{{ parameters.url }}",
+        "format": "json",
+        "maxwidth": "{{ parameters.maxwidth }}",
+        "maxheight": "{{ parameters.maxheight }}",
+        "style": "{{ parameters.style }}",
+        "layout": "{{ parameters.layout }}"
+    },
+    "body": {
+        "name": "{{parameters.name}}",
+        "email": "{{lower(parameters.email)}}"
+    },
+    "headers": {},
+    "response": {
+        "output": "{{body}}"
+    }
+}

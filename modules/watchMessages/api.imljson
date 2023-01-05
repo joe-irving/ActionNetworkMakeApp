@@ -1,0 +1,21 @@
+{
+    "url": "/v2/messages",
+    "method": "GET",
+    "response": {
+        "iterate": {
+            "container": "{{body._embedded.`osdi:messages`}}",
+            "condition": "{{ if(parameters.ready_to_send, item.subject && item.body && item.from && item.reply_to && item.status == 'draft' && item.total_targeted > 0, true) }}"
+        },
+        "trigger": {
+            "id": "{{item._links.self.href}}",
+            "date": "{{item[parameters.date_field]}}",
+            "type": "date",
+            "order": "desc"
+        },
+        "output": {
+            "id": "{{ substring(item._links.self.href, indexOf(item._links.self.href, '/v2/messages/') + 13, length(item._links.self.href)) }}",
+            "message": "{{item}}"
+        },
+        "limit": "{{parameters.limit}}"
+    }
+}

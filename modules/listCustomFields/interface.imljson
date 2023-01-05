@@ -1,0 +1,27 @@
+[
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Name"
+    },
+    {
+        "name": "created_date",
+        "type": "text",
+        "label": "Created Date"
+    },
+    {
+        "name": "modified_date",
+        "type": "text",
+        "label": "Modified Date"
+    },
+    {
+        "name": "notes",
+        "type": "text",
+        "label": "Notes"
+    },
+    {
+        "name": "numeric_id",
+        "type": "number",
+        "label": "Numeric ID"
+    }
+]

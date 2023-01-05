@@ -1,15 +1,19 @@
 [
     {
+        "mode": "edit",
         "name": "action_type",
         "label": "Action Type",
         "type": "select",
+        "required": true,
         "options": {
             "store": "rpc://listActionTypes?method=get",
             "nested": [
                 {
+                    "mode": "edit",
                     "name": "id",
                     "label": "Action",
                     "type": "select",
+                    "required": true,
                     "options": "rpc://getActionsListOptions"
                 }
             ]

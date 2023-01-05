@@ -1,0 +1,8 @@
+{
+    "name": "sendMessage",
+    "label": "Send Message",
+    "description": "Sends a message immediately",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

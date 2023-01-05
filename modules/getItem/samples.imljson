@@ -1,0 +1,33 @@
+{
+    "_links": {
+        "self": {
+            "href": "https://actionnetwork.org/api/v2/lists/71f8feef-61c8-4e6b-9745-ec1d7752f298/items/82e909f9-1ac7-4952-bbd4-b4690a14bec2"
+        },
+        "osdi:list": {
+            "href": "https://actionnetwork.org/api/v2/lists/71f8feef-61c8-4e6b-9745-ec1d7752f298"
+        },
+        "osdi:person": {
+            "href": "https://actionnetwork.org/api/v2/people/82e909f9-1ac7-4952-bbd4-b4690a14bec2"
+        },
+        "curies": [
+            {
+                "name": "osdi",
+                "href": "https://actionnetwork.org/docs/v2/{rel}",
+                "templated": true
+            },
+            {
+                "name": "action_network",
+                "href": "https://actionnetwork.org/docs/v2/{rel}",
+                "templated": true
+            }
+        ]
+    },
+    "identifiers": [
+        "action_network:82e909f9-1ac7-4952-bbd4-b4690a14bec2"
+    ],
+    "created_date": "2014-03-18T22:25:31Z",
+    "modified_date": "2014-03-18T22:25:38Z",
+    "item_type": "osdi:person",
+    "action_network:person_id": "82e909f9-1ac7-4952-bbd4-b4690a14bec2",
+    "action_network:list_id": "71f8feef-61c8-4e6b-9745-ec1d7752f298"
+}

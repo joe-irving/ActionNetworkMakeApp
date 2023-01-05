@@ -1,16 +1,5 @@
 [
     {
-        "name": "origin_system",
-        "type": "text",
-        "label": "Origin System",
-        "default": "make.com"
-    },
-    {
-        "name": "name",
-        "type": "text",
-        "label": "Admin Title"
-    },
-    {
         "name": "subject",
         "type": "text",
         "label": "Subject",
@@ -36,6 +25,17 @@
         "type": "email",
         "label": "Reply to",
         "required": true
+    },
+    {
+        "name": "origin_system",
+        "type": "text",
+        "label": "Origin System",
+        "default": "make.com"
+    },
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Admin Title"
     },
     {
         "name": "targets",

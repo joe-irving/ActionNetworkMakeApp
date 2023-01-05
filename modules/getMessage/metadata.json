@@ -1,0 +1,8 @@
+{
+    "name": "getMessage",
+    "label": "Get Message",
+    "description": "Get an individual message by ID",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

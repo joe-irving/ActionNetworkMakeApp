@@ -1,0 +1,7 @@
+{
+    "url": "/v2/lists/{{ parameters.list_id }}/items/{{ parameters.item_id }}",
+    "method": "GET",
+    "response": {
+        "output": "{{body}}"
+    }
+}

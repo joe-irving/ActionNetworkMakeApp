@@ -1,0 +1,12 @@
+{
+    "url": "/v2/queries",
+    "method": "GET",
+    "response": {
+        "output": {
+            "id": "{{ first(reverse(split(item._links.self.href, '/'))) }}",
+            "query": "{{ item }}"
+        },
+        "iterate": "{{body._embedded.`osdi:queries`}}",
+        "limit": "{{ parameters.limit }}"
+    }
+}

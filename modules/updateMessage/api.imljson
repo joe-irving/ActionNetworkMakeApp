@@ -1,0 +1,23 @@
+[
+    {
+        "url": "/v2/messages/{{ parameters.message_id }}",
+        "method": "PUT",
+        "body": {
+            "origin_system": "{{ parameters.origin_system }}",
+            "name": "{{ parameters.name }}",
+            "subject": "{{ parameters.subject }}",
+            "from": "{{ parameters.from }}",
+            "body": "{{ parameters.body }}",
+            "reply_to": "{{ parameters['reply-to'] }}",
+            "targets": "{{ parameters.targets }}",
+            "_links": "{{ temp._links }}"
+        },
+        "response": {
+            "output": {
+                "id": "{{ last(split(body._links.self.href, '/')) }}",
+                "wrapper_id": "{{ last(split(body._links.`osdi:wrappers`.href, '/')) }}",
+                "message": "{{body}}"
+            }
+        }
+    }
+]

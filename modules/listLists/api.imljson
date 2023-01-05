@@ -1,0 +1,16 @@
+{
+    "url": "/v2/lists",
+    "method": "GET",
+    "response": {
+        "output": {
+            "id": "{{ first(reverse(split(item._links.self.href, '/'))) }}",
+            "list": "{{item}}"
+        },
+        "iterate": "{{body._embedded.`osdi:lists`}}",
+        "limit": "{{ parameters.limit }}"
+    },
+    "pagination": {
+        "url": "{{ body._links.next.href }}",
+        "condition": "{{ body.page < body.total_pages }}"
+    }
+}

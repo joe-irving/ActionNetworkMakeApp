@@ -38,7 +38,9 @@
     {
         "url": "/v2/tags/{{ parameters.tag_id }}/taggings",
         "method": "POST",
-        "qs": {},
+        "qs": {
+            "background_request": "{{ parameters.background_request }}"
+        },
         "body": {
             "_links": {
                 "osdi:person": "{{ temp['osdi:person'] }}"

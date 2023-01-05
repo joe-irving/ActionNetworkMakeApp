@@ -128,7 +128,6 @@
         "label": "Process in the background?",
         "type": "boolean",
         "help": "The request will be processed in the background and you will have no data returned. Use if you do not need the reponse of this module.",
-        "default": false,
-        "required": true
+        "default": false
     }
 ]

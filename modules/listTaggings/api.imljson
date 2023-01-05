@@ -10,7 +10,8 @@
             "tag_id": "{{ first(reverse(split(item._links['osdi:tag'].href, '/'))) }}",
             "item": "{{item}}"
         },
-        "iterate": "{{body._embedded['osdi:taggings']}}"
+        "iterate": "{{body._embedded['osdi:taggings']}}",
+        "limit": "{{ parameters.limit }}"
     },
     "pagination": {
         "url": "{{body._links.next.href}}"

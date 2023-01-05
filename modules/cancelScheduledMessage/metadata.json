@@ -1,0 +1,8 @@
+{
+    "name": "cancelScheduledMessage",
+    "label": "Cancel Scheduled Message",
+    "description": "Cancels a message that has been scheduled to be sent",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "action"
+}

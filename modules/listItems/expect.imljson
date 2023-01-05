@@ -1,0 +1,14 @@
+[
+    {
+        "name": "id",
+        "label": "List ID",
+        "type": "text",
+        "required": true
+    },
+    {
+        "name": "limit",
+        "label": "Limit",
+        "type": "uinteger",
+        "default": 2
+    }
+]

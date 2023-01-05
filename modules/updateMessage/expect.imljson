@@ -1,0 +1,66 @@
+[
+    {
+        "name": "message_id",
+        "label": "Which message?",
+        "type": "select",
+        "options": "rpc://listMessagesAsOptions",
+        "required": true,
+        "mode": "edit"
+    },
+    {
+        "name": "subject",
+        "type": "text",
+        "label": "Subject"
+    },
+    {
+        "name": "from",
+        "type": "text",
+        "label": "From",
+        "help": "e.g. your name"
+    },
+    {
+        "name": "body",
+        "type": "text",
+        "multiline": true,
+        "label": "Body",
+        "help": "Format with HTML"
+    },
+    {
+        "name": "reply-to",
+        "type": "email",
+        "label": "Reply to"
+    },
+    {
+        "name": "origin_system",
+        "type": "text",
+        "label": "Origin System",
+        "default": "make.com"
+    },
+    {
+        "name": "name",
+        "type": "text",
+        "label": "Admin Title"
+    },
+    {
+        "name": "targets",
+        "type": "array",
+        "label": "Targets",
+        "spec": [
+            {
+                "name": "href",
+                "label": "Query",
+                "type": "select",
+                "mode": "edit",
+                "options": "rpc://listQueriesAsParameters"
+            }
+        ]
+    },
+    {
+        "name": "wrapper",
+        "type": "select",
+        "label": "Wrapper",
+        "mode": "edit",
+        "options": "rpc://listEmailWrappersAsParams",
+        "help": "Will overwrite if left empty"
+    }
+]

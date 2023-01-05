@@ -1,0 +1,10 @@
+{
+    "url": "/v2/queries/{{ parameters.id }}",
+    "method": "GET",
+    "response": {
+        "output": {
+            "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
+            "query": "{{ body }}"
+        }
+    }
+}

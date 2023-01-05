@@ -1,0 +1,8 @@
+[
+    {
+        "name": "id",
+        "label": "Query ID",
+        "type": "text",
+        "required": true
+    }
+]

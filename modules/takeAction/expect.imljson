@@ -3,6 +3,7 @@
         "name": "action_type",
         "label": "Action Type",
         "type": "select",
+        "required": true,
         "options": {
             "store": "rpc://listActionTypes?method=record_helper",
             "nested": [
@@ -57,5 +58,18 @@
         "label": "Referrer Data",
         "type": "collection",
         "spec": "rpc://referrerDataFields"
+    },
+    {
+        "name": "background_request",
+        "label": "Process in background (i.e. return nothing)",
+        "type": "boolean",
+        "advanced": true
+    },
+    // Do not subscribe activist if new to list?
+    {
+        "name": "unsubscribe_if_new",
+        "label": "Do not subscribe activist if new to list?",
+        "type": "boolean",
+        "advanced": true
     }
 ]

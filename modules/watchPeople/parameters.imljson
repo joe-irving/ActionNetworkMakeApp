@@ -75,15 +75,13 @@
         "name": "limit",
         "type": "uinteger",
         "label": "Limit",
-        "default": 2,
-        "required": true
+        "default": 2
     },
     {
         "name": "filter",
         "type": "text",
         "label": "Raw string filter, overides the simple filter",
         "help": "The oData query for the people list. See https://actionnetwork.org/docs/v2/#odata for help",
-        "required": false,
         "advanced": true
     }
 ]

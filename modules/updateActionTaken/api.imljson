@@ -36,7 +36,7 @@
         "url": "{{ temp.endpoint }}",
         "method": "PUT",
         "qs": {
-            "background_request": "{{ parameters.background_processing }}"
+            "background_request": "{{ parameters.background_request }}"
         },
         "body": {
             // The below line is commented out as it was not causing actions taken to be updated.

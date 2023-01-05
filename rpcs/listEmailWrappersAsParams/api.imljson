@@ -6,6 +6,7 @@
         "output": {
             "label": "{{ item.name }}",
             "value": "{{ item._links.self.href }}"
-        }
+        },
+        "limit": 75
     }
 }

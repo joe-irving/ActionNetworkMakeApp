@@ -1,0 +1,8 @@
+{
+    "name": "watchMessages",
+    "label": "Watch Messages",
+    "description": "Watch messages, for new update or completed calculation",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "trigger"
+}

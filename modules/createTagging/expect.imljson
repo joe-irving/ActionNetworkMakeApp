@@ -3,6 +3,7 @@
         "name": "person_source",
         "label": "Pick the person by:",
         "type": "select",
+        "required": true,
         "options": {
             "store": [
                 {
@@ -28,11 +29,17 @@
         "options": "rpc://tags",
         "label": "Tag ID",
         "required": true
+    },
+    {
+        "name": "background_request",
+        "label": "Process in background (i.e. return nothing)",
+        "type": "boolean",
+        "advanced": true
     }
-//     {
-//         "name": "person_id",
-//         "label": "Person ID",
-//         // "type": "uuid",
-//         "required": true
-//     }
+    //     {
+    //         "name": "person_id",
+    //         "label": "Person ID",
+    //         // "type": "uuid",
+    //         "required": true
+    //     }
 ]

@@ -1,0 +1,57 @@
+[
+    {
+        "name": "type",
+        "type": "text",
+        "label": "Type"
+    },
+    {
+        "name": "version",
+        "type": "text",
+        "label": "Version"
+    },
+    {
+        "name": "provider_name",
+        "type": "text",
+        "label": "Provider Name"
+    },
+    {
+        "name": "provider_url",
+        "type": "text",
+        "label": "Provider Url"
+    },
+    {
+        "name": "html",
+        "type": "text",
+        "label": "Html"
+    },
+    {
+        "name": "author_name",
+        "type": "text",
+        "label": "Author Name"
+    },
+    {
+        "name": "author_url",
+        "type": "text",
+        "label": "Author Url"
+    },
+    {
+        "name": "title",
+        "type": "text",
+        "label": "Title"
+    },
+    {
+        "name": "thumbnail_url",
+        "type": "text",
+        "label": "Thumbnail Url"
+    },
+    {
+        "name": "description",
+        "type": "text",
+        "label": "Description"
+    },
+    {
+        "name": "url",
+        "type": "text",
+        "label": "Url"
+    }
+]

@@ -3,6 +3,7 @@
         "name": "action_type",
         "label": "Action Type",
         "type": "select",
+        "required": true,
         "options": {
             "store": "rpc://getActionTakerTypes",
             "nested": [
@@ -10,6 +11,7 @@
                     "name": "person_or_action",
                     "label": "List actions taken for a person or an action?",
                     "type": "select",
+                    "required": true,
                     "options": {
                         "store": [
                             {

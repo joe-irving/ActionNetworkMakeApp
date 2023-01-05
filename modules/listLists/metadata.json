@@ -1,0 +1,8 @@
+{
+    "name": "listLists",
+    "label": "List Lists",
+    "description": "Lists reports and target lists for messages",
+    "connection": "action-network-jmxysg",
+    "webhook": null,
+    "type": "search"
+}

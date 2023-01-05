@@ -1,0 +1,8 @@
+{
+    "name": "getEmbedCode",
+    "label": "Get Embed Code",
+    "description": "Get embed code for action page",
+    "connection": null,
+    "webhook": null,
+    "type": "action"
+}

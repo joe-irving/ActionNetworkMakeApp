@@ -1,0 +1,167 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "message",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "identifiers",
+                "type": "array",
+                "spec": {
+                    "type": "text"
+                },
+                "label": "Identifiers"
+            },
+            {
+                "name": "administrative_url",
+                "type": "text",
+                "label": "Administrative Url"
+            },
+            {
+                "name": "body",
+                "type": "text",
+                "label": "Body"
+            },
+            {
+                "name": "created_date",
+                "type": "text",
+                "label": "Created Date"
+            },
+            {
+                "name": "modified_date",
+                "type": "text",
+                "label": "Modified Date"
+            },
+            {
+                "name": "from",
+                "type": "text",
+                "label": "From"
+            },
+            {
+                "name": "origin_system",
+                "type": "text",
+                "label": "Origin System"
+            },
+            {
+                "name": "reply_to",
+                "type": "text",
+                "label": "Reply To"
+            },
+            {
+                "name": "status",
+                "type": "text",
+                "label": "Status"
+            },
+            {
+                "name": "subject",
+                "type": "text",
+                "label": "Subject"
+            },
+            {
+                "name": "type",
+                "type": "text",
+                "label": "Type"
+            },
+            {
+                "name": "targets",
+                "type": "array",
+                "spec": {
+                    "type": "collection",
+                    "spec": [
+                        {
+                            "name": "href",
+                            "type": "text",
+                            "label": "Href"
+                        }
+                    ]
+                },
+                "label": "Targets"
+            },
+            {
+                "name": "_links",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "osdi:wrappers",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Osdi:Wrappers"
+                    },
+                    {
+                        "name": "osdi:send_helper",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Osdi:Send Helper"
+                    },
+                    {
+                        "name": "osdi:schedule_helper",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Osdi:Schedule Helper"
+                    },
+                    {
+                        "name": "self",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Self"
+                    },
+                    {
+                        "name": "curies",
+                        "type": "array",
+                        "spec": {
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "name",
+                                    "type": "text",
+                                    "label": "Name"
+                                },
+                                {
+                                    "name": "href",
+                                    "type": "text",
+                                    "label": "Href"
+                                },
+                                {
+                                    "name": "templated",
+                                    "type": "boolean",
+                                    "label": "Templated"
+                                }
+                            ]
+                        },
+                        "label": "Curies"
+                    }
+                ],
+                "label": " Links"
+            }
+        ],
+        "label": "Message"
+    }
+]

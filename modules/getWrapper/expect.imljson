@@ -1,0 +1,8 @@
+[
+    {
+        "name": "id",
+        "label": "Wrapper ID",
+        "type": "text",
+        "required": true
+    }
+]

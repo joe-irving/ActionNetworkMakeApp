@@ -17,7 +17,8 @@
                 "id": "{{ replace(item._links.self.href, 'https://actionnetwork.org/api/v2/people/', '') }}",
                 "item": "{{item}}"
             },
-            "iterate": "{{body._embedded['osdi:people']}}"
+            "iterate": "{{body._embedded['osdi:people']}}",
+            "limit": "{{ parameters.limit }}"
         },
         "pagination": {
             "url": "{{body._links.next.href}}"

@@ -4,6 +4,7 @@
         "label": "What action type?",
         "type": "select",
         "required": true,
+        "mode": "edit",
         "options": {
             "store": "rpc://listActionTypes?method=put_action_taker",
             "nested": [
@@ -12,7 +13,8 @@
                     "label": "Action",
                     "type": "select",
                     "required": true,
-                    "options": "rpc://getActionsListOptions"
+                    "options": "rpc://getActionsListOptions",
+                    "mode": "edit"
                 },
                 {
                     "name": "action_taken_id",
@@ -31,5 +33,11 @@
                 // }
             ]
         }
+    },
+    {
+        "name": "background_request",
+        "label": "Process in background (i.e. return nothing)",
+        "type": "boolean",
+        "advanced": true
     }
 ]

@@ -1,0 +1,78 @@
+[
+    {
+        "name": "_links",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "self",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "href",
+                        "type": "text",
+                        "label": "Href"
+                    }
+                ],
+                "label": "Self"
+            },
+            {
+                "name": "osdi:person",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "href",
+                        "type": "text",
+                        "label": "Href"
+                    }
+                ],
+                "label": "Osdi:Person"
+            },
+            {
+                "name": "osdi:list",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "href",
+                        "type": "text",
+                        "label": "Href"
+                    }
+                ],
+                "label": "Osdi:List"
+            }
+        ],
+        "label": " Links"
+    },
+    {
+        "name": "identifiers",
+        "type": "array",
+        "spec": {
+            "type": "text"
+        },
+        "label": "Identifiers"
+    },
+    {
+        "name": "created_date",
+        "type": "text",
+        "label": "Created Date"
+    },
+    {
+        "name": "modified_date",
+        "type": "text",
+        "label": "Modified Date"
+    },
+    {
+        "name": "action_network:person_id",
+        "type": "text",
+        "label": "Action Network:Person ID"
+    },
+    {
+        "name": "action_network:list_id",
+        "type": "text",
+        "label": "Action Network:List ID"
+    },
+    {
+        "name": "item_type",
+        "type": "text",
+        "label": "Item Type"
+    }
+]

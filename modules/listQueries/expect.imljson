@@ -1,0 +1,7 @@
+[
+    {
+        "name": "limit",
+        "label": "Limit",
+        "type": "uinteger"
+    }
+]

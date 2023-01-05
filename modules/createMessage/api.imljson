@@ -17,7 +17,9 @@
     },
     "response": {
         "output": {
-            "item": "{{body}}"
+            "id": "{{ last(split(body._links.self.href, '/')) }}",
+            "wrapper_id": "{{ last(split(body._links.`osdi:wrappers`.href, '/')) }}",
+            "message": "{{body}}"
         }
     }
 }
