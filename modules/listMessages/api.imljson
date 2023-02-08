@@ -5,7 +5,7 @@
         "output": {
             "id": "{{ last(split(item._links.self.href, '/')) }}",
             "wrapper_id": "{{ last(split(item._links.`osdi:wrappers`.href, '/')) }}",
-            "message": "{{item}}"
+            "message": "{{parseTimestamps(item)}}"
         },
         "iterate": "{{ body._embedded.`osdi:messages` }}",
         "limit": "{{ parameters.limit }}"

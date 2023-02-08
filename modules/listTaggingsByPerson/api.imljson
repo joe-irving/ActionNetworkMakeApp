@@ -49,7 +49,7 @@
                 "id": "{{ first(reverse(split(item._links.self.href, '/'))) }}",
                 "person_id": "{{ first(reverse(split(item._links['osdi:person'].href, '/'))) }}",
                 "tag_id": "{{ first(reverse(split(item._links['osdi:tag'].href, '/'))) }}",
-                "tagging": "{{item}}",
+                "tagging": "{{parseTimestamps(item)}}",
                 "person": "{{ temp['osdi:person'] }}"
             },
             "iterate": "{{body._embedded['osdi:taggings']}}",

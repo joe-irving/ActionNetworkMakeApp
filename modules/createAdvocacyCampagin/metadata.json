@@ -1,7 +1,7 @@
 {
     "name": "createAdvocacyCampagin",
     "label": "Create Advocacy Campagin",
-    "description": "Create a call or letter (email) campaign",
+    "description": "Creates a call or letter campaign",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "action"

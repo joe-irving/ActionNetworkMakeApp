@@ -1,7 +1,7 @@
 {
     "name": "listPeople",
     "label": "List People",
-    "description": "List People in group",
+    "description": "Lists people based on critera",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "search"

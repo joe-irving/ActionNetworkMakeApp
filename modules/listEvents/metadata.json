@@ -1,7 +1,7 @@
 {
     "name": "listEvents",
     "label": "List Events",
-    "description": "List events in a group or event campaign",
+    "description": "Lists events in a group or event campaign",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "search"

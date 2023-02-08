@@ -8,13 +8,13 @@
                 "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
                 "person_id": "{{ first(reverse(split(body._links['osdi:person'].href, '/'))) }}",
                 "tag_id": "{{ first(reverse(split(body._links['osdi:tag'].href, '/'))) }}",
-                "tagging": "{{body}}"
+                "tagging": "{{parseTimestamps(body)}}"
             },
             "output": {
                 "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
                 "person_id": "{{ first(reverse(split(body._links['osdi:person'].href, '/'))) }}",
                 "tag_id": "{{ first(reverse(split(body._links['osdi:tag'].href, '/'))) }}",
-                "tagging": "{{body}}"
+                "tagging": "{{parseTimestamps(body)}}"
             }
         }
     },
@@ -23,13 +23,13 @@
         "method": "GET",
         "response": {
             "temp": {
-                "osdi:person": "{{ body }}"
+                "osdi:person": "{{ parseTimestamps(body) }}"
             },
             "output": {
                 "id": "{{ temp.id }}",
                 "person_id": "{{ temp.person_id }}",
                 "tag_id": "{{ temp.tag_id }}",
-                "tagging": "{{ body }}",
+                "tagging": "{{ parseTimestamps(body) }}",
                 "person": "{{ temp.`osdi:person` }}"
             }
         }
@@ -42,9 +42,9 @@
                 "id": "{{ temp.id }}",
                 "person_id": "{{ temp.person_id }}",
                 "tag_id": "{{ temp.tag_id }}",
-                "tagging": "{{ body }}",
+                "tagging": "{{ temp.tagging }}",
                 "person": "{{ temp.`osdi:person` }}",
-                "tag": "{{ body }}"
+                "tag": "{{ parseTimestamps(body) }}"
             }
         }
     }

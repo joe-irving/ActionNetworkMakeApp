@@ -1,7 +1,147 @@
 [
     {
         "name": "id",
-        "type": "uinteger",
-        "label": "User ID"
+        "type": "text",
+        "label": "ID"
+    },
+    {
+        "name": "action_id",
+        "type": "text",
+        "label": "Action ID"
+    },
+    {
+        "name": "person_id",
+        "type": "text",
+        "label": "Person ID"
+    },
+    {
+        "name": "action_type",
+        "type": "text",
+        "label": "Action Type"
+    },
+    {
+        "name": "action_taken",
+        "type": "collection",
+        "spec": [
+            {
+                "name": "created_date",
+                "type": "text",
+                "label": "Created Date"
+            },
+            {
+                "name": "modified_date",
+                "type": "text",
+                "label": "Modified Date"
+            },
+            {
+                "name": "type",
+                "type": "text",
+                "label": "Type"
+            },
+            {
+                "name": "identifiers",
+                "type": "array",
+                "spec": {
+                    "type": "text"
+                },
+                "label": "Identifiers"
+            },
+            {
+                "name": "subject",
+                "type": "text",
+                "label": "Subject"
+            },
+            {
+                "name": "action_network:referrer_data",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "source",
+                        "type": "text",
+                        "label": "Source"
+                    },
+                    {
+                        "name": "referrer",
+                        "type": "text",
+                        "label": "Referrer"
+                    },
+                    {
+                        "name": "website",
+                        "type": "text",
+                        "label": "Website"
+                    }
+                ],
+                "label": "Referrer Data"
+            },
+            {
+                "name": "_links",
+                "type": "collection",
+                "spec": [
+                    {
+                        "name": "curies",
+                        "type": "array",
+                        "spec": {
+                            "type": "collection",
+                            "spec": [
+                                {
+                                    "name": "name",
+                                    "type": "text",
+                                    "label": "Name"
+                                },
+                                {
+                                    "name": "href",
+                                    "type": "text",
+                                    "label": "Href"
+                                },
+                                {
+                                    "name": "templated",
+                                    "type": "boolean",
+                                    "label": "Templated"
+                                }
+                            ]
+                        },
+                        "label": "Curies"
+                    },
+                    {
+                        "name": "self",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Self"
+                    },
+                    {
+                        "name": "osdi:advocacy_campaign",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Advocacy Campaign"
+                    },
+                    {
+                        "name": "osdi:person",
+                        "type": "collection",
+                        "spec": [
+                            {
+                                "name": "href",
+                                "type": "text",
+                                "label": "Href"
+                            }
+                        ],
+                        "label": "Person"
+                    }
+                ],
+                "label": "Links"
+            }
+        ],
+        "label": "Action Taken"
     }
 ]

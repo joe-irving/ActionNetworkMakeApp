@@ -2,7 +2,7 @@
     "qs": {
         "{{...}}": "{{toCollection(parameters.qs, 'key', 'value')}}"
     },
-    "url": "{{parameters.url}}",
+    "url": "https://actionnetwork.org/api/{{parameters.url}}",
     "body": "{{parameters.body}}",
     "type": "text",
     "method": "{{parameters.method}}",

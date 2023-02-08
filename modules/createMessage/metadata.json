@@ -1,7 +1,7 @@
 {
     "name": "createMessage",
     "label": "Create Message",
-    "description": "Create an email",
+    "description": "Creates an email",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "action"

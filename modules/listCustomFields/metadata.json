@@ -1,7 +1,7 @@
 {
     "name": "listCustomFields",
     "label": "List Custom Fields",
-    "description": "Gets a list of custom fields used by your group",
+    "description": "Returns a list of custom fields used by your group",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "search"

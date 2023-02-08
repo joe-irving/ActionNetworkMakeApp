@@ -48,14 +48,13 @@
             "test": "{{ temp.action_type_singular }}"
         },
         "method": "GET",
-        "response":{
+        "response": {
             "temp": {
-                "action_taken": "{{ body }}",
+                "action_taken": "{{ parseTimestamps(body) }}",
                 "person_url": "{{ body._links.`osdi:person`.href }}"
             }
         }
     },
-    
     // Get Action
     {
         "url": "{{ temp.action_url }}",
@@ -65,7 +64,7 @@
         "method": "GET",
         "response": {
             "temp": {
-                "action": "{{ body }}"
+                "action": "{{ parseTimestamps(body) }}"
             }
         }
     },
@@ -75,7 +74,7 @@
         "method": "GET",
         "response": {
             "temp": {
-                "person": "{{body}}"
+                "person": "{{parseTimestamps(body)}}"
             },
             "output": {
                 "id": "{{ first(reverse(split(temp.action_taken._links.self.href, '/'))) }}",

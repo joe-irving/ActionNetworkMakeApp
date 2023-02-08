@@ -19,7 +19,6 @@
             }
         }
     },
-
     {
         "url": "{{ temp.endpoint }}",
         "method": "GET",
@@ -28,7 +27,7 @@
                 "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
                 "creator_id": "{{ first(reverse(split(body._links['osdi:creator'].href, '/'))) }}",
                 "organizer_id": "{{ last(split(item._links['osdi:organizer'].href, '/')) }}",
-                "event": "{{ body }}"
+                "event": "{{ parseTimestamps(body) }}"
             }
         }
     }

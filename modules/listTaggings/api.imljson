@@ -8,7 +8,7 @@
             "id": "{{ first(reverse(split(item._links.self.href, '/'))) }}",
             "person_id": "{{ first(reverse(split(item._links['osdi:person'].href, '/'))) }}",
             "tag_id": "{{ first(reverse(split(item._links['osdi:tag'].href, '/'))) }}",
-            "item": "{{item}}"
+            "item": "{{parseTimestamps(item)}}"
         },
         "iterate": "{{body._embedded['osdi:taggings']}}",
         "limit": "{{ parameters.limit }}"

@@ -1,6 +1,6 @@
 [
     {
-        "help": "Enter a path relative to `https://actionnetwork.org/api`.",
+        "help": "Enter a path relative to `https://actionnetwork.org/api`, for example `/v2/metadata`.",
         "name": "url",
         "type": "text",
         "label": "URL",

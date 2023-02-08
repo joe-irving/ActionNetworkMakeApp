@@ -34,9 +34,10 @@
                 "creator_id": "{{ last(split(item._links['osdi:creator'].href, '/')) }}",
                 "organizer_id": "{{ last(split(item._links['osdi:organizer'].href, '/')) }}",
                 "action_type": "{{ parameters.action_type }}",
-                "action": "{{ item }}"
+                "action": "{{ parseTimestamps(item) }}"
             },
-            "iterate": "{{body._embedded[parameters.action_type]}}"
+            "iterate": "{{body._embedded[parameters.action_type]}}",
+            "limit": "{{ parameters.limit }}"
         },
         "pagination": {
             "url": "{{ body._links.next.href }}",

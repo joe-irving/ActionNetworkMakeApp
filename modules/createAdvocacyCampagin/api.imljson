@@ -17,6 +17,6 @@
         // }
     },
     "response": {
-        "output": "{{body}}"
+        "output": "{{parseTimestamps(body)}}"
     }
 }

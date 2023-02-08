@@ -1,7 +1,7 @@
 {
     "name": "createTagging",
     "label": "Create Tagging",
-    "description": "Create a new tagging by ID, email or phone",
+    "description": "Creates a new tagging of a person by ID, email or phone",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "action"

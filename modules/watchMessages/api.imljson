@@ -14,7 +14,7 @@
         },
         "output": {
             "id": "{{ substring(item._links.self.href, indexOf(item._links.self.href, '/v2/messages/') + 13, length(item._links.self.href)) }}",
-            "message": "{{item}}"
+            "message": "{{parseTimestamps(item)}}"
         },
         "limit": "{{parameters.limit}}"
     }

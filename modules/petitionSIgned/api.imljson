@@ -1,5 +1,1 @@
-{
-    "response": {
-        "output": "{{ body }}"
-    }
-}
+{}

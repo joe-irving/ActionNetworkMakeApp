@@ -100,8 +100,9 @@
                 "action_id": "{{ first(reverse(split(item._links[temp.action_type_singular].href, '/'))) }}",
                 "person_id": "{{ first(reverse(split(item._links.`osdi:person`.href, '/'))) }}",
                 "action_type": "{{ parameters.action_type }}",
-                "action_taken": "{{ item }}"
-            }
+                "action_taken": "{{ parseTimestamps(item) }}"
+            },
+            "limit": "{{ parameters.limit }}"
         },
         "pagination": {
             "url": "{{body._links.next.href}}",

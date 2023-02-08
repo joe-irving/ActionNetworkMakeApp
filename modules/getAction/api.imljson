@@ -6,7 +6,7 @@
             "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
             "creator_id": "{{ first(reverse(split(body._links['osdi:creator'].href, '/'))) }}",
             "action_type": "{{ parameters.action_type }}",
-            "action": "{{ body }}"
+            "action": "{{ parseTimestamps(body) }}"
         }
     }
 }

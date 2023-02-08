@@ -1,6 +1,6 @@
 {
     "name": "formSubmitted",
-    "label": "Form Submitted",
+    "label": "Watch Form Submissions",
     "description": "Triggers when a form is submitted",
     "connection": null,
     "webhook": "action-network-jmxysg",

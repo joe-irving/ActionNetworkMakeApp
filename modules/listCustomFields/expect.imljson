@@ -1,1 +1,7 @@
-[]
+[
+    {
+        "name": "limit",
+        "label": "label",
+        "type": "uinteger"
+    }
+]

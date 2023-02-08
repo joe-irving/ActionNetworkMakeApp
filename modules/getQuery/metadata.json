@@ -1,7 +1,7 @@
 {
     "name": "getQuery",
     "label": "Get Query",
-    "description": "Get an individual query by ID",
+    "description": "Gets an individual query by ID",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "action"

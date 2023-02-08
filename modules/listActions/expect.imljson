@@ -67,6 +67,11 @@
         ]
     },
     {
+        "name": "limit",
+        "label": "label",
+        "type": "uinteger"
+    },
+    {
         "name": "filter",
         "type": "text",
         "label": "Filter",

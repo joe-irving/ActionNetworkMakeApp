@@ -8,7 +8,7 @@
         "output": {
             "id": "{{ first(reverse(split(item._links.self.href, '/'))) }}",
             "creator_id": "{{ first(reverse(split(item._links['osdi:creator'].href, '/'))) }}",
-            "item": "{{ item }}"
+            "item": "{{ parseTimestamps(item) }}"
         },
         "iterate": "{{body._embedded['osdi:advocacy_campaigns']}}"
     }

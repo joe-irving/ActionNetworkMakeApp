@@ -2,7 +2,7 @@
     "url": "/v2/lists/{{ parameters.id }}/items",
     "method": "GET",
     "response": {
-        "output": "{{ item }}",
+        "output": "{{ parseTimestamps(item) }}",
         "iterate": "{{ body._embedded.`osdi:items` }}",
         "limit": "{{parameters.limit}}"
     },

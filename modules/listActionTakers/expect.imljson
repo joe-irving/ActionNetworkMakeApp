@@ -78,6 +78,11 @@
         }
     },
     {
+        "name": "limit",
+        "label": "label",
+        "type": "uinteger"
+    },
+    {
         "name": "filter",
         "label": "Raw filter",
         "type": "text",

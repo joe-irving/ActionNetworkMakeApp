@@ -1,7 +1,7 @@
 {
     "name": "takeAction",
-    "label": "Take Action",
-    "description": "Add a new action taker to an action",
+    "label": "Create Action Taken Record",
+    "description": "Creates a new action taker for an action",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "action"

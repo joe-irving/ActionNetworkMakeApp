@@ -1,7 +1,7 @@
 {
     "name": "updateEvent",
     "label": "Update Event",
-    "description": "Update an event",
+    "description": "Updates an event",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "action"

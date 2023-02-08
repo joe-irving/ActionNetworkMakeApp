@@ -55,8 +55,9 @@
                 "type": "date",
                 "order": "desc"
             },
-            "output": "{{item}}",
-            "iterate": "{{body._embedded.`osdi:events`}}"
+            "output": "{{parseTimestamps(item)}}",
+            "iterate": "{{body._embedded.`osdi:events`}}",
+            "limit": "{{ parameters.limit }}"
         },
         "pagination": {
             "url": "{{ body._links.next.href }}",

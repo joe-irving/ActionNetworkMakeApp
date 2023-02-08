@@ -1,7 +1,7 @@
 {
     "name": "listQueries",
     "label": "List Queries",
-    "description": "List queries (defined targeting) created in this group",
+    "description": "Lists queries (defined targeting)",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "search"

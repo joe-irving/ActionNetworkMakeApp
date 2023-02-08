@@ -2,7 +2,8 @@
     "url": "/v2/metadata/custom_fields",
     "method": "GET",
     "response": {
-        "output": "{{item}}",
-        "iterate": "{{body.`action_network:custom_fields`}}"
+        "output": "{{parseTimestamps(item)}}",
+        "iterate": "{{body.`action_network:custom_fields`}}",
+        "limit": "{{parameters.limit}}"
     }
 }

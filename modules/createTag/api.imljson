@@ -11,7 +11,7 @@
         "output": {
             "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
             "new": "{{ floor((formatDate(now, 'X') - formatDate(body.created_date, 'X'))) == 0 }}",
-            "tag": "{{ body }}"
+            "tag": "{{ parseTimestamps(body) }}"
         }
     }
 }

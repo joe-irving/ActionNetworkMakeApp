@@ -15,7 +15,7 @@
         "response": {
             "output": {
                 "id": "{{ replace(item._links.self.href, 'https://actionnetwork.org/api/v2/people/', '') }}",
-                "item": "{{item}}"
+                "item": "{{parseTimestamps(item)}}"
             },
             "iterate": "{{body._embedded['osdi:people']}}",
             "limit": "{{ parameters.limit }}"

@@ -51,7 +51,7 @@
                 "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
                 "person_id": "{{ first(reverse(split(body._links['osdi:person'].href, '/'))) }}",
                 "tag_id": "{{ first(reverse(split(body._links['osdi:tag'].href, '/'))) }}",
-                "item": "{{body}}"
+                "item": "{{parseTimestamps(body)}}"
             }
         }
     }

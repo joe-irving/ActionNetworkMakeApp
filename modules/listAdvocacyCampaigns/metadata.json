@@ -1,7 +1,7 @@
 {
     "name": "listAdvocacyCampaigns",
     "label": "List Advocacy Campaigns",
-    "description": "List Email and Call campaigns",
+    "description": "Lists call and letter campaigns",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "search"

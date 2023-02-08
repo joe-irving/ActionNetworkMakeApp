@@ -37,7 +37,7 @@
             },
             "output": {
                 "id": "{{ substring(item._links.self.href, indexOf(item._links.self.href, '/v2/people/') + 11, length(item._links.self.href)) }}",
-                "item": "{{ item }}"
+                "item": "{{ parseTimestamps(item) }}"
             },
             "limit": "{{parameters.limit}}"
         }

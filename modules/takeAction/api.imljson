@@ -46,8 +46,6 @@
         }
     },
     // Get existing person email status
-
-
     // POST data to the endpoint
     {
         "url": "{{ temp.endpoint }}",
@@ -111,7 +109,7 @@
                 "action_id": "{{ parameters.action_id }}",
                 "person_id": "{{ first(reverse(split(body._links.`osdi:person`.href, '/'))) }}",
                 "action_type": "{{ parameters.action_type }}",
-                "action_taken": "{{ body }}"
+                "action_taken": "{{ parseTimestamps(body) }}"
             },
             "temp": {
                 "person_endpoint": "{{ body._links.`osdi:person`.href }}",
@@ -119,7 +117,7 @@
                 "action_id": "{{ parameters.action_id }}",
                 "person_id": "{{ first(reverse(split(body._links.`osdi:person`.href, '/'))) }}",
                 "action_type": "{{ parameters.action_type }}",
-                "action_taken": "{{ body }}"
+                "action_taken": "{{ parseTimestamps(body) }}"
             }
         }
     },
@@ -141,7 +139,7 @@
                 "person_id": "{{ temp.id }}",
                 "action_type": "{{ temp.action_type }}",
                 "action_taken": "{{ temp.action_taken }}",
-                "person": "{{ body }}"
+                "person": "{{ parseTimestamps(body) }}"
             }
         }
     }

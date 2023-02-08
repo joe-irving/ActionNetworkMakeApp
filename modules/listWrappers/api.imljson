@@ -4,7 +4,7 @@
     "response": {
         "output": {
             "id": "{{ first(reverse(split(item._links.self.href, '/'))) }}",
-            "wrapper": "{{ item }}"
+            "wrapper": "{{ parseTimestamps(item) }}"
         },
         "iterate": "{{body._embedded.`osdi:wrappers`}}",
         "limit": "{{ parameters.limit }}"

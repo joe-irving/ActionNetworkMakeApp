@@ -5,7 +5,7 @@
         "output": {
             "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
             "creator_id": "{{ first(reverse(split(body._links['osdi:creator'].href, '/'))) }}",
-            "item": "{{ body }}"
+            "item": "{{ parseTimestamps(body) }}"
         }
     }
 }

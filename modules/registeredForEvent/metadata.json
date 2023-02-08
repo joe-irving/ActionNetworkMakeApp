@@ -1,6 +1,6 @@
 {
     "name": "registeredForEvent",
-    "label": "Registered for Event",
+    "label": "Watch Event Registrations",
     "description": "Triggers when a person registers for an event",
     "connection": null,
     "webhook": "action-network-jmxysg",

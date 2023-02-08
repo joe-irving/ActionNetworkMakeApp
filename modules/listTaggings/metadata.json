@@ -1,7 +1,7 @@
 {
     "name": "listTaggings",
     "label": "List Taggings by Tag",
-    "description": "List all taggings for a specific tag",
+    "description": "Lists all taggings for a specific tag",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "search"

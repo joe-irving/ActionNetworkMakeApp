@@ -35,8 +35,9 @@
                 "type": "date",
                 "order": "desc"
             },
-            "output": "{{item}}",
-            "iterate": "{{body._embedded[parameters.action_type]}}"
+            "output": "{{parseTimestamps(item)}}",
+            "iterate": "{{body._embedded[parameters.action_type]}}",
+            "limit": "{{ parameters.limit }}"
         },
         "pagination": {
             "url": "{{ body._links.next.href }}",

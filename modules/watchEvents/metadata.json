@@ -1,7 +1,7 @@
 {
     "name": "watchEvents",
     "label": "Watch Events",
-    "description": "Watch for new or updated events",
+    "description": "Triggers for new or updated events",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "trigger"

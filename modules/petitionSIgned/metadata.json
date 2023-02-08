@@ -1,6 +1,6 @@
 {
     "name": "petitionSIgned",
-    "label": "Petition Signed",
+    "label": "Watch Petition Signatures",
     "description": "Triggers when someone signs a petition",
     "connection": null,
     "webhook": "action-network-jmxysg",

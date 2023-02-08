@@ -14,7 +14,6 @@
             }
         }
     },
-
     // Get person by email then:
     {
         "condition": "{{ parameters.person_source == 'email' }}",
@@ -28,7 +27,6 @@
             }
         }
     },
-
     // Get person by phone number
     {
         "condition": "{{ parameters.person_source == 'phone_number' }}",
@@ -42,7 +40,6 @@
             }
         }
     },
-
     {
         "response": {
             "output": {
@@ -51,9 +48,7 @@
             }
         }
     },
-
     // If in selected in advanced settings then...
-
     // -> Get attendances (page 1)
     {
         "condition": "{{ contains(parameters.embedded_resources, 'osdi:attendances') }}",
@@ -68,7 +63,6 @@
             }
         }
     },
-
     // -> Get signatures (page 1)
     {
         "condition": "{{ contains(parameters.embedded_resources, 'osdi:signatures') }}",
@@ -83,7 +77,6 @@
             }
         }
     },
-
     // -> Get submissions (page 1)
     {
         "condition": "{{ contains(parameters.embedded_resources, 'osdi:submissions') }}",
@@ -98,8 +91,6 @@
             }
         }
     },
-
-
     // -> Get donations (page 1)
     {
         "condition": "{{ contains(parameters.embedded_resources, 'osdi:donations') }}",
@@ -114,7 +105,6 @@
             }
         }
     },
-
     // -> Get taggings (page 1)
     {
         "condition": "{{ contains(parameters.embedded_resources, 'osdi:taggings') }}",
@@ -129,7 +119,6 @@
             }
         }
     },
-
     // -> Get outreaches (page 1)
     {
         "condition": "{{ contains(parameters.embedded_resources, 'osdi:taoutreachesggings') }}",
@@ -144,13 +133,12 @@
             }
         }
     },
-
     // Output with embedded resources
     {
         "response": {
             "output": {
                 "id": "{{ first(reverse(split(temp.`osdi:person`._links.self.href, '/'))) }}",
-                "item": "{{ temp.`osdi:person` }}",
+                "item": "{{ parseTimestamps(temp.`osdi:person`) }}",
                 "attendances": "{{ temp.attendances }}",
                 "signatures": "{{ temp.signatures }}",
                 "submissions": "{{ temp.submissions }}",

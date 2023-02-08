@@ -1,7 +1,7 @@
 {
     "name": "getPerson",
     "label": "Get Person",
-    "description": "Get a single person by ID, email or phone number. Optional embed of linked resources",
+    "description": "Gets a single person by ID, email or phone number. Optional embed of linked resources",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "action"

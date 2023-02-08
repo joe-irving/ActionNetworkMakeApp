@@ -4,7 +4,7 @@
     "response": {
         "output": {
             "id": "{{ first(reverse(split(body._links.self.href, '/'))) }}",
-            "wrapper": "{{ body }}"
+            "wrapper": "{{ parseTimestamps(body) }}"
         }
     }
 }

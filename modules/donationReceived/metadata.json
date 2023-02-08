@@ -1,6 +1,6 @@
 {
     "name": "donationReceived",
-    "label": "Donation received",
+    "label": "Watch New Donations",
     "description": "Triggers when a donation is made to a fundraising page",
     "connection": null,
     "webhook": "action-network-jmxysg",

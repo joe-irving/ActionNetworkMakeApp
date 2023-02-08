@@ -1,7 +1,7 @@
 {
     "name": "listItems",
     "label": "List Items",
-    "description": "List items in a list (report or message targeting list)",
+    "description": "Lists items in a list (report or message targeting list)",
     "connection": "action-network-jmxysg",
     "webhook": null,
     "type": "search"
